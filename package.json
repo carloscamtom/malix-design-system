@@ -1,0 +1,22 @@
+{
+  "name": "malix-design-system",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Malix Design System monorepo",
+  "packageManager": "pnpm@9.12.3",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @malix/storybook dev",
+    "lint": "pnpm -r lint && node scripts/validate-tokens.mjs",
+    "test": "node scripts/validate-tokens.mjs",
+    "build": "pnpm -r build"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.9.0",
+    "@typescript-eslint/parser": "^8.9.0",
+    "eslint": "^8.57.1"
+  }
+}

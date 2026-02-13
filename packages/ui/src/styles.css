@@ -1,0 +1,162 @@
+@import "@malix/tokens/tokens.css";
+
+.malix-button {
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-base);
+  font-weight: var(--malix-weight-semibold);
+  border-radius: var(--malix-radius-md);
+  border: 1px solid transparent;
+  padding: var(--malix-space-sm) var(--malix-space-md);
+  gap: var(--malix-space-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+  box-shadow: var(--malix-shadow-depth);
+  position: relative;
+}
+
+.malix-button[data-hierarchy="primary"] {
+  background: var(--malix-cta-primary-bg);
+  color: var(--malix-primary-foreground);
+}
+
+.malix-button[data-hierarchy="primary"]:hover {
+  background: var(--malix-primary-hover);
+}
+
+.malix-button[data-hierarchy="primary"]:active {
+  background: var(--malix-primary-active);
+}
+
+.malix-button[data-hierarchy="secondary"] {
+  background: var(--malix-surface);
+  border-color: var(--malix-border);
+  color: var(--malix-foreground);
+}
+
+.malix-button[data-hierarchy="secondary"]:hover {
+  background: var(--malix-surface-hover);
+}
+
+.malix-button[data-hierarchy="ghost"] {
+  background: transparent;
+  border-color: transparent;
+  color: var(--malix-foreground-secondary);
+  box-shadow: none;
+}
+
+.malix-button[data-hierarchy="ghost"]:hover {
+  background: var(--malix-surface-hover);
+}
+
+.malix-button:focus-visible,
+.malix-input-wrap:focus-within {
+  outline: 2px solid var(--malix-border-focus);
+  outline-offset: 2px;
+}
+
+.malix-button:disabled,
+.malix-button[data-loading="true"] {
+  cursor: not-allowed;
+  color: var(--malix-foreground-disabled);
+}
+
+.malix-button__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.malix-button__badge {
+  border-radius: var(--malix-radius-pill);
+  background: var(--malix-primary-light);
+  color: var(--malix-foreground);
+  font-size: var(--malix-text-xs);
+  line-height: 1;
+  padding: 2px 6px;
+}
+
+.malix-input-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--malix-space-sm);
+  width: 100%;
+  max-width: 360px;
+  background: var(--malix-surface);
+  border: 1px solid var(--malix-border);
+  border-radius: var(--malix-radius-md);
+  padding: var(--malix-space-sm) var(--malix-space-md);
+  box-shadow: var(--malix-shadow-depth);
+}
+
+.malix-input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  color: var(--malix-foreground);
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-base);
+}
+
+.malix-input::placeholder {
+  color: var(--malix-foreground-tertiary);
+}
+
+.malix-tooltip-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.malix-tooltip {
+  position: absolute;
+  bottom: calc(100% + var(--malix-space-sm));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 260px;
+  width: max-content;
+  background: var(--malix-foreground);
+  color: var(--malix-primary-foreground);
+  border-radius: var(--malix-radius-sm);
+  padding: var(--malix-space-xs) var(--malix-space-sm);
+  font-size: var(--malix-text-xs);
+  box-shadow: var(--malix-shadow-overlay);
+  z-index: 20;
+}
+
+.malix-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: var(--malix-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--malix-space-xl);
+  z-index: 50;
+}
+
+.malix-overlay-panel {
+  min-width: 320px;
+  max-width: min(560px, 100%);
+  max-height: 80vh;
+  overflow: auto;
+  background: var(--malix-glass-bg);
+  border: 1px solid var(--malix-glass-border);
+  border-radius: var(--malix-radius-lg);
+  box-shadow: var(--malix-shadow-overlay);
+  backdrop-filter: blur(var(--malix-glass-blur));
+  padding: var(--malix-space-lg);
+}
+
+.malix-overlay-title {
+  margin: 0 0 var(--malix-space-sm);
+  font-size: var(--malix-text-lg);
+  font-family: var(--malix-font-heading);
+  color: var(--malix-foreground);
+}
+
+.malix-overlay-close {
+  margin-top: var(--malix-space-md);
+}

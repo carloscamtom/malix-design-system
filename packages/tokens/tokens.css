@@ -1,0 +1,78 @@
+:root {
+  --malix-background-main: #ffffff;
+  --malix-surface: #ffffff;
+  --malix-surface-secondary: #f9fafb;
+  --malix-surface-hover: #f3f4f6;
+
+  --malix-foreground: #111827;
+  --malix-foreground-secondary: #6b7280;
+  --malix-foreground-tertiary: #9ca3af;
+  --malix-foreground-disabled: #d1d5db;
+
+  --malix-border: #e5e7eb;
+  --malix-border-strong: #d1d5db;
+  --malix-border-focus: #004a7c;
+  --malix-overlay: #00000066;
+
+  --malix-cta-primary-bg: #004a7c;
+  --malix-primary-hover: #003a63;
+  --malix-primary-active: #002e4f;
+  --malix-primary-foreground: #ffffff;
+  --malix-primary-light: #e6f0f7;
+
+  --malix-success: #059669;
+  --malix-success-light: #ecfdf5;
+  --malix-success-foreground: #065f46;
+
+  --malix-warning: #d97706;
+  --malix-warning-light: #fffbeb;
+  --malix-warning-foreground: #92400e;
+
+  --malix-error: #dc2626;
+  --malix-error-light: #fef2f2;
+  --malix-error-foreground: #991b1b;
+
+  --malix-info: #2563eb;
+  --malix-info-light: #eff6ff;
+  --malix-info-foreground: #1e40af;
+
+  --malix-glass-bg: #f3f3f3b3;
+  --malix-glass-border: #ffffff66;
+  --malix-glass-blur: 20px;
+
+  --malix-sidebar-bg: #fbfbfb;
+  --malix-sidebar-hover-bg: #fbfbfb;
+  --malix-sidebar-active-bg: #e6f0f7;
+
+  --malix-space-xs: 4px;
+  --malix-space-sm: 8px;
+  --malix-space-md: 12px;
+  --malix-space-lg: 16px;
+  --malix-space-xl: 24px;
+  --malix-space-2xl: 32px;
+  --malix-space-3xl: 48px;
+
+  --malix-radius-sm: 4px;
+  --malix-radius-md: 8px;
+  --malix-radius-lg: 12px;
+  --malix-radius-xl: 16px;
+  --malix-radius-pill: 9999px;
+
+  --malix-text-xs: 12px;
+  --malix-text-sm: 13px;
+  --malix-text-base: 14px;
+  --malix-text-lg: 16px;
+  --malix-text-xl: 20px;
+  --malix-text-2xl: 24px;
+
+  --malix-font-body: Inter, sans-serif;
+  --malix-font-heading: Inter, sans-serif;
+
+  --malix-weight-normal: 400;
+  --malix-weight-medium: 500;
+  --malix-weight-semibold: 600;
+  --malix-weight-bold: 700;
+
+  --malix-shadow-depth: 0 4px 12px color-mix(in srgb, var(--malix-foreground) 12%, transparent);
+  --malix-shadow-overlay: 0 10px 25px color-mix(in srgb, var(--malix-foreground) 16%, transparent);
+}

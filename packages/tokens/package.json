@@ -1,0 +1,20 @@
+{
+  "name": "@malix/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "tokens.css",
+    "tokens.registry.json",
+    "index.js"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./tokens.css": "./tokens.css",
+    "./tokens.registry.json": "./tokens.registry.json"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "build": "node -e \"console.log('tokens build: static assets ready')\""
+  }
+}
