@@ -60,7 +60,16 @@
     "--malix-weight-medium",
     "--malix-weight-semibold",
     "--malix-weight-bold",
+    "--malix-shadow-btn-primary",
+    "--malix-shadow-btn-secondary",
+    "--malix-shadow-input",
     "--malix-shadow-depth",
-    "--malix-shadow-overlay"
+    "--malix-shadow-card-l1",
+    "--malix-shadow-card-l2",
+    "--malix-shadow-card-l3",
+    "--malix-shadow-overlay",
+    "--malix-shadow-tooltip",
+    "--malix-shadow-sidebar",
+    "--malix-shadow-header"
   ]
 }

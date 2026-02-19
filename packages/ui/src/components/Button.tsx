@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ButtonHierarchy = 'primary' | 'secondary' | 'ghost';
+export type ButtonHierarchy = 'primary' | 'secondary' | 'tertiary' | 'ghost';
 export type ButtonVariant = 'text' | 'leading-icon-text' | 'icon-only' | 'icon-badge';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {

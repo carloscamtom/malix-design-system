@@ -1,25 +1,30 @@
 :root {
+  /* ── Backgrounds ────────────────────────────── */
   --malix-background-main: #ffffff;
   --malix-surface: #ffffff;
   --malix-surface-secondary: #f9fafb;
   --malix-surface-hover: #f3f4f6;
 
+  /* ── Foreground / text ─────────────────────── */
   --malix-foreground: #111827;
   --malix-foreground-secondary: #6b7280;
   --malix-foreground-tertiary: #9ca3af;
   --malix-foreground-disabled: #d1d5db;
 
+  /* ── Borders ───────────────────────────────── */
   --malix-border: #e5e7eb;
   --malix-border-strong: #d1d5db;
   --malix-border-focus: #004a7c;
   --malix-overlay: #00000066;
 
+  /* ── Primary CTA ───────────────────────────── */
   --malix-cta-primary-bg: #004a7c;
   --malix-primary-hover: #003a63;
   --malix-primary-active: #002e4f;
   --malix-primary-foreground: #ffffff;
   --malix-primary-light: #e6f0f7;
 
+  /* ── Semantic colors ───────────────────────── */
   --malix-success: #059669;
   --malix-success-light: #ecfdf5;
   --malix-success-foreground: #065f46;
@@ -36,14 +41,17 @@
   --malix-info-light: #eff6ff;
   --malix-info-foreground: #1e40af;
 
+  /* ── Glass / morphism ──────────────────────── */
   --malix-glass-bg: #f3f3f3b3;
   --malix-glass-border: #ffffff66;
   --malix-glass-blur: 20px;
 
+  /* ── Sidebar ───────────────────────────────── */
   --malix-sidebar-bg: #fbfbfb;
   --malix-sidebar-hover-bg: #fbfbfb;
   --malix-sidebar-active-bg: #e6f0f7;
 
+  /* ── Spacing ───────────────────────────────── */
   --malix-space-xs: 4px;
   --malix-space-sm: 8px;
   --malix-space-md: 12px;
@@ -52,12 +60,14 @@
   --malix-space-2xl: 32px;
   --malix-space-3xl: 48px;
 
+  /* ── Radii ─────────────────────────────────── */
   --malix-radius-sm: 4px;
   --malix-radius-md: 8px;
   --malix-radius-lg: 12px;
   --malix-radius-xl: 16px;
   --malix-radius-pill: 9999px;
 
+  /* ── Typography ────────────────────────────── */
   --malix-text-xs: 12px;
   --malix-text-sm: 13px;
   --malix-text-base: 14px;
@@ -73,6 +83,16 @@
   --malix-weight-semibold: 600;
   --malix-weight-bold: 700;
 
+  /* ── Shadows (matching Pencil elevation levels) */
+  --malix-shadow-btn-primary: 0 1px 2px #00000015, 0 2px 4px #004a7c40;
+  --malix-shadow-btn-secondary: 0 4px 4px #b8b8b84d;
+  --malix-shadow-input: 0 1px 2px #0000000a;
   --malix-shadow-depth: 0 4px 12px color-mix(in srgb, var(--malix-foreground) 12%, transparent);
-  --malix-shadow-overlay: 0 10px 25px color-mix(in srgb, var(--malix-foreground) 16%, transparent);
+  --malix-shadow-card-l1: 0 1px 3px #0000000f, 0 1px 2px #0000000a;
+  --malix-shadow-card-l2: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000000f;
+  --malix-shadow-card-l3: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000000f;
+  --malix-shadow-overlay: 0 10px 25px #0000001a;
+  --malix-shadow-tooltip: 0 4px 8px #00000026;
+  --malix-shadow-sidebar: 1px 0 3px #0000000a;
+  --malix-shadow-header: 0 1px 3px #0000000a;
 }

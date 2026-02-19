@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import '@malix/ui/src/styles.css';
+import '@malix/ui/styles.css';
 
 const preview: Preview = {
   parameters: {
