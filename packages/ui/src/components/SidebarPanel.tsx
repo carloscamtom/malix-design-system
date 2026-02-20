@@ -40,8 +40,11 @@ export function SidebarPanel({
                 onClick={onToggleCollapse}
                 aria-label="Expand sidebar"
               >
+                {/* panel-left-open */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="m9 18 6-6-6-6" />
+                  <rect width="18" height="18" x="3" y="3" rx="2" />
+                  <path d="M9 3v18" />
+                  <path d="m14 9 3 3-3 3" />
                 </svg>
               </button>
             ) : (
@@ -60,8 +63,11 @@ export function SidebarPanel({
                   onClick={onToggleCollapse}
                   aria-label="Collapse sidebar"
                 >
+                  {/* panel-left-close */}
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m15 18-6-6 6-6" />
+                    <rect width="18" height="18" x="3" y="3" rx="2" />
+                    <path d="M9 3v18" />
+                    <path d="m16 15-3-3 3-3" />
                   </svg>
                 </button>
               ) : null}

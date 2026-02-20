@@ -569,11 +569,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 28px;
+  width: 40px;
+  height: 40px;
 }
 
 .malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__brand {
   justify-content: center;
+  padding: 0;
+}
+
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__nav {
+  align-items: center;
 }
 
 .malix-sidebar-panel__nav {
