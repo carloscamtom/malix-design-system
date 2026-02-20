@@ -20,7 +20,7 @@ export type { InputGroupProps } from './components/InputGroup';
 
 // Feedback
 export { Tooltip } from './components/Tooltip';
-export type { TooltipProps } from './components/Tooltip';
+export type { TooltipProps, TooltipPlacement } from './components/Tooltip';
 
 // Navigation
 export { SidebarItem } from './components/SidebarItem';

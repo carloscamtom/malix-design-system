@@ -105,13 +105,18 @@
   box-shadow: 0 0 0 3px rgba(0, 74, 124, 0.1);
 }
 
-.malix-button:disabled,
-.malix-button[data-loading="true"] {
+.malix-button:disabled {
   cursor: not-allowed;
   background: var(--malix-foreground-disabled);
   color: var(--malix-primary-foreground);
   box-shadow: none;
   border-color: transparent;
+}
+
+.malix-button[data-loading="true"] {
+  cursor: not-allowed;
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 .malix-button__icon {
@@ -326,9 +331,6 @@
 
 .malix-tooltip {
   position: absolute;
-  bottom: calc(100% + var(--malix-space-sm));
-  left: 50%;
-  transform: translateX(-50%);
   max-width: 260px;
   width: max-content;
   background: var(--malix-foreground);
@@ -340,6 +342,30 @@
   font-weight: var(--malix-weight-medium);
   box-shadow: var(--malix-shadow-tooltip);
   z-index: 20;
+}
+
+.malix-tooltip[data-placement="top"] {
+  bottom: calc(100% + var(--malix-space-sm));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.malix-tooltip[data-placement="bottom"] {
+  top: calc(100% + var(--malix-space-sm));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.malix-tooltip[data-placement="left"] {
+  right: calc(100% + var(--malix-space-sm));
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.malix-tooltip[data-placement="right"] {
+  left: calc(100% + var(--malix-space-sm));
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ═══════════════════════════════════════════════
@@ -438,7 +464,7 @@
 }
 
 .malix-flyout-menu__item[data-active] {
-  background: var(--malix-sidebar-active-bg);
+  background: #f3f3f3;
   color: #3a3a3a;
   font-weight: var(--malix-weight-medium);
 }
@@ -725,6 +751,7 @@
   font-size: var(--malix-text-base);
   font-weight: var(--malix-weight-semibold);
   color: var(--malix-foreground);
+  line-height: 1.4;
 }
 
 .malix-glass-popover__close {
@@ -1014,7 +1041,7 @@
   align-items: center;
   gap: 8px;
   font-family: var(--malix-font-body);
-  font-size: var(--malix-text-sm);
+  font-size: 13px;
   font-weight: var(--malix-weight-normal);
   color: var(--malix-foreground-secondary);
 }
@@ -1029,14 +1056,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   flex-shrink: 0;
 }
 
 .malix-breadcrumb__icon > svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 .malix-breadcrumb__label {
@@ -1052,7 +1079,7 @@ a.malix-breadcrumb__label:hover {
 
 .malix-breadcrumb__item[data-active] {
   color: var(--malix-foreground);
-  font-weight: var(--malix-weight-semibold);
+  font-weight: var(--malix-weight-medium);
 }
 
 .malix-breadcrumb__separator {
@@ -1064,8 +1091,8 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-breadcrumb__separator > svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
 }
 
 /* ═══════════════════════════════════════════════
@@ -1619,8 +1646,8 @@ a.malix-breadcrumb__label:hover {
   color: var(--malix-cta-primary-bg);
 }
 
-.malix-op-status[data-status="active"] .malix-op-status__icon > svg {
-  animation: malix-spin 1s linear infinite;
+.malix-op-status[data-status="active"] .malix-op-status__icon {
+  animation: malix-blink 1.4s ease-in-out infinite;
 }
 
 .malix-op-status[data-status="completed"] {
@@ -1634,14 +1661,13 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-op-status[data-status="pending"] {
-  background: var(--malix-surface-secondary);
-  color: var(--malix-foreground-secondary);
-  border: 1px solid var(--malix-border);
+  background: var(--malix-warning-light);
+  color: var(--malix-warning-foreground);
 }
 
-@keyframes malix-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes malix-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1653,9 +1679,9 @@ a.malix-breadcrumb__label:hover {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  padding: 12px 16px;
+  padding: 14px 16px;
   border-radius: var(--malix-radius-md);
-  border-left: 3px solid transparent;
+  border: 1px solid transparent;
   font-family: var(--malix-font-body);
 }
 
@@ -1663,6 +1689,8 @@ a.malix-breadcrumb__label:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
   padding-top: 1px;
 }
@@ -1711,16 +1739,16 @@ a.malix-breadcrumb__label:hover {
 /* error variant */
 .malix-validation-alert[data-variant="error"] {
   background: var(--malix-error-light);
-  border-left-color: var(--malix-error);
+  border-color: var(--malix-error);
 }
 
 .malix-validation-alert[data-variant="error"] .malix-validation-alert__icon,
 .malix-validation-alert[data-variant="error"] .malix-validation-alert__title {
-  color: var(--malix-error-foreground);
+  color: var(--malix-error);
 }
 
 .malix-validation-alert[data-variant="error"] .malix-validation-alert__message {
-  color: var(--malix-error-foreground);
+  color: var(--malix-foreground-secondary);
 }
 
 .malix-validation-alert[data-variant="error"] .malix-validation-alert__close {
@@ -1730,16 +1758,16 @@ a.malix-breadcrumb__label:hover {
 /* warning variant */
 .malix-validation-alert[data-variant="warning"] {
   background: var(--malix-warning-light);
-  border-left-color: var(--malix-warning);
+  border-color: var(--malix-warning);
 }
 
 .malix-validation-alert[data-variant="warning"] .malix-validation-alert__icon,
 .malix-validation-alert[data-variant="warning"] .malix-validation-alert__title {
-  color: var(--malix-warning-foreground);
+  color: var(--malix-warning);
 }
 
 .malix-validation-alert[data-variant="warning"] .malix-validation-alert__message {
-  color: var(--malix-warning-foreground);
+  color: var(--malix-foreground-secondary);
 }
 
 .malix-validation-alert[data-variant="warning"] .malix-validation-alert__close {
@@ -1749,16 +1777,16 @@ a.malix-breadcrumb__label:hover {
 /* info variant */
 .malix-validation-alert[data-variant="info"] {
   background: var(--malix-info-light);
-  border-left-color: var(--malix-info);
+  border-color: var(--malix-info);
 }
 
 .malix-validation-alert[data-variant="info"] .malix-validation-alert__icon,
 .malix-validation-alert[data-variant="info"] .malix-validation-alert__title {
-  color: var(--malix-info-foreground);
+  color: var(--malix-info);
 }
 
 .malix-validation-alert[data-variant="info"] .malix-validation-alert__message {
-  color: var(--malix-info-foreground);
+  color: var(--malix-foreground-secondary);
 }
 
 .malix-validation-alert[data-variant="info"] .malix-validation-alert__close {

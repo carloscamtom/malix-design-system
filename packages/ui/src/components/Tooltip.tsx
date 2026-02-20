@@ -1,11 +1,14 @@
 import React, { useId, useState } from 'react';
 
+export type TooltipPlacement = 'top' | 'bottom' | 'left' | 'right';
+
 export type TooltipProps = {
   content: React.ReactNode;
   children: React.ReactElement;
+  placement?: TooltipPlacement;
 };
 
-export function Tooltip({ content, children }: TooltipProps) {
+export function Tooltip({ content, children, placement = 'top' }: TooltipProps) {
   const [open, setOpen] = useState(false);
   const tooltipId = useId();
 
@@ -21,7 +24,7 @@ export function Tooltip({ content, children }: TooltipProps) {
         'aria-describedby': open ? tooltipId : undefined
       })}
       {open ? (
-        <span role="tooltip" id={tooltipId} className="malix-tooltip">
+        <span role="tooltip" id={tooltipId} className="malix-tooltip" data-placement={placement}>
           {content}
         </span>
       ) : null}

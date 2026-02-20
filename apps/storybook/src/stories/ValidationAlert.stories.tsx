@@ -6,8 +6,8 @@ const meta = {
   title: 'Malix/ValidationAlert',
   component: ValidationAlert,
   args: {
-    title: 'Validation error',
-    message: 'Please correct the highlighted fields before submitting.',
+    title: 'Error de validacion',
+    message: 'El campo "nombre" es obligatorio y no puede estar vacio.',
     variant: 'error',
   },
 } satisfies Meta<typeof ValidationAlert>;
@@ -19,32 +19,32 @@ export const Default: Story = {};
 
 export const Error: Story = {
   args: {
-    title: 'Error',
-    message: 'Something went wrong. Please try again later.',
+    title: 'Error de validacion',
+    message: 'El campo "nombre" es obligatorio y no puede estar vacio.',
     variant: 'error',
   },
 };
 
 export const Warning: Story = {
   args: {
-    title: 'Warning',
-    message: 'Your session will expire in 5 minutes.',
+    title: 'Advertencia',
+    message: 'Tu sesion expirara en 5 minutos. Guarda tus cambios.',
     variant: 'warning',
   },
 };
 
 export const Info: Story = {
   args: {
-    title: 'Information',
-    message: 'Your changes have been saved automatically.',
+    title: 'Informacion',
+    message: 'Los cambios se han guardado automaticamente.',
     variant: 'info',
   },
 };
 
 export const WithClose: Story = {
   args: {
-    title: 'Dismissible alert',
-    message: 'Click the close button to dismiss this alert.',
+    title: 'Alerta descartable',
+    message: 'Haz clic en el boton de cerrar para descartar esta alerta.',
     variant: 'warning',
     onClose: () => {},
   },
@@ -53,9 +53,9 @@ export const WithClose: Story = {
 export const AllVariants: Story = {
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12, maxWidth: 480 }}>
-      <ValidationAlert variant="error" title="Error" message="Something went wrong. Please try again later." />
-      <ValidationAlert variant="warning" title="Warning" message="Your session will expire in 5 minutes." onClose={() => {}} />
-      <ValidationAlert variant="info" title="Information" message="Your changes have been saved automatically." />
+      <ValidationAlert variant="error" title="Error de validacion" message="El campo 'nombre' es obligatorio y no puede estar vacio." />
+      <ValidationAlert variant="warning" title="Advertencia" message="Tu sesion expirara en 5 minutos. Guarda tus cambios." onClose={() => {}} />
+      <ValidationAlert variant="info" title="Informacion" message="Los cambios se han guardado automaticamente." />
     </div>
   ),
 };

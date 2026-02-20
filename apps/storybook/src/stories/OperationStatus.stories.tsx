@@ -35,7 +35,7 @@ export const CustomLabel: Story = {
 
 export const AllStatuses: Story = {
   render: () => (
-    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+    <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', alignItems: 'center' }}>
       <OperationStatus status="active" />
       <OperationStatus status="completed" />
       <OperationStatus status="failed" />
