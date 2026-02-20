@@ -423,6 +423,19 @@
   text-overflow: ellipsis;
 }
 
+/* Collapsed sidebar: icon-only 40x40 items */
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-item {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  justify-content: center;
+  gap: 0;
+}
+
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-item__label {
+  display: none;
+}
+
 /* ═══════════════════════════════════════════════
    FLYOUT MENU — Pencil: zfXyV
    w: 220, p: 8, gap: 2, radius-lg, glass bg
@@ -537,11 +550,30 @@
   background: transparent;
   border-radius: var(--malix-radius-sm);
   cursor: pointer;
-  color: var(--malix-foreground-secondary);
+  color: var(--malix-foreground-tertiary);
 }
 
 .malix-sidebar-panel__toggle:hover {
   background: var(--malix-surface-hover);
+}
+
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__toggle {
+  width: 32px;
+  height: 32px;
+  background: #f3f3f3;
+  color: #3a3a3a;
+  border-radius: var(--malix-radius-sm);
+}
+
+.malix-sidebar-panel__collapsed-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+}
+
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__brand {
+  justify-content: center;
 }
 
 .malix-sidebar-panel__nav {
