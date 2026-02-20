@@ -1,0 +1,6 @@
+import{R as e}from"./index-Bc2G9s8g.js";/* empty css               */import{f as s}from"./GlassPopover-C2tPgYDT.js";import{L as c}from"./layout-dashboard-DYnp7BhA.js";import{F as i}from"./folder-DmFmzjTz.js";import{S as m}from"./search-BbgPumCS.js";import{c as l}from"./createLucideIcon-BUYvj0_X.js";/**
+ * @license lucide-react v0.575.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const n=[["path",{d:"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",key:"1yyitq"}],["path",{d:"M16 3.128a4 4 0 0 1 0 7.744",key:"16gr8j"}],["path",{d:"M22 21v-2a4 4 0 0 0-3-3.87",key:"kshegd"}],["circle",{cx:"9",cy:"7",r:"4",key:"nufk8"}]],p=l("users",n),k={title:"Malix/FlyoutMenu",component:s,args:{items:[{icon:e.createElement(c,{size:16}),label:"Dashboard",active:!0},{icon:e.createElement(i,{size:16}),label:"Projects"},{icon:e.createElement(m,{size:16}),label:"Clasificacion"},{icon:e.createElement(p,{size:16}),label:"Mis Clientes"}]}},a={};var t,r,o;a.parameters={...a.parameters,docs:{...(t=a.parameters)==null?void 0:t.docs,source:{originalSource:"{}",...(o=(r=a.parameters)==null?void 0:r.docs)==null?void 0:o.source}}};const E=["Default"];export{a as Default,E as __namedExportsOrder,k as default};
