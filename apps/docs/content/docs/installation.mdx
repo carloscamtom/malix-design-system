@@ -1,0 +1,108 @@
+---
+title: Installation
+description: How to install and configure Malix Design System in your project.
+---
+
+## Install the packages
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['pnpm', 'npm', 'yarn']}>
+  <Tab value="pnpm">
+    ```bash
+    pnpm add @malix/ui @malix/tokens
+    ```
+  </Tab>
+  <Tab value="npm">
+    ```bash
+    npm install @malix/ui @malix/tokens
+    ```
+  </Tab>
+  <Tab value="yarn">
+    ```bash
+    yarn add @malix/ui @malix/tokens
+    ```
+  </Tab>
+</Tabs>
+
+## Import the styles
+
+Add the token CSS and component styles to your application entry point:
+
+```tsx title="app/layout.tsx"
+import '@malix/tokens/tokens.css';
+import '@malix/ui/styles.css';
+```
+
+Or import them in your global CSS file:
+
+```css title="globals.css"
+@import '@malix/tokens/tokens.css';
+@import '@malix/ui/styles.css';
+```
+
+## Bundler Configuration
+
+Since `@malix/ui` exports raw TypeScript source, configure your bundler to transpile it.
+
+### Next.js
+
+```js title="next.config.mjs"
+/** @type {import('next').NextConfig} */
+const config = {
+  transpilePackages: ['@malix/ui', '@malix/tokens'],
+};
+
+export default config;
+```
+
+### Vite
+
+```ts title="vite.config.ts"
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@malix/ui': resolve(__dirname, 'node_modules/@malix/ui/src'),
+    },
+  },
+});
+```
+
+## Usage
+
+Import components and start building:
+
+```tsx
+import { Button, Input, Card } from '@malix/ui';
+
+export function MyComponent() {
+  return (
+    <Card title="Welcome" description="Get started with Malix">
+      <Input placeholder="Enter your name" />
+      <Button hierarchy="primary">Submit</Button>
+    </Card>
+  );
+}
+```
+
+## Icon Library
+
+Malix components accept any `React.ReactNode` for icon props. We recommend [Lucide React](https://lucide.dev/) for consistency with the design system:
+
+```bash
+pnpm add lucide-react
+```
+
+```tsx
+import { Button } from '@malix/ui';
+import { Plus } from 'lucide-react';
+
+<Button hierarchy="primary" variant="leading-icon-text" icon={<Plus size={16} />}>
+  Create Project
+</Button>
+```

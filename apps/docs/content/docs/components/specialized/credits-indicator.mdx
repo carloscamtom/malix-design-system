@@ -1,0 +1,49 @@
+---
+title: CreditsIndicator
+description: A compact indicator displaying remaining credits with a customizable label.
+---
+
+import { CreditsIndicatorDemo } from '@/components/examples/credits-indicator-demo'
+
+## Preview
+
+<ComponentPreview>
+  <CreditsIndicatorDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { CreditsIndicator } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<CreditsIndicator remaining={250} />
+```
+
+## Custom Label
+
+Override the default label:
+
+```tsx
+<CreditsIndicator remaining={12} label="API Calls Left" />
+```
+
+## Low Credits Warning
+
+The indicator can be styled contextually based on the remaining count:
+
+```tsx
+<CreditsIndicator remaining={3} label="Credits Remaining" />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'remaining', type: 'number', required: true, description: 'Number of remaining credits to display.' },
+    { name: 'label', type: 'string', default: "'Credits Remaining'", description: 'Text label displayed alongside the credit count.' },
+  ]}
+/>

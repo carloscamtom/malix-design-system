@@ -1,0 +1,61 @@
+---
+title: InputGroup
+description: A form field wrapper that pairs an Input with a label, helper text, leading icon, and error state.
+---
+
+import { InputGroupDemo } from '@/components/examples/input-group-demo'
+
+## Preview
+
+<ComponentPreview>
+  <InputGroupDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { InputGroup } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<InputGroup label="Email address" helperText="We will never share your email.">
+  <Input placeholder="you@example.com" />
+</InputGroup>
+```
+
+## With Leading Icon
+
+```tsx
+import { Mail } from 'lucide-react';
+
+<InputGroup
+  label="Email"
+  helperText="Enter your work email"
+  leadingIcon={<Mail size={16} />}
+>
+  <Input placeholder="you@company.com" />
+</InputGroup>
+```
+
+## Error State
+
+Display a validation error by setting the `error` prop:
+
+```tsx
+<InputGroup label="Username" error helperText="Username is already taken.">
+  <Input placeholder="Choose a username" />
+</InputGroup>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'label', type: 'string', description: 'Label text displayed above the input.' },
+    { name: 'helperText', type: 'string', description: 'Assistive text displayed below the input.' },
+    { name: 'leadingIcon', type: 'React.ReactNode', description: 'Icon displayed inside the input on the leading side.' },
+    { name: 'error', type: 'boolean', default: 'false', description: 'Applies error styling to the input group.' },
+  ]}
+/>

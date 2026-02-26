@@ -1,0 +1,4 @@
+{
+  "title": "Layout",
+  "pages": ["card", "divider", "section-header", "split-pane"]
+}

@@ -1,0 +1,79 @@
+---
+title: OperationStatus
+description: An icon-based status indicator for asynchronous operations. Displays distinct visual states for active, completed, failed, and pending operations.
+---
+
+import { OperationStatusDemo } from '@/components/examples/operation-status-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="OperationStatus">
+  <OperationStatusDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { OperationStatus } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { OperationStatus } from '@malix/ui';
+
+export function DeploymentRow() {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+      <OperationStatus status="completed" />
+      <span>Deployment finished</span>
+    </div>
+  );
+}
+```
+
+## Variants
+
+### Active
+
+```tsx
+<OperationStatus status="active" />
+```
+
+### Completed
+
+```tsx
+<OperationStatus status="completed" />
+```
+
+### Failed
+
+```tsx
+<OperationStatus status="failed" />
+```
+
+### Pending
+
+```tsx
+<OperationStatus status="pending" />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'status',
+      type: "'active' | 'completed' | 'failed' | 'pending'",
+      required: true,
+      description: 'The current status of the operation.',
+    },
+    {
+      name: 'label',
+      type: 'string',
+      description: 'Optional text label displayed alongside the status icon.',
+    },
+  ]}
+/>

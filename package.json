@@ -10,6 +10,8 @@
   ],
   "scripts": {
     "dev": "pnpm --filter @malix/storybook dev",
+    "dev:docs": "pnpm --filter @malix/docs dev",
+    "build:docs": "pnpm --filter @malix/docs build",
     "lint": "pnpm -r lint && node scripts/validate-tokens.mjs",
     "test": "node scripts/validate-tokens.mjs",
     "build": "pnpm -r build"

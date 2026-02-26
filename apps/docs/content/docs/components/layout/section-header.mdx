@@ -1,0 +1,68 @@
+---
+title: SectionHeader
+description: A heading row for content sections with a title, optional description, and an actions slot. Used to introduce and label page sections.
+---
+
+import { SectionHeaderDemo } from '@/components/examples/section-header-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="SectionHeader">
+  <SectionHeaderDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SectionHeader } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { SectionHeader, Button } from '@malix/ui';
+import { Plus } from 'lucide-react';
+
+export function TeamSection() {
+  return (
+    <SectionHeader
+      title="Team members"
+      description="Manage who has access to this project."
+      actions={
+        <Button
+          hierarchy="primary"
+          variant="leading-icon-text"
+          icon={<Plus size={16} />}
+        >
+          Add member
+        </Button>
+      }
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'title',
+      type: 'string',
+      required: true,
+      description: 'The heading text for the section.',
+    },
+    {
+      name: 'description',
+      type: 'string',
+      description: 'Supporting text displayed below the title.',
+    },
+    {
+      name: 'actions',
+      type: 'ReactNode',
+      description: 'Action elements rendered on the right side of the header row.',
+    },
+  ]}
+/>

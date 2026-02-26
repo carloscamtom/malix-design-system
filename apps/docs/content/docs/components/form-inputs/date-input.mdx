@@ -1,0 +1,56 @@
+---
+title: DateInput
+description: A date input component with a formatted placeholder and value handling.
+---
+
+import { DateInputDemo } from '@/components/examples/date-input-demo'
+
+## Preview
+
+<ComponentPreview>
+  <DateInputDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { DateInput } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<DateInput
+  placeholder="dd/mm/yyyy"
+  onChange={(value) => console.log(value)}
+/>
+```
+
+## With Default Value
+
+```tsx
+<DateInput
+  value="2025-03-15"
+  onChange={(value) => console.log(value)}
+/>
+```
+
+## Disabled State
+
+```tsx
+<DateInput
+  value="2025-01-01"
+  disabled
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'value', type: 'string', description: 'The current date value.' },
+    { name: 'placeholder', type: 'string', default: "'dd/mm/yyyy'", description: 'Placeholder text shown when no date is selected.' },
+    { name: 'onChange', type: '(value: string) => void', description: 'Callback fired when the date value changes.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the date input.' },
+  ]}
+/>

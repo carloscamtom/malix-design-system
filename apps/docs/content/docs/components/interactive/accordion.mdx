@@ -1,0 +1,59 @@
+---
+title: Accordion
+description: A collapsible content section that expands and collapses on click, with optional icon and default open state.
+---
+
+import { AccordionDemo } from '@/components/examples/accordion-demo'
+
+## Preview
+
+<ComponentPreview>
+  <AccordionDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Accordion } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Accordion title="What payment methods do you accept?">
+  <p>We accept all major credit cards, PayPal, and bank transfers.</p>
+</Accordion>
+```
+
+## Default Open
+
+Render the accordion expanded on mount:
+
+```tsx
+<Accordion title="Getting Started" defaultOpen>
+  <p>Follow the installation guide to set up your project.</p>
+</Accordion>
+```
+
+## With Icon
+
+Add a leading icon to the accordion header:
+
+```tsx
+import { HelpCircle } from 'lucide-react';
+
+<Accordion title="Frequently Asked Questions" icon={<HelpCircle size={16} />}>
+  <p>Find answers to common questions below.</p>
+</Accordion>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'title', type: 'string', required: true, description: 'The clickable header text of the accordion.' },
+    { name: 'children', type: 'React.ReactNode', required: true, description: 'Content revealed when the accordion is expanded.' },
+    { name: 'defaultOpen', type: 'boolean', default: 'false', description: 'Whether the accordion is expanded on initial render.' },
+    { name: 'icon', type: 'React.ReactNode', description: 'Optional icon displayed before the title.' },
+  ]}
+/>

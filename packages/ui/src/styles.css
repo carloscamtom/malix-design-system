@@ -597,6 +597,11 @@
   width: 100%;
 }
 
+.malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__bottom {
+  justify-content: center;
+  padding: 12px 0;
+}
+
 /* ═══════════════════════════════════════════════
    HEADER — Pencil: Vc71N
    h: 64, p: 0 24, bg: sidebar-bg, border-bottom

@@ -1,0 +1,69 @@
+---
+title: Checkbox
+description: A checkbox component for selecting one or more options with support for indeterminate state.
+---
+
+import { CheckboxDemo } from '@/components/examples/checkbox-demo'
+
+## Preview
+
+<ComponentPreview>
+  <CheckboxDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Checkbox } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Checkbox
+  label="Accept terms and conditions"
+  checked={false}
+  onChange={(checked) => console.log(checked)}
+/>
+```
+
+## Checked State
+
+```tsx
+<Checkbox
+  label="Remember me"
+  checked={true}
+  onChange={(checked) => console.log(checked)}
+/>
+```
+
+## Indeterminate State
+
+Use the indeterminate state when a checkbox controls a group with mixed selections:
+
+```tsx
+<Checkbox
+  label="Select all items"
+  indeterminate
+  onChange={(checked) => console.log(checked)}
+/>
+```
+
+## Disabled State
+
+```tsx
+<Checkbox label="Read-only option" checked={true} disabled />
+<Checkbox label="Unavailable option" checked={false} disabled />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'checked', type: 'boolean', default: 'false', description: 'Whether the checkbox is checked.' },
+    { name: 'onChange', type: '(checked: boolean) => void', description: 'Callback fired when the checked state changes.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the checkbox.' },
+    { name: 'label', type: 'string', description: 'Label text displayed next to the checkbox.' },
+    { name: 'indeterminate', type: 'boolean', default: 'false', description: 'Displays the checkbox in an indeterminate (mixed) state.' },
+  ]}
+/>

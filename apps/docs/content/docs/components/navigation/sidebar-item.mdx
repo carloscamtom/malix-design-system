@@ -1,0 +1,64 @@
+---
+title: SidebarItem
+description: A navigation item used within sidebars. Renders a row with an optional icon and label, with support for an active state.
+---
+
+import { SidebarItemDemo } from '@/components/examples/sidebar-item-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="SidebarItem">
+  <SidebarItemDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SidebarItem } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { SidebarItem } from '@malix/ui';
+import { Home, Settings } from 'lucide-react';
+
+export function Navigation() {
+  return (
+    <nav>
+      <SidebarItem icon={<Home size={18} />} active>
+        Home
+      </SidebarItem>
+      <SidebarItem icon={<Settings size={18} />}>
+        Settings
+      </SidebarItem>
+    </nav>
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'icon',
+      type: 'ReactNode',
+      description: 'Icon element displayed to the left of the label.',
+    },
+    {
+      name: 'active',
+      type: 'boolean',
+      default: 'false',
+      description: 'Whether the item is currently active or selected.',
+    },
+    {
+      name: 'children',
+      type: 'ReactNode',
+      required: true,
+      description: 'The label content for the sidebar item.',
+    },
+  ]}
+/>

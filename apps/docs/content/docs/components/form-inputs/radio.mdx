@@ -1,0 +1,62 @@
+---
+title: Radio
+description: A radio button component for selecting a single option from a group.
+---
+
+import { RadioDemo } from '@/components/examples/radio-demo'
+
+## Preview
+
+<ComponentPreview>
+  <RadioDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Radio } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Radio
+  label="Option A"
+  name="example"
+  value="a"
+  checked={true}
+  onChange={(value) => console.log(value)}
+/>
+```
+
+## Radio Group
+
+Combine multiple Radio components with the same `name` to form a group:
+
+```tsx
+<div>
+  <Radio name="plan" value="free" label="Free" onChange={(value) => console.log(value)} />
+  <Radio name="plan" value="pro" label="Pro" onChange={(value) => console.log(value)} />
+  <Radio name="plan" value="enterprise" label="Enterprise" onChange={(value) => console.log(value)} />
+</div>
+```
+
+## Disabled State
+
+```tsx
+<Radio name="locked" value="selected" label="Selected (locked)" checked disabled />
+<Radio name="locked" value="unselected" label="Unselected (locked)" disabled />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'checked', type: 'boolean', default: 'false', description: 'Whether the radio is selected.' },
+    { name: 'onChange', type: '(value: string) => void', description: 'Callback fired when the radio is selected.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the radio button.' },
+    { name: 'label', type: 'string', description: 'Label text displayed next to the radio button.' },
+    { name: 'name', type: 'string', description: 'Groups radio buttons together so only one can be selected.' },
+    { name: 'value', type: 'string', required: true, description: 'The value submitted when this radio is selected.' },
+  ]}
+/>

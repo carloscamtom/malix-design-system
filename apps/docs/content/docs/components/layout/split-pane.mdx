@@ -1,0 +1,81 @@
+---
+title: SplitPane
+description: A two-column layout with a draggable divider for resizing. Ideal for editor-preview interfaces, comparison views, and side-by-side content.
+---
+
+import { SplitPaneDemo } from '@/components/examples/split-pane-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="SplitPane">
+  <SplitPaneDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SplitPane } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { SplitPane } from '@malix/ui';
+
+export function EditorLayout() {
+  return (
+    <SplitPane
+      leftTitle="Editor"
+      rightTitle="Preview"
+      leftPanel={
+        <div style={{ padding: 16 }}>
+          <p>Write your content here.</p>
+        </div>
+      }
+      rightPanel={
+        <div style={{ padding: 16 }}>
+          <p>Live preview of the output.</p>
+        </div>
+      }
+      defaultSplit={50}
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'leftPanel',
+      type: 'ReactNode',
+      required: true,
+      description: 'Content rendered in the left pane.',
+    },
+    {
+      name: 'rightPanel',
+      type: 'ReactNode',
+      required: true,
+      description: 'Content rendered in the right pane.',
+    },
+    {
+      name: 'leftTitle',
+      type: 'string',
+      description: 'Optional heading displayed above the left pane.',
+    },
+    {
+      name: 'rightTitle',
+      type: 'string',
+      description: 'Optional heading displayed above the right pane.',
+    },
+    {
+      name: 'defaultSplit',
+      type: 'number',
+      default: '50',
+      description: 'The initial split position as a percentage (0-100). Determines how much space the left pane occupies.',
+    },
+  ]}
+/>

@@ -1,0 +1,98 @@
+---
+title: ValidationAlert
+description: An inline alert box for form validation and contextual messages. Supports error, warning, and info variants with a title and descriptive message.
+---
+
+import { ValidationAlertDemo } from '@/components/examples/validation-alert-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="ValidationAlert">
+  <ValidationAlertDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { ValidationAlert } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { ValidationAlert } from '@malix/ui';
+
+export function FormFeedback() {
+  return (
+    <ValidationAlert
+      variant="error"
+      title="Validation failed"
+      message="Please check the required fields and try again."
+    />
+  );
+}
+```
+
+## Variants
+
+### Error
+
+```tsx
+<ValidationAlert
+  variant="error"
+  title="Validation failed"
+  message="Please check the required fields and try again."
+/>
+```
+
+### Warning
+
+```tsx
+<ValidationAlert
+  variant="warning"
+  title="Unsaved changes"
+  message="You have unsaved changes that will be lost if you leave."
+/>
+```
+
+### Info
+
+```tsx
+<ValidationAlert
+  variant="info"
+  title="Tip"
+  message="You can use keyboard shortcuts to speed up your workflow."
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'title',
+      type: 'string',
+      required: true,
+      description: 'The bold title text of the alert.',
+    },
+    {
+      name: 'message',
+      type: 'string',
+      required: true,
+      description: 'The descriptive message displayed below the title.',
+    },
+    {
+      name: 'variant',
+      type: "'error' | 'warning' | 'info'",
+      default: "'error'",
+      description: 'The visual style of the alert.',
+    },
+    {
+      name: 'onClose',
+      type: '() => void',
+      description: 'Callback fired when the close button is clicked. If omitted, no close button is shown.',
+    },
+  ]}
+/>

@@ -1,0 +1,69 @@
+---
+title: FilterTabs
+description: Tabs with count badges used for filtering lists. Each tab displays a label with an optional numeric count indicator.
+---
+
+import { FilterTabsDemo } from '@/components/examples/filter-tabs-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="FilterTabs">
+  <FilterTabsDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { FilterTabs } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { FilterTabs } from '@malix/ui';
+
+export function TaskFilters() {
+  const [value, setValue] = useState('all');
+
+  return (
+    <FilterTabs
+      value={value}
+      onChange={setValue}
+      items={[
+        { label: 'All', value: 'all', count: 128 },
+        { label: 'Active', value: 'active', count: 54 },
+        { label: 'Completed', value: 'completed', count: 74 },
+      ]}
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'items',
+      type: 'FilterTabItem[]',
+      required: true,
+      description:
+        'Array of filter tab items. Each item has a label (string), value (string), and count (number).',
+    },
+    {
+      name: 'value',
+      type: 'string',
+      required: true,
+      description: 'The currently selected filter value.',
+    },
+    {
+      name: 'onChange',
+      type: '(value: string) => void',
+      required: true,
+      description: 'Callback fired when a filter tab is selected.',
+    },
+  ]}
+/>

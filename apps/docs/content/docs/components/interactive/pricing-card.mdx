@@ -1,0 +1,85 @@
+---
+title: PricingCard
+description: A pricing plan card with plan name, price, feature list, and call-to-action button, with optional highlighted styling.
+---
+
+import { PricingCardDemo } from '@/components/examples/pricing-card-demo'
+
+## Preview
+
+<ComponentPreview>
+  <PricingCardDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { PricingCard } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<PricingCard
+  planName="Pro"
+  price="$29"
+  description="For growing teams that need more power."
+  features={[
+    'Unlimited projects',
+    '50 GB storage',
+    'Priority support',
+    'Advanced analytics',
+  ]}
+  onCtaClick={() => handleSubscribe('pro')}
+/>
+```
+
+## Highlighted Plan
+
+Draw attention to a recommended plan:
+
+```tsx
+<PricingCard
+  planName="Business"
+  price="$79"
+  period="/month"
+  description="Best for scaling organizations."
+  features={[
+    'Everything in Pro',
+    'Unlimited storage',
+    'SSO & SAML',
+    'Dedicated account manager',
+    'Custom integrations',
+  ]}
+  ctaLabel="Start Free Trial"
+  onCtaClick={() => handleSubscribe('business')}
+  highlighted
+/>
+```
+
+## Custom Period
+
+```tsx
+<PricingCard
+  planName="Starter"
+  price="$99"
+  period="/year"
+  features={['5 projects', '10 GB storage', 'Email support']}
+  ctaLabel="Subscribe"
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'planName', type: 'string', required: true, description: 'Name of the pricing plan.' },
+    { name: 'price', type: 'string', required: true, description: 'Price to display (e.g., "$29").' },
+    { name: 'period', type: 'string', default: "'/month'", description: 'Billing period label appended to the price.' },
+    { name: 'description', type: 'string', description: 'Short description of the plan.' },
+    { name: 'features', type: 'string[]', required: true, description: 'List of features included in the plan.' },
+    { name: 'ctaLabel', type: 'string', default: "'Get Started'", description: 'Label for the call-to-action button.' },
+    { name: 'onCtaClick', type: '() => void', description: 'Callback fired when the CTA button is clicked.' },
+    { name: 'highlighted', type: 'boolean', default: 'false', description: 'Applies highlighted styling to emphasize the plan.' },
+  ]}
+/>

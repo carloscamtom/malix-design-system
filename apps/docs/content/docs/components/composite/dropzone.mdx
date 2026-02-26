@@ -1,0 +1,78 @@
+---
+title: Dropzone
+description: A file upload area supporting drag-and-drop and click-to-browse, with customizable accept types and disabled state.
+---
+
+import { DropzoneDemo } from '@/components/examples/dropzone-demo'
+
+## Preview
+
+<ComponentPreview>
+  <DropzoneDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Dropzone } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Dropzone
+  onDrop={(files) => handleUpload(files)}
+  accept="image/*"
+/>
+```
+
+## Custom Labels
+
+Override the default title and hint text:
+
+```tsx
+<Dropzone
+  onDrop={handleUpload}
+  title="Upload your logo"
+  hint="PNG or SVG, max 2 MB"
+  accept=".png,.svg"
+/>
+```
+
+## Disabled State
+
+Prevent interaction while an upload is in progress:
+
+```tsx
+<Dropzone
+  onDrop={handleUpload}
+  disabled
+  title="Upload in progress..."
+  hint="Please wait"
+/>
+```
+
+## Accept Specific Types
+
+Restrict the accepted file types:
+
+```tsx
+<Dropzone
+  onDrop={handleUpload}
+  accept=".pdf,.docx,.xlsx"
+  title="Drop documents here"
+  hint="PDF, Word, or Excel files"
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'onDrop', type: '(files: File[]) => void', required: true, description: 'Callback fired when files are dropped or selected via the file browser.' },
+    { name: 'accept', type: 'string', description: 'Accepted file types (e.g., "image/*", ".pdf,.docx").' },
+    { name: 'title', type: 'string', default: "'Drop files here'", description: 'Primary text displayed in the dropzone.' },
+    { name: 'hint', type: 'string', default: "'or click to browse'", description: 'Secondary hint text displayed below the title.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the dropzone, preventing file drops and clicks.' },
+  ]}
+/>

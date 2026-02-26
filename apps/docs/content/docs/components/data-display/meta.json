@@ -1,0 +1,4 @@
+{
+  "title": "Data Display",
+  "pages": ["data-table", "pagination", "stepper", "stat-card", "file-card", "avatar"]
+}

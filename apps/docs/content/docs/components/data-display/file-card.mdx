@@ -1,0 +1,53 @@
+---
+title: FileCard
+description: A card component for displaying file information with an icon, metadata, and an optional action trigger.
+---
+
+import { FileCardDemo } from '@/components/examples/file-card-demo'
+
+## Preview
+
+<ComponentPreview>
+  <FileCardDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { FileCard } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { FileText } from 'lucide-react';
+
+<FileCard
+  fileName="annual-report.pdf"
+  meta="2.4 MB"
+  icon={<FileText size={20} />}
+  onAction={() => handleDownload('annual-report.pdf')}
+/>
+```
+
+## Without Icon
+
+The file card works without a custom icon:
+
+```tsx
+<FileCard
+  fileName="design-tokens.json"
+  meta="12 KB"
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'fileName', type: 'string', required: true, description: 'The name of the file to display.' },
+    { name: 'meta', type: 'string', description: 'Metadata text displayed below the file name (e.g., file size, date).' },
+    { name: 'icon', type: 'React.ReactNode', description: 'Custom icon element displayed alongside the file name.' },
+    { name: 'onAction', type: 'MouseEventHandler', description: 'Callback fired when the action button is clicked.' },
+  ]}
+/>

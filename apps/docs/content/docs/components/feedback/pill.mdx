@@ -1,0 +1,93 @@
+---
+title: Pill
+description: A compact, rounded label used for tagging, categorization, or inline status. Available in six color variants.
+---
+
+import { PillDemo } from '@/components/examples/pill-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Pill">
+  <PillDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Pill } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Pill } from '@malix/ui';
+
+export function TagList() {
+  return (
+    <div style={{ display: 'flex', gap: 8 }}>
+      <Pill variant="primary">Feature</Pill>
+      <Pill variant="success">Shipped</Pill>
+      <Pill variant="warning">In Review</Pill>
+    </div>
+  );
+}
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Pill variant="default">Default</Pill>
+```
+
+### Primary
+
+```tsx
+<Pill variant="primary">Primary</Pill>
+```
+
+### Success
+
+```tsx
+<Pill variant="success">Success</Pill>
+```
+
+### Error
+
+```tsx
+<Pill variant="error">Error</Pill>
+```
+
+### Warning
+
+```tsx
+<Pill variant="warning">Warning</Pill>
+```
+
+### Info
+
+```tsx
+<Pill variant="info">Info</Pill>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'variant',
+      type: "'default' | 'primary' | 'success' | 'error' | 'warning' | 'info'",
+      default: "'default'",
+      description: 'The color variant of the pill.',
+    },
+    {
+      name: 'children',
+      type: 'ReactNode',
+      required: true,
+      description: 'The label text displayed inside the pill.',
+    },
+  ]}
+/>

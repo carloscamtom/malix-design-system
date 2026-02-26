@@ -1,0 +1,68 @@
+---
+title: StatCard
+description: A compact card displaying a metric label, value, and optional change indicator with positive, negative, or neutral styling.
+---
+
+import { StatCardDemo } from '@/components/examples/stat-card-demo'
+
+## Preview
+
+<ComponentPreview>
+  <StatCardDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { StatCard } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<StatCard
+  label="Total Revenue"
+  value="$48,250"
+  change="+12.5%"
+  changeType="positive"
+/>
+```
+
+## Change Types
+
+### Positive
+
+```tsx
+<StatCard label="Growth" value="24%" change="+4.2%" changeType="positive" />
+```
+
+### Negative
+
+```tsx
+<StatCard label="Churn" value="3.1%" change="-0.8%" changeType="negative" />
+```
+
+### Neutral
+
+```tsx
+<StatCard label="Active Users" value="1,204" change="0%" changeType="neutral" />
+```
+
+## Without Change
+
+Display a stat without a change indicator:
+
+```tsx
+<StatCard label="Total Projects" value="42" />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'label', type: 'string', required: true, description: 'The metric label displayed above the value.' },
+    { name: 'value', type: 'string', required: true, description: 'The primary value to display.' },
+    { name: 'change', type: 'string', description: 'Change indicator text (e.g., "+12.5%").' },
+    { name: 'changeType', type: "'positive' | 'negative' | 'neutral'", default: "'neutral'", description: 'Controls the color styling of the change indicator.' },
+  ]}
+/>

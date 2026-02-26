@@ -1,0 +1,93 @@
+---
+title: Tooltip
+description: A small overlay that appears on hover to provide additional context. Supports four placement directions and accepts any content.
+---
+
+import { TooltipDemo } from '@/components/examples/tooltip-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Tooltip">
+  <TooltipDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Tooltip } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Tooltip, Button } from '@malix/ui';
+
+export function SaveAction() {
+  return (
+    <Tooltip content="Save your changes" placement="top">
+      <Button hierarchy="primary">Save</Button>
+    </Tooltip>
+  );
+}
+```
+
+## Placements
+
+### Top
+
+```tsx
+<Tooltip content="Tooltip on top" placement="top">
+  <Button hierarchy="secondary">Top</Button>
+</Tooltip>
+```
+
+### Bottom
+
+```tsx
+<Tooltip content="Tooltip on bottom" placement="bottom">
+  <Button hierarchy="secondary">Bottom</Button>
+</Tooltip>
+```
+
+### Left
+
+```tsx
+<Tooltip content="Tooltip on left" placement="left">
+  <Button hierarchy="secondary">Left</Button>
+</Tooltip>
+```
+
+### Right
+
+```tsx
+<Tooltip content="Tooltip on right" placement="right">
+  <Button hierarchy="secondary">Right</Button>
+</Tooltip>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'content',
+      type: 'ReactNode',
+      required: true,
+      description: 'The content displayed inside the tooltip.',
+    },
+    {
+      name: 'children',
+      type: 'ReactElement',
+      required: true,
+      description: 'The trigger element that activates the tooltip on hover.',
+    },
+    {
+      name: 'placement',
+      type: "'top' | 'bottom' | 'left' | 'right'",
+      default: "'top'",
+      description: 'The preferred position of the tooltip relative to the trigger.',
+    },
+  ]}
+/>

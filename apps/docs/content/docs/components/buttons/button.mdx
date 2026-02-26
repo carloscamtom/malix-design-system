@@ -1,0 +1,79 @@
+---
+title: Button
+description: A versatile button component with 4 hierarchy levels and 4 layout variants.
+---
+
+import { ButtonDemo } from '@/components/examples/button-demo'
+
+## Preview
+
+<ComponentPreview>
+  <ButtonDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Button } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Button hierarchy="primary" variant="text">
+  Create Project
+</Button>
+```
+
+## Hierarchy Variants
+
+The Button supports 4 hierarchy levels that control visual prominence:
+
+```tsx
+<Button hierarchy="primary">Primary</Button>
+<Button hierarchy="secondary">Secondary</Button>
+<Button hierarchy="tertiary">Tertiary</Button>
+<Button hierarchy="ghost">Ghost</Button>
+```
+
+## Layout Variants
+
+Four layout variants control the button content arrangement:
+
+```tsx
+// Text only (default)
+<Button variant="text">Label</Button>
+
+// Icon + Text
+<Button variant="leading-icon-text" icon={<Plus size={16} />}>
+  Create
+</Button>
+
+// Icon only
+<Button variant="icon-only" icon={<Settings size={16} />} label="Settings" />
+
+// Icon with badge
+<Button variant="icon-badge" icon={<Bell size={16} />} badge="3">
+  Notifications
+</Button>
+```
+
+## Loading State
+
+```tsx
+<Button loading>Saving...</Button>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'hierarchy', type: "'primary' | 'secondary' | 'tertiary' | 'ghost'", default: "'primary'", description: 'Visual hierarchy level of the button.' },
+    { name: 'variant', type: "'text' | 'leading-icon-text' | 'icon-only' | 'icon-badge'", default: "'text'", description: 'Layout variant controlling content arrangement.' },
+    { name: 'icon', type: 'React.ReactNode', description: 'Icon element for icon variants.' },
+    { name: 'badge', type: 'React.ReactNode', description: 'Badge content for icon-badge variant.' },
+    { name: 'loading', type: 'boolean', default: 'false', description: 'Shows loading state and disables interaction.' },
+    { name: 'label', type: 'string', description: 'Accessible label for icon-only variant.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the button.' },
+  ]}
+/>

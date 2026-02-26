@@ -1,0 +1,97 @@
+---
+title: Banner
+description: A full-width alert banner for displaying important messages. Supports info, success, warning, and error variants with an optional close action.
+---
+
+import { BannerDemo } from '@/components/examples/banner-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Banner">
+  <BannerDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Banner } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Banner } from '@malix/ui';
+
+export function Notifications() {
+  return (
+    <Banner variant="info">
+      A new software update is available for download.
+    </Banner>
+  );
+}
+```
+
+## Variants
+
+### Info
+
+```tsx
+<Banner variant="info">
+  A new software update is available for download.
+</Banner>
+```
+
+### Success
+
+```tsx
+<Banner variant="success">
+  Your changes have been saved successfully.
+</Banner>
+```
+
+### Warning
+
+```tsx
+<Banner variant="warning">
+  Your trial expires in 3 days. Upgrade now to keep access.
+</Banner>
+```
+
+### Error
+
+```tsx
+<Banner variant="error">
+  Failed to connect to the server. Please try again later.
+</Banner>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'variant',
+      type: "'info' | 'success' | 'warning' | 'error'",
+      default: "'info'",
+      description: 'The visual style of the banner.',
+    },
+    {
+      name: 'onClose',
+      type: '() => void',
+      description: 'Callback fired when the close button is clicked. If omitted, no close button is shown.',
+    },
+    {
+      name: 'icon',
+      type: 'ReactNode',
+      description: 'Custom icon element. If omitted, a default icon for the variant is used.',
+    },
+    {
+      name: 'children',
+      type: 'ReactNode',
+      required: true,
+      description: 'The message content displayed inside the banner.',
+    },
+  ]}
+/>

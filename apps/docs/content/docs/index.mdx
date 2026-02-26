@@ -1,0 +1,43 @@
+---
+title: Introduction
+description: Malix is a professional design system with 49 production-ready React components built with CSS custom properties and TypeScript.
+---
+
+import { Cards, Card } from 'fumadocs-ui/components/card';
+
+**Malix** is a design system built for modern web applications. It provides a complete set of React components that use CSS custom properties for consistent theming and zero runtime overhead.
+
+## Why Malix?
+
+- **49 Components** — From simple atoms like Divider and Avatar to complex patterns like DataTable, SidebarPanel, and PricingCard.
+- **74 Design Tokens** — A closed, validated set of CSS custom properties for colors, spacing, typography, and shadows.
+- **Zero Runtime Dependencies** — Components have no external dependencies beyond React.
+- **TypeScript First** — Full type safety with exported interfaces for every component.
+- **Accessible** — Keyboard navigation, focus management, ARIA attributes, and screen reader support built in.
+
+## Design Principles
+
+### Token-Driven
+
+All visual properties come from a closed set of 74 CSS custom properties (`--malix-*`). No raw hex colors, arbitrary pixel values, or magic numbers. Every token is validated at build time.
+
+### Data-Attribute Variants
+
+Component variants are controlled via `data-*` attributes, not CSS modifier classes. This keeps the API clean and the styles predictable:
+
+```css
+.malix-button[data-hierarchy="primary"] { ... }
+.malix-card[data-level="2"] { ... }
+```
+
+### No Surprise Policy
+
+New tokens and components require proposal and approval before implementation. This ensures the design system grows intentionally, not accidentally.
+
+## Getting Started
+
+<Cards>
+  <Card title="Installation" href="/docs/installation" description="Install Malix in your project in under 2 minutes." />
+  <Card title="Components" href="/docs/components" description="Browse all 49 components organized by category." />
+  <Card title="Design Tokens" href="/docs/tokens" description="Explore the 74 CSS custom properties that power the system." />
+</Cards>

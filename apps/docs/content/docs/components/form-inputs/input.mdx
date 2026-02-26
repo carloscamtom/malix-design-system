@@ -1,0 +1,47 @@
+---
+title: Input
+description: A styled text input component with optional leading icon support.
+---
+
+import { InputDemo } from '@/components/examples/input-demo'
+
+## Preview
+
+<ComponentPreview>
+  <InputDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Input } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Input placeholder="Enter your name" />
+```
+
+## With Leading Icon
+
+Display an icon inside the input to provide visual context:
+
+```tsx
+import { Search } from 'lucide-react';
+
+<Input
+  placeholder="Search..."
+  leadingIcon={<Search size={16} />}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'leadingIcon', type: 'React.ReactNode', description: 'Icon displayed inside the input on the leading side.' },
+    { name: 'placeholder', type: 'string', description: 'Placeholder text shown when the input is empty.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the input.' },
+  ]}
+/>

@@ -1,0 +1,4 @@
+{
+  "title": "Feedback",
+  "pages": ["banner", "badge", "pill", "status-dot", "operation-status", "validation-alert", "progress-bar", "tooltip", "empty-state"]
+}

@@ -1,0 +1,60 @@
+---
+title: SelectGroup
+description: A form field wrapper that pairs a Select with a label, helper text, and error state.
+---
+
+import { SelectGroupDemo } from '@/components/examples/select-group-demo'
+
+## Preview
+
+<ComponentPreview>
+  <SelectGroupDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SelectGroup, Select } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<SelectGroup label="Country" helperText="Select your country of residence.">
+  <Select
+    placeholder="Choose a country"
+    options={[
+      { label: 'United States', value: 'us' },
+      { label: 'Canada', value: 'ca' },
+      { label: 'Mexico', value: 'mx' },
+    ]}
+  />
+</SelectGroup>
+```
+
+## Error State
+
+Display a validation error by setting the `error` prop:
+
+```tsx
+<SelectGroup label="Department" error helperText="Please select a department.">
+  <Select
+    placeholder="Choose a department"
+    options={[
+      { label: 'Engineering', value: 'engineering' },
+      { label: 'Design', value: 'design' },
+      { label: 'Product', value: 'product' },
+    ]}
+  />
+</SelectGroup>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'label', type: 'string', description: 'Label text displayed above the select.' },
+    { name: 'helperText', type: 'string', description: 'Assistive text displayed below the select.' },
+    { name: 'error', type: 'boolean', default: 'false', description: 'Applies error styling to the select group.' },
+  ]}
+/>

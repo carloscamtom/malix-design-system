@@ -1,0 +1,80 @@
+---
+title: ProgressBar
+description: A horizontal bar that visualizes the completion of a process. Supports labels, percentage display, and a success variant for completed states.
+---
+
+import { ProgressBarDemo } from '@/components/examples/progress-bar-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="ProgressBar">
+  <ProgressBarDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { ProgressBar } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { ProgressBar } from '@malix/ui';
+
+export function UploadProgress() {
+  return <ProgressBar value={65} label="Uploading files" />;
+}
+```
+
+## Variants
+
+### Default
+
+```tsx
+<ProgressBar value={50} label="Processing" />
+```
+
+### Success
+
+```tsx
+<ProgressBar value={100} label="Complete" variant="success" />
+```
+
+### Without Percentage
+
+```tsx
+<ProgressBar value={30} label="Loading" showPercent={false} />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'value',
+      type: 'number',
+      required: true,
+      description: 'The current progress value between 0 and 100.',
+    },
+    {
+      name: 'label',
+      type: 'string',
+      description: 'A text label displayed above the progress bar.',
+    },
+    {
+      name: 'showPercent',
+      type: 'boolean',
+      default: 'true',
+      description: 'Whether to display the percentage value next to the bar.',
+    },
+    {
+      name: 'variant',
+      type: "'default' | 'success'",
+      default: "'default'",
+      description: 'The visual style. Use success for completed states.',
+    },
+  ]}
+/>

@@ -1,0 +1,57 @@
+---
+title: FlyoutMenu
+description: A vertical menu with icon-label rows and an active state indicator. Useful for context menus, dropdown panels, and secondary navigation.
+---
+
+import { FlyoutMenuDemo } from '@/components/examples/flyout-menu-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="FlyoutMenu">
+  <FlyoutMenuDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { FlyoutMenu } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { FlyoutMenu } from '@malix/ui';
+import { User, Settings, LogOut } from 'lucide-react';
+
+export function AccountMenu() {
+  return (
+    <FlyoutMenu
+      items={[
+        { icon: <User size={16} />, label: 'Profile', active: true },
+        { icon: <Settings size={16} />, label: 'Settings' },
+        {
+          icon: <LogOut size={16} />,
+          label: 'Log out',
+          onClick: () => console.log('logout'),
+        },
+      ]}
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'items',
+      type: 'FlyoutMenuItem[]',
+      required: true,
+      description:
+        'Array of menu items. Each item has icon (ReactNode), label (string), active (boolean), and onClick (() => void).',
+    },
+  ]}
+/>

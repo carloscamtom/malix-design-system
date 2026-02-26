@@ -1,0 +1,75 @@
+---
+title: StatusDot
+description: A small colored dot paired with a text label to convey status at a glance. Used in lists, tables, and profile indicators.
+---
+
+import { StatusDotDemo } from '@/components/examples/status-dot-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="StatusDot">
+  <StatusDotDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { StatusDot } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { StatusDot } from '@malix/ui';
+
+export function UserStatus() {
+  return <StatusDot variant="success" label="Online" />;
+}
+```
+
+## Variants
+
+### Success
+
+```tsx
+<StatusDot variant="success" label="Online" />
+```
+
+### Warning
+
+```tsx
+<StatusDot variant="warning" label="Away" />
+```
+
+### Error
+
+```tsx
+<StatusDot variant="error" label="Offline" />
+```
+
+### Default
+
+```tsx
+<StatusDot variant="default" label="Unknown" />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'variant',
+      type: "'success' | 'warning' | 'error' | 'default'",
+      default: "'default'",
+      description: 'The color variant of the status dot.',
+    },
+    {
+      name: 'label',
+      type: 'string',
+      required: true,
+      description: 'The text label displayed next to the dot.',
+    },
+  ]}
+/>

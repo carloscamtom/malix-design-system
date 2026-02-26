@@ -1,0 +1,59 @@
+---
+title: LanguageSelector
+description: A dropdown selector for choosing a language from a list of options.
+---
+
+import { LanguageSelectorDemo } from '@/components/examples/language-selector-demo'
+
+## Preview
+
+<ComponentPreview>
+  <LanguageSelectorDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { LanguageSelector } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const [language, setLanguage] = useState('en');
+
+<LanguageSelector
+  value={language}
+  options={[
+    { value: 'en', label: 'English' },
+    { value: 'es', label: 'Espa\u00f1ol' },
+    { value: 'fr', label: 'Fran\u00e7ais' },
+    { value: 'de', label: 'Deutsch' },
+    { value: 'pt', label: 'Portugu\u00eas' },
+  ]}
+  onChange={setLanguage}
+/>
+```
+
+## Minimal Options
+
+```tsx
+<LanguageSelector
+  value={language}
+  options={[
+    { value: 'en', label: 'EN' },
+    { value: 'es', label: 'ES' },
+  ]}
+  onChange={setLanguage}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'value', type: 'string', required: true, description: 'The currently selected language value.' },
+    { name: 'options', type: 'LanguageSelectorOption[]', required: true, description: 'Array of language options with value and label.' },
+    { name: 'onChange', type: '(value: string) => void', required: true, description: 'Callback fired when the selection changes.' },
+  ]}
+/>

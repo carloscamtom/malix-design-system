@@ -1,0 +1,69 @@
+---
+title: Pagination
+description: A page navigation component with full and mini layout variants for navigating paged content.
+---
+
+import { PaginationDemo } from '@/components/examples/pagination-demo'
+
+## Preview
+
+<ComponentPreview>
+  <PaginationDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Pagination } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const [page, setPage] = useState(1);
+
+<Pagination
+  currentPage={page}
+  totalPages={10}
+  onPageChange={setPage}
+/>
+```
+
+## Variants
+
+### Full
+
+The default variant displays page numbers with previous/next navigation:
+
+```tsx
+<Pagination
+  variant="full"
+  currentPage={3}
+  totalPages={10}
+  onPageChange={setPage}
+/>
+```
+
+### Mini
+
+A compact variant showing only the current page indicator and navigation arrows:
+
+```tsx
+<Pagination
+  variant="mini"
+  currentPage={3}
+  totalPages={10}
+  onPageChange={setPage}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'currentPage', type: 'number', required: true, description: 'The currently active page (1-based).' },
+    { name: 'totalPages', type: 'number', required: true, description: 'Total number of pages available.' },
+    { name: 'onPageChange', type: '(page: number) => void', required: true, description: 'Callback fired when a page is selected.' },
+    { name: 'variant', type: "'full' | 'mini'", default: "'full'", description: 'Layout variant controlling the amount of detail shown.' },
+  ]}
+/>

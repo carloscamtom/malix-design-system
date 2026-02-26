@@ -1,0 +1,59 @@
+---
+title: Breadcrumb
+description: A breadcrumb navigation trail showing the current page hierarchy. Supports icons, links, and a custom separator.
+---
+
+import { BreadcrumbDemo } from '@/components/examples/breadcrumb-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Breadcrumb">
+  <BreadcrumbDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Breadcrumb } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Breadcrumb } from '@malix/ui';
+import { Home } from 'lucide-react';
+
+export function PageBreadcrumb() {
+  return (
+    <Breadcrumb
+      items={[
+        { label: 'Home', href: '/', icon: <Home size={14} /> },
+        { label: 'Projects', href: '/projects' },
+        { label: 'Current Project' },
+      ]}
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'items',
+      type: 'BreadcrumbItem[]',
+      required: true,
+      description:
+        'Array of breadcrumb items. Each item has label (string), href (string), icon (ReactNode), and active (boolean).',
+    },
+    {
+      name: 'separator',
+      type: 'ReactNode',
+      default: '"/"',
+      description: 'Custom separator element rendered between breadcrumb items.',
+    },
+  ]}
+/>

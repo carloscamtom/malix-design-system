@@ -1,0 +1,60 @@
+---
+title: OnboardingPopover
+description: A step-by-step onboarding popover that guides users through a multi-step flow with progress indication.
+---
+
+import { OnboardingPopoverDemo } from '@/components/examples/onboarding-popover-demo'
+
+## Preview
+
+<ComponentPreview>
+  <OnboardingPopoverDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { OnboardingPopover } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<OnboardingPopover
+  step={1}
+  totalSteps={4}
+  title="Create your first project"
+  description="Click the + button in the sidebar to get started with a new project."
+  onNext={() => setStep(2)}
+  onSkip={() => setShowOnboarding(false)}
+/>
+```
+
+## Custom Next Label
+
+Override the next button label for the final step:
+
+```tsx
+<OnboardingPopover
+  step={4}
+  totalSteps={4}
+  title="You're all set!"
+  description="You've completed the onboarding. Start exploring the dashboard."
+  onNext={handleFinish}
+  nextLabel="Finish"
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'step', type: 'number', required: true, description: 'Current step number (1-based).' },
+    { name: 'totalSteps', type: 'number', required: true, description: 'Total number of steps in the onboarding flow.' },
+    { name: 'title', type: 'string', required: true, description: 'Title for the current onboarding step.' },
+    { name: 'description', type: 'string', required: true, description: 'Description text for the current step.' },
+    { name: 'onNext', type: '() => void', description: 'Callback fired when the next button is clicked.' },
+    { name: 'onSkip', type: '() => void', description: 'Callback fired when the skip button is clicked.' },
+    { name: 'nextLabel', type: 'string', default: "'Next'", description: 'Label for the next/continue button.' },
+  ]}
+/>

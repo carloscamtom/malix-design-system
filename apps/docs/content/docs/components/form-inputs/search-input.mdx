@@ -1,0 +1,39 @@
+---
+title: SearchInput
+description: A pre-configured search input with a built-in search icon and clear functionality.
+---
+
+import { SearchInputDemo } from '@/components/examples/search-input-demo'
+
+## Preview
+
+<ComponentPreview>
+  <SearchInputDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SearchInput } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<SearchInput placeholder="Search components..." />
+```
+
+## With Custom Placeholder
+
+```tsx
+<SearchInput placeholder="Find users by name or email..." />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'placeholder', type: 'string', default: "'Search...'", description: 'Placeholder text shown when the input is empty.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the search input.' },
+  ]}
+/>

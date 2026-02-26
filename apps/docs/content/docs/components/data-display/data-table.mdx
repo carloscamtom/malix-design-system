@@ -1,0 +1,66 @@
+---
+title: DataTable
+description: A sortable data table with configurable columns, custom cell renderers, and row click support.
+---
+
+import { DataTableDemo } from '@/components/examples/data-table-demo'
+
+## Preview
+
+<ComponentPreview>
+  <DataTableDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { DataTable } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const columns = [
+  { key: 'name', header: 'Name', width: '200px' },
+  { key: 'role', header: 'Role' },
+  { key: 'status', header: 'Status', render: (row) => (
+    <Badge variant={row.status === 'Active' ? 'success' : 'neutral'}>
+      {row.status}
+    </Badge>
+  )},
+];
+
+const data = [
+  { id: 1, name: 'Alice Johnson', role: 'Engineer', status: 'Active' },
+  { id: 2, name: 'Bob Smith', role: 'Designer', status: 'Inactive' },
+];
+
+<DataTable
+  columns={columns}
+  data={data}
+  onRowClick={(row) => navigate(`/users/${row.id}`)}
+/>
+```
+
+## Empty State
+
+When no data is available, a message is displayed:
+
+```tsx
+<DataTable
+  columns={columns}
+  data={[]}
+  emptyMessage="No users found matching your search."
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'columns', type: 'TableColumn[]', required: true, description: 'Array of column definitions with key, header, optional width, and optional render function.' },
+    { name: 'data', type: 'TableRow[]', required: true, description: 'Array of row data objects to display.' },
+    { name: 'onRowClick', type: '(row: TableRow) => void', description: 'Callback fired when a row is clicked.' },
+    { name: 'emptyMessage', type: 'string', default: "'No data available'", description: 'Message displayed when the data array is empty.' },
+  ]}
+/>

@@ -1,0 +1,62 @@
+---
+title: Header
+description: A page-level header bar with a title and an optional actions slot. Used at the top of content areas to label pages and provide primary actions.
+---
+
+import { HeaderDemo } from '@/components/examples/header-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Header">
+  <HeaderDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Header } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Header, Button } from '@malix/ui';
+import { Plus } from 'lucide-react';
+
+export function DashboardHeader() {
+  return (
+    <Header
+      pageTitle="Dashboard"
+      actions={
+        <Button
+          hierarchy="primary"
+          variant="leading-icon-text"
+          icon={<Plus size={16} />}
+        >
+          New Project
+        </Button>
+      }
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'pageTitle',
+      type: 'string',
+      required: true,
+      description: 'The title displayed in the header.',
+    },
+    {
+      name: 'actions',
+      type: 'ReactNode',
+      description: 'Action elements rendered on the right side of the header.',
+    },
+  ]}
+/>

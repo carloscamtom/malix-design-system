@@ -1,0 +1,49 @@
+---
+title: GlassPopover
+description: A floating popover panel with glassmorphism styling, providing a translucent backdrop blur effect.
+---
+
+import { GlassPopoverDemo } from '@/components/examples/glass-popover-demo'
+
+## Preview
+
+<ComponentPreview>
+  <GlassPopoverDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { GlassPopover } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<GlassPopover title="Quick Actions" onClose={() => setOpen(false)}>
+  <p>Select an action to perform.</p>
+</GlassPopover>
+```
+
+## Without Title
+
+The popover can be rendered without a title for minimal layouts:
+
+```tsx
+<GlassPopover onClose={handleClose}>
+  <ul>
+    <li>Option A</li>
+    <li>Option B</li>
+  </ul>
+</GlassPopover>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'title', type: 'string', description: 'Optional title displayed at the top of the popover.' },
+    { name: 'onClose', type: '() => void', description: 'Callback fired when the popover is dismissed.' },
+    { name: 'children', type: 'React.ReactNode', description: 'Content rendered inside the popover.' },
+  ]}
+/>

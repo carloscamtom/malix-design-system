@@ -20,7 +20,7 @@ export function Tooltip({ content, children, placement = 'top' }: TooltipProps) 
       onFocus={() => setOpen(true)}
       onBlur={() => setOpen(false)}
     >
-      {React.cloneElement(children, {
+      {React.cloneElement(children as React.ReactElement<any>, {
         'aria-describedby': open ? tooltipId : undefined
       })}
       {open ? (

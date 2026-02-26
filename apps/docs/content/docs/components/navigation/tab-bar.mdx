@@ -1,0 +1,68 @@
+---
+title: TabBar
+description: A horizontal tab bar for switching between views. Renders underline-style tabs with a controlled active value.
+---
+
+import { TabBarDemo } from '@/components/examples/tab-bar-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="TabBar">
+  <TabBarDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { TabBar } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { TabBar } from '@malix/ui';
+
+export function PageTabs() {
+  const [value, setValue] = useState('overview');
+
+  return (
+    <TabBar
+      value={value}
+      onChange={setValue}
+      items={[
+        { label: 'Overview', value: 'overview' },
+        { label: 'Activity', value: 'activity' },
+        { label: 'Settings', value: 'settings' },
+      ]}
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'items',
+      type: 'TabItem[]',
+      required: true,
+      description: 'Array of tab items. Each item has a label (string) and value (string).',
+    },
+    {
+      name: 'value',
+      type: 'string',
+      required: true,
+      description: 'The currently selected tab value.',
+    },
+    {
+      name: 'onChange',
+      type: '(value: string) => void',
+      required: true,
+      description: 'Callback fired when a tab is selected.',
+    },
+  ]}
+/>

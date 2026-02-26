@@ -1,0 +1,94 @@
+---
+title: SidebarPanel
+description: A collapsible sidebar container that manages layout for logo, navigation items, and a footer section. Supports expanded and collapsed states.
+---
+
+import { SidebarPanelDemo } from '@/components/examples/sidebar-panel-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="SidebarPanel">
+  <SidebarPanelDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SidebarPanel } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { useState } from 'react';
+import { SidebarPanel, SidebarItem } from '@malix/ui';
+import { Home, Settings, HelpCircle } from 'lucide-react';
+
+export function AppSidebar() {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+    <SidebarPanel
+      collapsed={collapsed}
+      onToggleCollapse={() => setCollapsed((c) => !c)}
+      logo={<span className="text-white font-bold">Malix</span>}
+      collapsedLogo={<span className="text-white font-bold">M</span>}
+      navigation={
+        <>
+          <SidebarItem icon={<Home size={18} />} active>
+            Home
+          </SidebarItem>
+          <SidebarItem icon={<Settings size={18} />}>
+            Settings
+          </SidebarItem>
+        </>
+      }
+      footer={
+        <SidebarItem icon={<HelpCircle size={18} />}>
+          Help & Support
+        </SidebarItem>
+      }
+    />
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'collapsed',
+      type: 'boolean',
+      default: 'false',
+      description: 'Whether the sidebar is in its collapsed (narrow) state.',
+    },
+    {
+      name: 'logo',
+      type: 'ReactNode',
+      description: 'Logo content displayed when the sidebar is expanded.',
+    },
+    {
+      name: 'collapsedLogo',
+      type: 'ReactNode',
+      description: 'Logo content displayed when the sidebar is collapsed.',
+    },
+    {
+      name: 'navigation',
+      type: 'ReactNode',
+      description: 'The main navigation content, typically a list of SidebarItem components.',
+    },
+    {
+      name: 'footer',
+      type: 'ReactNode',
+      description: 'Footer content pinned to the bottom of the sidebar.',
+    },
+    {
+      name: 'onToggleCollapse',
+      type: '() => void',
+      description: 'Callback fired when the collapse toggle is clicked.',
+    },
+  ]}
+/>

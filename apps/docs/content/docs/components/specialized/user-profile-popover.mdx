@@ -1,0 +1,62 @@
+---
+title: UserProfilePopover
+description: A profile popover displaying user info, avatar, credits balance, menu items, and a logout action.
+---
+
+import { UserProfilePopoverDemo } from '@/components/examples/user-profile-popover-demo'
+
+## Preview
+
+<ComponentPreview>
+  <UserProfilePopoverDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { UserProfilePopover } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Settings, CreditCard, HelpCircle } from 'lucide-react';
+
+<UserProfilePopover
+  name="Carlos Garcia"
+  email="carlos@example.com"
+  avatar={<Avatar initials="CG" size={40} />}
+  credits={250}
+  menuItems={[
+    { icon: <Settings size={16} />, label: 'Settings', onClick: () => navigate('/settings') },
+    { icon: <CreditCard size={16} />, label: 'Billing', onClick: () => navigate('/billing') },
+    { icon: <HelpCircle size={16} />, label: 'Help', onClick: () => navigate('/help') },
+  ]}
+  onLogout={handleLogout}
+/>
+```
+
+## Minimal
+
+Without credits or custom menu items:
+
+```tsx
+<UserProfilePopover
+  name="Jane Doe"
+  email="jane@example.com"
+  onLogout={handleLogout}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'name', type: 'string', required: true, description: "The user's display name." },
+    { name: 'email', type: 'string', required: true, description: "The user's email address." },
+    { name: 'avatar', type: 'React.ReactNode', description: 'Custom avatar element displayed next to user info.' },
+    { name: 'menuItems', type: 'UserProfileMenuItem[]', description: 'Array of menu items with icon, label, and onClick handler.' },
+    { name: 'onLogout', type: '() => void', description: 'Callback fired when the logout option is clicked.' },
+    { name: 'credits', type: 'number', description: 'Number of credits to display in the profile popover.' },
+  ]}
+/>

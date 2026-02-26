@@ -1,0 +1,54 @@
+---
+title: Stepper
+description: A multi-step progress indicator showing completed, active, and pending steps with labels and icons.
+---
+
+import { StepperDemo } from '@/components/examples/stepper-demo'
+
+## Preview
+
+<ComponentPreview>
+  <StepperDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Stepper } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { User, CreditCard, Check } from 'lucide-react';
+
+<Stepper
+  steps={[
+    { label: 'Account', icon: <User size={16} />, status: 'completed' },
+    { label: 'Payment', icon: <CreditCard size={16} />, status: 'active' },
+    { label: 'Confirmation', icon: <Check size={16} />, status: 'pending' },
+  ]}
+/>
+```
+
+## Step Statuses
+
+Each step can have one of three statuses:
+
+```tsx
+<Stepper
+  steps={[
+    { label: 'Details', status: 'completed' },
+    { label: 'Review', status: 'active' },
+    { label: 'Publish', status: 'pending' },
+  ]}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'steps', type: 'StepItem[]', required: true, description: "Array of step definitions with label, optional icon, and status ('completed' | 'active' | 'pending')." },
+  ]}
+/>

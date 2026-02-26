@@ -1,0 +1,69 @@
+---
+title: ChatInput
+description: A specialized input for chat interfaces with send functionality.
+---
+
+import { ChatInputDemo } from '@/components/examples/chat-input-demo'
+
+## Preview
+
+<ComponentPreview>
+  <ChatInputDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { ChatInput } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const [message, setMessage] = useState('');
+
+<ChatInput
+  value={message}
+  onChange={(value) => setMessage(value)}
+  onSend={() => {
+    console.log('Sent:', message);
+    setMessage('');
+  }}
+  placeholder="Type a message..."
+/>
+```
+
+## Custom Placeholder
+
+```tsx
+<ChatInput
+  value={message}
+  onChange={(value) => setMessage(value)}
+  onSend={() => handleSend()}
+  placeholder="Ask a question..."
+/>
+```
+
+## Disabled State
+
+```tsx
+<ChatInput
+  value=""
+  onChange={() => {}}
+  onSend={() => {}}
+  placeholder="Chat is disabled"
+  disabled
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'value', type: 'string', required: true, description: 'The current input value.' },
+    { name: 'onChange', type: '(value: string) => void', required: true, description: 'Callback fired when the input value changes.' },
+    { name: 'onSend', type: '() => void', required: true, description: 'Callback fired when the user sends a message.' },
+    { name: 'placeholder', type: 'string', default: "'Type a message...'", description: 'Placeholder text shown when the input is empty.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the chat input.' },
+  ]}
+/>

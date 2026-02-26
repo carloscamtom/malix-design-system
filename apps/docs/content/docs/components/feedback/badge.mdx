@@ -1,0 +1,95 @@
+---
+title: Badge
+description: A small label for categorization or status indication. Comes in multiple color variants with an optional leading dot indicator.
+---
+
+import { BadgeDemo } from '@/components/examples/badge-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Badge">
+  <BadgeDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Badge } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Badge } from '@malix/ui';
+
+export function StatusBadge() {
+  return <Badge variant="success">Active</Badge>;
+}
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Badge variant="default">Default</Badge>
+```
+
+### Primary
+
+```tsx
+<Badge variant="primary">Primary</Badge>
+```
+
+### Success
+
+```tsx
+<Badge variant="success">Success</Badge>
+```
+
+### Warning
+
+```tsx
+<Badge variant="warning">Warning</Badge>
+```
+
+### Error
+
+```tsx
+<Badge variant="error">Error</Badge>
+```
+
+### With Dot
+
+```tsx
+<Badge variant="primary" dot>
+  With Dot
+</Badge>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'variant',
+      type: "'default' | 'primary' | 'success' | 'warning' | 'error'",
+      default: "'default'",
+      description: 'The color variant of the badge.',
+    },
+    {
+      name: 'dot',
+      type: 'boolean',
+      default: 'false',
+      description: 'Whether to display a small dot indicator before the label.',
+    },
+    {
+      name: 'children',
+      type: 'ReactNode',
+      required: true,
+      description: 'The label text displayed inside the badge.',
+    },
+  ]}
+/>

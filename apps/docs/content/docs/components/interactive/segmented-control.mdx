@@ -1,0 +1,59 @@
+---
+title: SegmentedControl
+description: A horizontally segmented toggle control for switching between a set of options.
+---
+
+import { SegmentedControlDemo } from '@/components/examples/segmented-control-demo'
+
+## Preview
+
+<ComponentPreview>
+  <SegmentedControlDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SegmentedControl } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const [view, setView] = useState('grid');
+
+<SegmentedControl
+  items={[
+    { label: 'Grid', value: 'grid' },
+    { label: 'List', value: 'list' },
+    { label: 'Board', value: 'board' },
+  ]}
+  value={view}
+  onChange={setView}
+/>
+```
+
+## Two Options
+
+```tsx
+const [period, setPeriod] = useState('monthly');
+
+<SegmentedControl
+  items={[
+    { label: 'Monthly', value: 'monthly' },
+    { label: 'Yearly', value: 'yearly' },
+  ]}
+  value={period}
+  onChange={setPeriod}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'items', type: 'SegmentedControlItem[]', required: true, description: 'Array of items with label and value.' },
+    { name: 'value', type: 'string', required: true, description: 'The currently selected value.' },
+    { name: 'onChange', type: '(value: string) => void', required: true, description: 'Callback fired when the selection changes.' },
+  ]}
+/>

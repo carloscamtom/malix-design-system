@@ -1,0 +1,43 @@
+---
+title: Avatar
+description: A circular avatar component displaying user initials with a configurable size.
+---
+
+import { AvatarDemo } from '@/components/examples/avatar-demo'
+
+## Preview
+
+<ComponentPreview>
+  <AvatarDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Avatar } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Avatar initials="CG" />
+```
+
+## Custom Size
+
+Adjust the avatar size in pixels:
+
+```tsx
+<Avatar initials="CG" size={24} />
+<Avatar initials="CG" size={40} />
+<Avatar initials="CG" size={64} />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'initials', type: 'string', required: true, description: 'One or two characters displayed inside the avatar.' },
+    { name: 'size', type: 'number', default: '40', description: 'Diameter of the avatar in pixels.' },
+  ]}
+/>

@@ -1,0 +1,50 @@
+---
+title: Divider
+description: A thin horizontal rule used to separate content sections. A simple visual break with no custom props beyond standard HTML attributes.
+---
+
+import { DividerDemo } from '@/components/examples/divider-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Divider">
+  <DividerDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Divider } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Divider } from '@malix/ui';
+
+export function SettingsPage() {
+  return (
+    <div>
+      <h3>General</h3>
+      <p>Configure your general preferences.</p>
+      <Divider />
+      <h3>Notifications</h3>
+      <p>Choose which notifications you receive.</p>
+    </div>
+  );
+}
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'className',
+      type: 'string',
+      description: 'Additional CSS class names to apply to the divider element.',
+    },
+  ]}
+/>

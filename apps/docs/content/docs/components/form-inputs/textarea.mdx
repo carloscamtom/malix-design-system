@@ -1,0 +1,60 @@
+---
+title: Textarea
+description: A multi-line text input with label, helper text, and error handling.
+---
+
+import { TextareaDemo } from '@/components/examples/textarea-demo'
+
+## Preview
+
+<ComponentPreview>
+  <TextareaDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Textarea } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Textarea label="Description" placeholder="Enter a description..." />
+```
+
+## With Helper Text
+
+```tsx
+<Textarea
+  label="Bio"
+  helperText="Write a short bio about yourself."
+  placeholder="Tell us about yourself..."
+/>
+```
+
+## Error State
+
+Display a validation error with a custom error message:
+
+```tsx
+<Textarea
+  label="Comments"
+  error
+  errorMessage="This field is required."
+  placeholder="Leave a comment..."
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'label', type: 'string', description: 'Label text displayed above the textarea.' },
+    { name: 'helperText', type: 'string', description: 'Assistive text displayed below the textarea.' },
+    { name: 'error', type: 'boolean', default: 'false', description: 'Applies error styling to the textarea.' },
+    { name: 'errorMessage', type: 'string', description: 'Error message displayed when error is true.' },
+    { name: 'placeholder', type: 'string', description: 'Placeholder text shown when the textarea is empty.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the textarea.' },
+  ]}
+/>

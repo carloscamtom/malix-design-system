@@ -1,0 +1,43 @@
+---
+title: Overlay
+description: A full-screen overlay panel with focus trap, Escape key dismissal, and tab cycling.
+---
+
+import { OverlayDemo } from '@/components/examples/overlay-demo'
+
+## Preview
+
+<ComponentPreview>
+  <OverlayDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Overlay } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+const [open, setOpen] = useState(false);
+
+<Overlay
+  open={open}
+  title="Settings"
+  onClose={() => setOpen(false)}
+>
+  <p>Configure your preferences below.</p>
+</Overlay>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'open', type: 'boolean', required: true, description: 'Controls whether the overlay is visible.' },
+    { name: 'title', type: 'string', required: true, description: 'Title displayed at the top of the overlay.' },
+    { name: 'onClose', type: '() => void', required: true, description: 'Callback fired when the overlay is dismissed via Escape key or close button.' },
+    { name: 'children', type: 'React.ReactNode', required: true, description: 'Content rendered inside the overlay body.' },
+  ]}
+/>

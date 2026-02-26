@@ -1,0 +1,78 @@
+---
+title: SelectionCard
+description: A clickable card for selecting an option, with support for icon, description, and active state styling.
+---
+
+import { SelectionCardDemo } from '@/components/examples/selection-card-demo'
+
+## Preview
+
+<ComponentPreview>
+  <SelectionCardDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { SelectionCard } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Zap } from 'lucide-react';
+
+const [selected, setSelected] = useState('fast');
+
+<SelectionCard
+  title="Fast Delivery"
+  description="Get your order within 24 hours."
+  icon={<Zap size={20} />}
+  active={selected === 'fast'}
+  onClick={() => setSelected('fast')}
+/>
+```
+
+## Card Group
+
+Use multiple SelectionCards together for single-select or multi-select patterns:
+
+```tsx
+import { Globe, Shield, Zap } from 'lucide-react';
+
+<div style={{ display: 'flex', gap: 12 }}>
+  <SelectionCard
+    title="Standard"
+    description="5-7 business days"
+    icon={<Globe size={20} />}
+    active={selected === 'standard'}
+    onClick={() => setSelected('standard')}
+  />
+  <SelectionCard
+    title="Express"
+    description="2-3 business days"
+    icon={<Zap size={20} />}
+    active={selected === 'express'}
+    onClick={() => setSelected('express')}
+  />
+  <SelectionCard
+    title="Secure"
+    description="Tracked and insured"
+    icon={<Shield size={20} />}
+    active={selected === 'secure'}
+    onClick={() => setSelected('secure')}
+  />
+</div>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'title', type: 'string', required: true, description: 'Primary text displayed on the card.' },
+    { name: 'description', type: 'string', description: 'Secondary text displayed below the title.' },
+    { name: 'icon', type: 'React.ReactNode', description: 'Icon element displayed on the card.' },
+    { name: 'active', type: 'boolean', default: 'false', description: 'Whether the card is in the selected/active state.' },
+    { name: 'onClick', type: '() => void', description: 'Callback fired when the card is clicked.' },
+  ]}
+/>

@@ -1,0 +1,80 @@
+---
+title: Card
+description: A container for grouping related content with three elevation levels. Each level provides a different degree of visual emphasis.
+---
+
+import { CardDemo } from '@/components/examples/card-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Card">
+  <CardDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Card } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+import { Card } from '@malix/ui';
+
+export function SettingsSection() {
+  return (
+    <Card level={2} title="Account" description="Manage your account settings and preferences." />
+  );
+}
+```
+
+## Levels
+
+### Level 1 (Default)
+
+```tsx
+<Card level={1} title="Level 1" description="Default card with subtle background." />
+```
+
+### Level 2
+
+```tsx
+<Card level={2} title="Level 2" description="Mid-emphasis card for grouped content." />
+```
+
+### Level 3
+
+```tsx
+<Card level={3} title="Level 3" description="Highest-emphasis card for focused content." />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: 'level',
+      type: '1 | 2 | 3',
+      default: '1',
+      description: 'The elevation level of the card. Higher levels have more visual emphasis.',
+    },
+    {
+      name: 'title',
+      type: 'string',
+      description: 'The heading text displayed at the top of the card.',
+    },
+    {
+      name: 'description',
+      type: 'string',
+      description: 'Supporting text displayed below the title.',
+    },
+    {
+      name: 'children',
+      type: 'ReactNode',
+      description: 'Custom content rendered inside the card body.',
+    },
+  ]}
+/>

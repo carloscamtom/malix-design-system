@@ -1,0 +1,56 @@
+---
+title: Toggle
+description: A toggle switch component for binary on/off states.
+---
+
+import { ToggleDemo } from '@/components/examples/toggle-demo'
+
+## Preview
+
+<ComponentPreview>
+  <ToggleDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Toggle } from '@malix/ui';
+```
+
+## Usage
+
+```tsx
+<Toggle
+  label="Enable notifications"
+  checked={false}
+  onChange={(checked) => console.log(checked)}
+/>
+```
+
+## Checked State
+
+```tsx
+<Toggle
+  label="Dark mode"
+  checked={true}
+  onChange={(checked) => console.log(checked)}
+/>
+```
+
+## Disabled State
+
+```tsx
+<Toggle label="Maintenance mode" checked={false} disabled />
+<Toggle label="Always on" checked={true} disabled />
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'checked', type: 'boolean', default: 'false', description: 'Whether the toggle is on or off.' },
+    { name: 'onChange', type: '(checked: boolean) => void', description: 'Callback fired when the toggle state changes.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the toggle.' },
+    { name: 'label', type: 'string', description: 'Accessible label text displayed next to the toggle.' },
+  ]}
+/>
