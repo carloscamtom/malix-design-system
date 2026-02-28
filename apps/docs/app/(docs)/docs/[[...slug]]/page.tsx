@@ -10,6 +10,10 @@ import defaultMdxComponents from 'fumadocs-ui/mdx';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { ComponentPreview } from '@/components/component-preview';
 import { PropsTable } from '@/components/props-table';
+import { ColorSwatch } from '@/components/color-swatch';
+import { TypographyScale } from '@/components/typography-scale';
+import { IconGrid } from '@/components/icon-grid';
+import { SpacingScale } from '@/components/spacing-scale';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -32,6 +36,10 @@ export default async function Page(props: {
             Tabs,
             ComponentPreview,
             PropsTable,
+            ColorSwatch,
+            TypographyScale,
+            IconGrid,
+            SpacingScale,
           }}
         />
       </DocsBody>

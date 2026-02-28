@@ -1,0 +1,64 @@
+---
+title: Icons
+description: Icon guidelines and recommended icon library for Malix components.
+---
+
+import { IconGrid } from '@/components/icon-grid';
+
+Malix components accept any `React.ReactNode` for icon props. We recommend [Lucide React](https://lucide.dev/) for a consistent icon set that matches the design system's visual language.
+
+## Recommended Library
+
+```bash
+pnpm add lucide-react
+```
+
+Lucide provides 1400+ open-source icons with consistent stroke width and sizing that pairs well with Malix's visual style.
+
+## Icon Sizes
+
+Components use standardized icon sizes:
+
+| Context | Size | Example |
+|---------|------|---------|
+| Buttons, inputs | `16px` | Navigation actions, form icons |
+| Sidebar items | `20px` | Navigation menu items |
+| Empty states | `24px` | Illustration-style icons |
+| Feature cards | `20–24px` | Section icons, card headers |
+
+## Common Icons
+
+<IconGrid />
+
+## Usage with Components
+
+```tsx
+import { Button } from '@malix/ui';
+import { Plus, Search, Settings } from 'lucide-react';
+
+// Button with leading icon
+<Button hierarchy="primary" variant="leading-icon-text" icon={<Plus size={16} />}>
+  Create
+</Button>
+
+// Icon-only button
+<Button hierarchy="ghost" variant="icon-only" icon={<Settings size={16} />} label="Settings" />
+```
+
+## Custom Icons
+
+You can use any SVG or React component as an icon. Ensure:
+
+- **Consistent sizing** — match the expected size for the component context (16px, 20px, 24px)
+- **`currentColor`** — use `currentColor` for fill/stroke so icons inherit the component's text color
+- **Accessibility** — use `aria-hidden="true"` on decorative icons, or provide an `aria-label` for interactive ones
+
+```tsx
+function CustomIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+      <circle cx="12" cy="12" r="10" />
+    </svg>
+  );
+}
+```

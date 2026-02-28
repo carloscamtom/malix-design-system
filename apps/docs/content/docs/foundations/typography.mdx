@@ -1,0 +1,63 @@
+---
+title: Typography
+description: Type scale, font families, and weight tokens for consistent text hierarchy.
+---
+
+import { TypographyScale } from '@/components/typography-scale';
+
+Malix uses **Inter** as the primary font family for both body and heading text, with **JetBrains Mono** for code. All sizes, weights, and line heights are defined as tokens.
+
+## Type Scale
+
+<TypographyScale />
+
+## Font Families
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--malix-font-body` | `Inter, sans-serif` | Body text, labels, descriptions |
+| `--malix-font-heading` | `Inter, sans-serif` | Headings, titles |
+
+For code and monospace contexts, use `JetBrains Mono`.
+
+## Font Weights
+
+| Token | Value | Preview |
+|-------|-------|---------|
+| `--malix-weight-normal` | `400` | Regular body text |
+| `--malix-weight-medium` | `500` | Labels, buttons, navigation |
+| `--malix-weight-semibold` | `600` | Section titles, card headings |
+| `--malix-weight-bold` | `700` | Page headings, emphasis |
+
+## Font Sizes
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--malix-text-xs` | `12px` | Captions, badges, helper text |
+| `--malix-text-sm` | `13px` | Secondary text, descriptions |
+| `--malix-text-base` | `14px` | Body text, inputs, buttons |
+| `--malix-text-lg` | `16px` | Card titles, section headers |
+| `--malix-text-xl` | `20px` | Page subtitles |
+| `--malix-text-2xl` | `24px` | Page headings |
+
+## Usage
+
+```css
+.heading {
+  font-family: var(--malix-font-heading);
+  font-size: var(--malix-text-2xl);
+  font-weight: var(--malix-weight-bold);
+}
+
+.body {
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-base);
+  font-weight: var(--malix-weight-normal);
+}
+
+.caption {
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-xs);
+  color: var(--malix-foreground-secondary);
+}
+```

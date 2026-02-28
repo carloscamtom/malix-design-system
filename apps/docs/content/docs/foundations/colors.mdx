@@ -1,0 +1,100 @@
+---
+title: Colors
+description: A high-contrast, accessible color system built on CSS custom properties.
+---
+
+import { ColorSwatch } from '@/components/color-swatch';
+
+Malix uses a closed set of color tokens defined as CSS custom properties. Every color in the system is intentional — no arbitrary hex values, no magic numbers.
+
+## Background Colors
+
+<ColorSwatch colors={[
+  { token: '--malix-background-main', value: '#ffffff', label: 'Background Main' },
+  { token: '--malix-surface', value: '#ffffff', label: 'Surface' },
+  { token: '--malix-surface-secondary', value: '#f9fafb', label: 'Surface Secondary' },
+  { token: '--malix-surface-hover', value: '#f3f4f6', label: 'Surface Hover' },
+]} />
+
+## Foreground / Text
+
+<ColorSwatch colors={[
+  { token: '--malix-foreground', value: '#111827', label: 'Foreground' },
+  { token: '--malix-foreground-secondary', value: '#6b7280', label: 'Secondary' },
+  { token: '--malix-foreground-tertiary', value: '#9ca3af', label: 'Tertiary' },
+  { token: '--malix-foreground-disabled', value: '#d1d5db', label: 'Disabled' },
+]} />
+
+## Primary CTA
+
+<ColorSwatch colors={[
+  { token: '--malix-cta-primary-bg', value: '#004a7c', label: 'Primary' },
+  { token: '--malix-primary-hover', value: '#003a63', label: 'Primary Hover' },
+  { token: '--malix-primary-active', value: '#002e4f', label: 'Primary Active' },
+  { token: '--malix-primary-foreground', value: '#ffffff', label: 'Primary Foreground' },
+  { token: '--malix-primary-light', value: '#e6f0f7', label: 'Primary Light' },
+]} />
+
+## Borders
+
+<ColorSwatch colors={[
+  { token: '--malix-border', value: '#e5e7eb', label: 'Border' },
+  { token: '--malix-border-strong', value: '#d1d5db', label: 'Border Strong' },
+  { token: '--malix-border-focus', value: '#004a7c', label: 'Border Focus' },
+]} />
+
+## Semantic Colors
+
+### Success
+
+<ColorSwatch colors={[
+  { token: '--malix-success', value: '#059669', label: 'Success' },
+  { token: '--malix-success-light', value: '#ecfdf5', label: 'Success Light' },
+  { token: '--malix-success-foreground', value: '#065f46', label: 'Success Foreground' },
+]} />
+
+### Warning
+
+<ColorSwatch colors={[
+  { token: '--malix-warning', value: '#d97706', label: 'Warning' },
+  { token: '--malix-warning-light', value: '#fffbeb', label: 'Warning Light' },
+  { token: '--malix-warning-foreground', value: '#92400e', label: 'Warning Foreground' },
+]} />
+
+### Error
+
+<ColorSwatch colors={[
+  { token: '--malix-error', value: '#dc2626', label: 'Error' },
+  { token: '--malix-error-light', value: '#fef2f2', label: 'Error Light' },
+  { token: '--malix-error-foreground', value: '#991b1b', label: 'Error Foreground' },
+]} />
+
+### Info
+
+<ColorSwatch colors={[
+  { token: '--malix-info', value: '#2563eb', label: 'Info' },
+  { token: '--malix-info-light', value: '#eff6ff', label: 'Info Light' },
+  { token: '--malix-info-foreground', value: '#1e40af', label: 'Info Foreground' },
+]} />
+
+## Sidebar
+
+<ColorSwatch colors={[
+  { token: '--malix-sidebar-bg', value: '#fbfbfb', label: 'Sidebar BG' },
+  { token: '--malix-sidebar-hover-bg', value: '#fbfbfb', label: 'Sidebar Hover' },
+  { token: '--malix-sidebar-active-bg', value: '#e6f0f7', label: 'Sidebar Active' },
+]} />
+
+## Usage
+
+```css
+.my-card {
+  background: var(--malix-surface);
+  color: var(--malix-foreground);
+  border: 1px solid var(--malix-border);
+}
+
+.my-card:hover {
+  background: var(--malix-surface-hover);
+}
+```

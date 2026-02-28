@@ -1,0 +1,49 @@
+---
+title: Spacing
+description: Consistent spacing scale and border radius tokens for layout and component design.
+---
+
+import { SpacingScale } from '@/components/spacing-scale';
+
+Malix uses a 7-step spacing scale and 5 border radius values. All values are defined as CSS custom properties.
+
+## Spacing Scale
+
+<SpacingScale />
+
+## Spacing Tokens
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--malix-space-xs` | `4px` | Tight inner gaps, icon padding |
+| `--malix-space-sm` | `8px` | Small gaps between related elements |
+| `--malix-space-md` | `12px` | Default component padding |
+| `--malix-space-lg` | `16px` | Section gaps, card padding |
+| `--malix-space-xl` | `24px` | Large section spacing |
+| `--malix-space-2xl` | `32px` | Page section breaks |
+| `--malix-space-3xl` | `48px` | Major layout divisions |
+
+## Border Radius
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--malix-radius-sm` | `4px` | Buttons (small), tags |
+| `--malix-radius-md` | `8px` | Inputs, cards, dropdowns |
+| `--malix-radius-lg` | `12px` | Cards, modals |
+| `--malix-radius-xl` | `16px` | Overlays, large panels |
+| `--malix-radius-pill` | `9999px` | Pills, badges, avatars |
+
+## Usage
+
+```css
+.card {
+  padding: var(--malix-space-lg);
+  gap: var(--malix-space-md);
+  border-radius: var(--malix-radius-lg);
+}
+
+.button {
+  padding: var(--malix-space-sm) var(--malix-space-lg);
+  border-radius: var(--malix-radius-md);
+}
+```

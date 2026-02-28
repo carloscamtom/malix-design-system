@@ -3,6 +3,9 @@
   "pages": [
     "index",
     "installation",
+    "---",
+    "foundations",
+    "---",
     "tokens",
     "---",
     "components"

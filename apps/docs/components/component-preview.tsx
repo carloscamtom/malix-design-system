@@ -11,8 +11,8 @@ export function ComponentPreview({ children }: ComponentPreviewProps) {
   const [tab, setTab] = useState<'preview' | 'code'>('preview');
 
   return (
-    <div className="not-prose relative my-6 rounded-xl border border-fd-border bg-fd-card">
-      <div className="flex items-center border-b border-fd-border px-4">
+    <div className="not-prose relative my-6 rounded-xl border border-fd-border overflow-hidden">
+      <div className="flex items-center border-b border-fd-border bg-fd-card px-4">
         <button
           onClick={() => setTab('preview')}
           className={`relative px-3 py-2.5 text-sm font-medium transition-colors ${
@@ -36,13 +36,13 @@ export function ComponentPreview({ children }: ComponentPreviewProps) {
       </div>
 
       {tab === 'preview' && (
-        <div className="flex min-h-[200px] items-center justify-center p-8">
+        <div className="malix-preview-area flex min-h-[200px] items-center justify-center p-8 bg-white">
           {children}
         </div>
       )}
 
       {tab === 'code' && (
-        <div className="p-4 text-sm text-fd-muted-foreground">
+        <div className="p-4 text-sm text-fd-muted-foreground bg-fd-card">
           <p>See the code examples below.</p>
         </div>
       )}

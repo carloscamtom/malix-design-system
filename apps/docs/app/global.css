@@ -9,3 +9,46 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
+
+/*
+ * Force Malix component previews to always use light-mode tokens,
+ * regardless of the docs site's current theme. This ensures components
+ * render exactly as designed until dark-mode tokens are built in Pencil.
+ */
+.malix-preview-area {
+  --malix-background-main: #ffffff;
+  --malix-surface: #ffffff;
+  --malix-surface-secondary: #f9fafb;
+  --malix-surface-hover: #f3f4f6;
+  --malix-foreground: #111827;
+  --malix-foreground-secondary: #6b7280;
+  --malix-foreground-tertiary: #9ca3af;
+  --malix-foreground-disabled: #d1d5db;
+  --malix-border: #e5e7eb;
+  --malix-border-strong: #d1d5db;
+  --malix-border-focus: #004a7c;
+  --malix-overlay: #00000066;
+  --malix-cta-primary-bg: #004a7c;
+  --malix-primary-hover: #003a63;
+  --malix-primary-active: #002e4f;
+  --malix-primary-foreground: #ffffff;
+  --malix-primary-light: #e6f0f7;
+  --malix-success: #059669;
+  --malix-success-light: #ecfdf5;
+  --malix-success-foreground: #065f46;
+  --malix-warning: #d97706;
+  --malix-warning-light: #fffbeb;
+  --malix-warning-foreground: #92400e;
+  --malix-error: #dc2626;
+  --malix-error-light: #fef2f2;
+  --malix-error-foreground: #991b1b;
+  --malix-info: #2563eb;
+  --malix-info-light: #eff6ff;
+  --malix-info-foreground: #1e40af;
+  --malix-glass-bg: #f3f3f3b3;
+  --malix-glass-border: #ffffff66;
+  --malix-sidebar-bg: #fbfbfb;
+  --malix-sidebar-hover-bg: #fbfbfb;
+  --malix-sidebar-active-bg: #e6f0f7;
+  color-scheme: light;
+}
