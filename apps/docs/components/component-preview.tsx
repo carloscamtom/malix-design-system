@@ -36,7 +36,7 @@ export function ComponentPreview({ children }: ComponentPreviewProps) {
       </div>
 
       {tab === 'preview' && (
-        <div className="malix-preview-area flex min-h-[200px] items-center justify-center p-8 bg-white">
+        <div className="malix-preview-area flex min-h-[200px] items-center justify-center p-8" style={{ backgroundColor: 'var(--malix-surface)' }}>
           {children}
         </div>
       )}

@@ -96,3 +96,70 @@
   --malix-shadow-sidebar: 1px 0 3px #0000000a;
   --malix-shadow-header: 0 1px 3px #0000000a;
 }
+
+/* ── Dark Mode ───────────────────────────────── */
+.dark, [data-theme="dark"] {
+  /* ── Backgrounds ────────────────────────────── */
+  --malix-background-main: #010510;
+  --malix-surface: #000413;
+  --malix-surface-secondary: #1c232d;
+  --malix-surface-hover: #475569;
+
+  /* ── Foreground / text ─────────────────────── */
+  --malix-foreground: #F9FAFB;
+  --malix-foreground-secondary: #dfdfdf;
+  --malix-foreground-tertiary: #6B7280;
+  --malix-foreground-disabled: #475569;
+
+  /* ── Borders ───────────────────────────────── */
+  --malix-border: #334155;
+  --malix-border-strong: #475569;
+  --malix-border-focus: #60A5FA;
+  --malix-overlay: #00000099;
+
+  /* ── Primary CTA ───────────────────────────── */
+  --malix-cta-primary-bg: #005ce8;
+  --malix-primary-hover: #0351cf;
+  --malix-primary-active: #1037a3;
+  --malix-primary-foreground: #FFFFFF;
+  --malix-primary-light: #082b59;
+
+  /* ── Semantic colors ───────────────────────── */
+  --malix-success: #34D399;
+  --malix-success-light: #064E3B;
+  --malix-success-foreground: #6EE7B7;
+
+  --malix-warning: #ffb700;
+  --malix-warning-light: #441b02;
+  --malix-warning-foreground: #ffcf57;
+
+  --malix-error: #ff9595;
+  --malix-error-light: #7F1D1D;
+  --malix-error-foreground: #ff9d9d;
+
+  --malix-info: #47a8ff;
+  --malix-info-light: #1E3A5F;
+  --malix-info-foreground: #93C5FD;
+
+  /* ── Glass / morphism ──────────────────────── */
+  --malix-glass-bg: #1E293BCC;
+  --malix-glass-border: #47556966;
+
+  /* ── Sidebar ───────────────────────────────── */
+  --malix-sidebar-bg: #010510;
+  --malix-sidebar-hover-bg: #1e2632;
+  --malix-sidebar-active-bg: #1c232d;
+
+  /* ── Shadows (dark mode) ───────────────────── */
+  --malix-shadow-btn-primary: 0 1px 2px #00000025, 0 2px 4px #60A5FA40;
+  --malix-shadow-btn-secondary: 0 4px 4px #0000004d;
+  --malix-shadow-input: 0 1px 2px #00000020;
+  --malix-shadow-depth: 0 4px 12px #00000040;
+  --malix-shadow-card-l1: 0 1px 3px #0000002a, 0 1px 2px #00000020;
+  --malix-shadow-card-l2: 0 4px 6px -1px #00000033, 0 2px 4px -2px #00000025;
+  --malix-shadow-card-l3: 0 10px 15px -3px #00000040, 0 4px 6px -4px #00000030;
+  --malix-shadow-overlay: 0 10px 25px #00000040;
+  --malix-shadow-tooltip: 0 4px 8px #00000040;
+  --malix-shadow-sidebar: 1px 0 3px #00000020;
+  --malix-shadow-header: 0 1px 3px #00000020;
+}
