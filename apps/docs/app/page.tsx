@@ -35,8 +35,8 @@ export default function HomePage() {
                 Malix Design System
               </h1>
               <p className="mt-3 text-lg text-fd-muted-foreground">
-                Production-ready React components built with CSS custom properties,
-                TypeScript, and a strict token-driven architecture.
+                Camtom's design system for enterprise foreign trade software.
+                49 React components, 74 design tokens, zero visual chaos.
               </p>
             </div>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
@@ -142,7 +142,15 @@ export default function HomePage() {
                 Malix
               </span>
               <span className="text-xs text-fd-muted-foreground">
-                Design System
+                Built by{' '}
+                <a
+                  href="https://camtomx.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-fd-muted-foreground underline decoration-fd-border underline-offset-2 transition-colors hover:text-fd-foreground"
+                >
+                  Camtom
+                </a>
               </span>
             </div>
             <div className="flex items-center gap-4">

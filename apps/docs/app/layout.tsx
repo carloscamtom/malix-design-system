@@ -10,7 +10,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 export const metadata: Metadata = {
   title: { default: 'Malix Design System', template: '%s - Malix' },
   description:
-    'A professional design system with 49 production-ready React components. Built with CSS custom properties and TypeScript.',
+    "Camtom's design system for enterprise foreign trade software. 49 production-ready React components built with CSS custom properties and TypeScript.",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
