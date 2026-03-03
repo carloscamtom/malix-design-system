@@ -98,7 +98,7 @@ export default function HomePage() {
                   </span>
                 </div>
                 <Link
-                  href={`/docs/components/${slug}`}
+                  href={`/docs/components/${slug}/${catComponents[0]?.slug}`}
                   className="text-sm text-fd-muted-foreground transition-colors hover:text-fd-foreground"
                 >
                   View all
