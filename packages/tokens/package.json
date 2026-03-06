@@ -1,16 +1,36 @@
 {
-  "name": "@malix/tokens",
-  "version": "0.1.1",
+  "name": "@camtomlabs/malix-tokens",
+  "version": "0.1.2",
+  "description": "Malix Design System design tokens, token registry, and CSS variables.",
   "type": "module",
   "files": [
     "tokens.css",
     "tokens.registry.json",
     "index.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloscamtom/malix-design-system.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/carloscamtom/malix-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/carloscamtom/malix-design-system/issues"
+  },
+  "keywords": [
+    "malix",
+    "design-system",
+    "tokens",
+    "css-variables"
+  ],
+  "license": "MIT",
   "exports": {
     ".": "./index.js",
     "./tokens.css": "./tokens.css",
     "./tokens.registry.json": "./tokens.registry.json"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "lint": "eslint .",
