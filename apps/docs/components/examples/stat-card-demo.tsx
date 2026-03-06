@@ -1,6 +1,6 @@
 'use client';
 
-import { StatCard } from '@malix/ui';
+import { StatCard } from '@camtomlabs/malix-design-system';
 
 export function StatCardDemo() {
   return (

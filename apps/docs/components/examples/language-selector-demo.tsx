@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { LanguageSelector } from '@malix/ui';
+import { LanguageSelector } from '@camtomlabs/malix-design-system';
 
 const languages = [
   { value: 'en', label: 'English' },

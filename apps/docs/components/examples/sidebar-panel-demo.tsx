@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { SidebarPanel, SidebarItem } from '@malix/ui';
+import { SidebarPanel, SidebarItem } from '@camtomlabs/malix-design-system';
 import { Home, Settings, Users, BarChart3, HelpCircle } from 'lucide-react';
 
 export function SidebarPanelDemo() {

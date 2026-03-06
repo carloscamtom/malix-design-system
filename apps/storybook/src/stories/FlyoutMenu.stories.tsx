@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { FlyoutMenu } from '@malix/ui';
+import { FlyoutMenu } from '@camtomlabs/malix-design-system';
 import { LayoutDashboard, Folder, Search, Users } from 'lucide-react';
 
 const meta = {

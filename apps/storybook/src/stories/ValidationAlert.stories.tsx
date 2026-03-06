@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ValidationAlert } from '@malix/ui';
+import { ValidationAlert } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/ValidationAlert',

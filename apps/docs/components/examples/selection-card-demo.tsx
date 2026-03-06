@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { SelectionCard } from '@malix/ui';
+import { SelectionCard } from '@camtomlabs/malix-design-system';
 import { Rocket, Zap, Shield } from 'lucide-react';
 
 const options = [

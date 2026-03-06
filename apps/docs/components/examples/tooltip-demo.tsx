@@ -1,6 +1,6 @@
 'use client';
 
-import { Tooltip, Button } from '@malix/ui';
+import { Tooltip, Button } from '@camtomlabs/malix-design-system';
 
 export function TooltipDemo() {
   return (

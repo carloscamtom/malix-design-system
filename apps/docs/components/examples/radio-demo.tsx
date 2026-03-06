@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Radio } from '@malix/ui';
+import { Radio } from '@camtomlabs/malix-design-system';
 
 export function RadioDemo() {
   const [selected, setSelected] = useState('email');

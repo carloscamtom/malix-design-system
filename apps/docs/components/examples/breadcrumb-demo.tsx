@@ -1,6 +1,6 @@
 'use client';
 
-import { Breadcrumb } from '@malix/ui';
+import { Breadcrumb } from '@camtomlabs/malix-design-system';
 import { Home } from 'lucide-react';
 
 export function BreadcrumbDemo() {

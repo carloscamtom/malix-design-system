@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChatInput } from '@malix/ui';
+import { ChatInput } from '@camtomlabs/malix-design-system';
 
 export function ChatInputDemo() {
   const [message, setMessage] = useState('');

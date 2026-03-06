@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Checkbox } from '@malix/ui';
+import { Checkbox } from '@camtomlabs/malix-design-system';
 
 export function CheckboxDemo() {
   const [checked, setChecked] = useState(false);

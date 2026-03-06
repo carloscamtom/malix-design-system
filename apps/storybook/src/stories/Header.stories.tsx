@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Header, Button } from '@malix/ui';
+import { Header, Button } from '@camtomlabs/malix-design-system';
 import { CircleCheck } from 'lucide-react';
 
 const meta = {

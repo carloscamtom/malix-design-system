@@ -1,6 +1,6 @@
 'use client';
 
-import { Card } from '@malix/ui';
+import { Card } from '@camtomlabs/malix-design-system';
 
 export function CardDemo() {
   return (

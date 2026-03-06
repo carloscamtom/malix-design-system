@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Modal, Button } from '@malix/ui';
+import { Modal, Button } from '@camtomlabs/malix-design-system';
 
 function ModalExample() {
   const [open, setOpen] = useState(false);

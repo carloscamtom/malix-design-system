@@ -1,6 +1,6 @@
 'use client';
 
-import { OperationStatus } from '@malix/ui';
+import { OperationStatus } from '@camtomlabs/malix-design-system';
 
 export function OperationStatusDemo() {
   return (

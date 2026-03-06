@@ -1,6 +1,6 @@
 # Malix Design System
 
-Private monorepo for Malix tokens and UI components.
+Monorepo for the published Malix Design System npm packages.
 
 This repository enforces two core constraints:
 - No surprise tokens
@@ -8,17 +8,26 @@ This repository enforces two core constraints:
 
 ## Repository structure
 
-- `packages/tokens` (`@malix/tokens`)
+- `packages/malix` (`@camtomlabs/malix-design-system`)
+  - published package with components, bundled styles, token CSS, and token registry
+- `packages/tokens`
+  - internal token source of truth used to maintain the published package contents
   - `tokens.css`: CSS variables with `--malix-*` naming
   - `tokens.registry.json`: closed list of allowed tokens
-- `packages/ui` (`@malix/ui`)
-  - React components that use only Malix token CSS variables
+- `packages/ui`
+  - internal React component source of truth used to maintain the published package contents
 - `apps/storybook`
   - Storybook for component validation and documentation
 - `scripts/validate-tokens.mjs`
   - Validator that fails if code uses unknown `var(--malix-...)` tokens
 
-## Install and run
+## Published packages
+
+```bash
+npm install @camtomlabs/malix-design-system
+```
+
+## Install and run locally
 
 ```bash
 pnpm install
@@ -35,12 +44,26 @@ pnpm test   # no-surprise-token validator
 pnpm build  # build all workspaces
 ```
 
-## Using tokens
+## Using the combined package
+
+Import the bundled styles once:
+
+```ts
+import '@camtomlabs/malix-design-system/styles.css';
+```
+
+Import components from the single package entrypoint:
+
+```tsx
+import { Button, SearchInput, Tooltip, Overlay } from '@camtomlabs/malix-design-system';
+```
+
+## Using tokens directly
 
 Import token CSS globally:
 
 ```ts
-import '@malix/tokens/tokens.css';
+import '@camtomlabs/malix-design-system/tokens.css';
 ```
 
 Use tokens only through CSS variables:
@@ -54,12 +77,6 @@ Use tokens only through CSS variables:
 ```
 
 Do not use raw hex colors, ad-hoc shadows, or one-off spacing/radius values in feature code.
-
-## Using `@malix/ui`
-
-```tsx
-import { Button, SearchInput, Tooltip, Overlay } from '@malix/ui';
-```
 
 V1 component scope:
 - `Button` (text, leading icon + text, icon-only, icon + badge)
@@ -82,7 +99,7 @@ New tokens or primitives are approval-gated.
 ### Propose a new component
 1. Open a proposal with use case and API.
 2. Wait for approval.
-3. Add implementation in `@malix/ui` using tokens only.
+3. Add implementation in `@camtomlabs/malix-design-system` using tokens only.
 4. Add stories in `apps/storybook`.
 
 ## CI
@@ -93,3 +110,8 @@ GitHub Actions runs:
 - `pnpm build`
 
 This guarantees token policy validation in every PR.
+
+## License
+
+This repository and the published packages currently ship as `UNLICENSED` until a distribution
+license is chosen.

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Avatar } from '@malix/ui';
+import { Avatar } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/Avatar',

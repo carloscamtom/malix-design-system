@@ -1,6 +1,6 @@
 'use client';
 
-import { GlassPopover } from '@malix/ui';
+import { GlassPopover } from '@camtomlabs/malix-design-system';
 
 export function GlassPopoverDemo() {
   return (

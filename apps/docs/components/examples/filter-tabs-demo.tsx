@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { FilterTabs } from '@malix/ui';
+import { FilterTabs } from '@camtomlabs/malix-design-system';
 
 export function FilterTabsDemo() {
   const [value, setValue] = useState('all');

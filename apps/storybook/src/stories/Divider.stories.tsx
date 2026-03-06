@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Divider } from '@malix/ui';
+import { Divider } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/Divider',

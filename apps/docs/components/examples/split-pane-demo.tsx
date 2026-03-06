@@ -1,6 +1,6 @@
 'use client';
 
-import { SplitPane } from '@malix/ui';
+import { SplitPane } from '@camtomlabs/malix-design-system';
 
 export function SplitPaneDemo() {
   return (

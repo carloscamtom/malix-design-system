@@ -1,6 +1,6 @@
 'use client';
 
-import { Divider } from '@malix/ui';
+import { Divider } from '@camtomlabs/malix-design-system';
 
 export function DividerDemo() {
   return (

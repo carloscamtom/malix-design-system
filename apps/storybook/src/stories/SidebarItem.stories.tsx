@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarItem } from '@malix/ui';
+import { SidebarItem } from '@camtomlabs/malix-design-system';
 import { Home, Folder, FileText } from 'lucide-react';
 
 const meta = {

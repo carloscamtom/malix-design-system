@@ -1,6 +1,6 @@
 'use client';
 
-import { EmptyState, Button } from '@malix/ui';
+import { EmptyState, Button } from '@camtomlabs/malix-design-system';
 import { FolderOpen, Plus } from 'lucide-react';
 
 export function EmptyStateDemo() {

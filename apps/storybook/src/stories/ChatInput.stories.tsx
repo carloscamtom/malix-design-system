@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ChatInput } from '@malix/ui';
+import { ChatInput } from '@camtomlabs/malix-design-system';
 
 function ChatInputExample({ placeholder, disabled }: { placeholder?: string; disabled?: boolean }) {
   const [value, setValue] = useState('');

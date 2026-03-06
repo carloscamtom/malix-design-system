@@ -3,54 +3,52 @@ title: Installation
 description: How to install and configure Malix Design System in your project.
 ---
 
-## Install the packages
+## Install the package
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['pnpm', 'npm', 'yarn']}>
   <Tab value="pnpm">
     ```bash
-    pnpm add @malix/ui @malix/tokens
+    pnpm add @camtomlabs/malix-design-system
     ```
   </Tab>
   <Tab value="npm">
     ```bash
-    npm install @malix/ui @malix/tokens
+    npm install @camtomlabs/malix-design-system
     ```
   </Tab>
   <Tab value="yarn">
     ```bash
-    yarn add @malix/ui @malix/tokens
+    yarn add @camtomlabs/malix-design-system
     ```
   </Tab>
 </Tabs>
 
 ## Import the styles
 
-Add the token CSS and component styles to your application entry point:
+Add the bundled Malix styles to your application entry point:
 
 ```tsx title="app/layout.tsx"
-import '@malix/tokens/tokens.css';
-import '@malix/ui/styles.css';
+import '@camtomlabs/malix-design-system/styles.css';
 ```
 
 Or import them in your global CSS file:
 
 ```css title="globals.css"
-@import '@malix/tokens/tokens.css';
-@import '@malix/ui/styles.css';
+@import '@camtomlabs/malix-design-system/styles.css';
 ```
 
 ## Bundler Configuration
 
-Since `@malix/ui` exports raw TypeScript source, configure your bundler to transpile it.
+`@camtomlabs/malix-design-system` publishes raw TypeScript source, so configure your bundler to transpile the package.
 
 ### Next.js
 
 ```js title="next.config.mjs"
 /** @type {import('next').NextConfig} */
 const config = {
-  transpilePackages: ['@malix/ui', '@malix/tokens'],
+  transpilePackages: ['@camtomlabs/malix-design-system'],
 };
 
 export default config;
@@ -67,7 +65,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@malix/ui': resolve(__dirname, 'node_modules/@malix/ui/src'),
+      '@camtomlabs/malix-design-system': resolve(__dirname, 'node_modules/@camtomlabs/malix-design-system/src'),
     },
   },
 });
@@ -78,7 +76,7 @@ export default defineConfig({
 Import components and start building:
 
 ```tsx
-import { Button, Input, Card } from '@malix/ui';
+import { Button, Input, Card } from '@camtomlabs/malix-design-system';
 
 export function MyComponent() {
   return (
@@ -99,7 +97,7 @@ pnpm add lucide-react
 ```
 
 ```tsx
-import { Button } from '@malix/ui';
+import { Button } from '@camtomlabs/malix-design-system';
 import { Plus } from 'lucide-react';
 
 <Button hierarchy="primary" variant="leading-icon-text" icon={<Plus size={16} />}>

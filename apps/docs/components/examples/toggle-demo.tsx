@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Toggle } from '@malix/ui';
+import { Toggle } from '@camtomlabs/malix-design-system';
 
 export function ToggleDemo() {
   const [checkedA, setCheckedA] = useState(false);

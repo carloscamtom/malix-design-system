@@ -1,6 +1,6 @@
 'use client';
 
-import { FileCard } from '@malix/ui';
+import { FileCard } from '@camtomlabs/malix-design-system';
 import { FileText } from 'lucide-react';
 
 export function FileCardDemo() {

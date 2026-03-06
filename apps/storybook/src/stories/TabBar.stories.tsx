@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { TabBar } from '@malix/ui';
+import { TabBar } from '@camtomlabs/malix-design-system';
 
 const defaultItems = [
   { label: 'Overview', value: 'overview' },

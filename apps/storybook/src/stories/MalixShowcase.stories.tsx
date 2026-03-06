@@ -4,7 +4,7 @@ import {
   Button, SearchInput, Tooltip,
   Divider, Avatar, Pill, InputGroup, Card,
   Header, SidebarItem, FlyoutMenu, Modal, GlassPopover,
-} from '@malix/ui';
+} from '@camtomlabs/malix-design-system';
 import {
   Home, Folder, Settings, CircleCheck, Search, Plus,
   LayoutDashboard, ScanText, ShieldCheck,

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { StatCard } from '@malix/ui';
+import { StatCard } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/StatCard',

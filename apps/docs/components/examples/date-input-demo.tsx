@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DateInput } from '@malix/ui';
+import { DateInput } from '@camtomlabs/malix-design-system';
 
 export function DateInputDemo() {
   const [date, setDate] = useState('');

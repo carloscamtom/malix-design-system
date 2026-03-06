@@ -1,6 +1,6 @@
 'use client';
 
-import { PricingCard } from '@malix/ui';
+import { PricingCard } from '@camtomlabs/malix-design-system';
 
 export function PricingCardDemo() {
   return (

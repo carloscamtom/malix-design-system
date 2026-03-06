@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { GlassPopover } from '@malix/ui';
+import { GlassPopover } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/GlassPopover',

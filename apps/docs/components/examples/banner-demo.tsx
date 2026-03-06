@@ -1,6 +1,6 @@
 'use client';
 
-import { Banner } from '@malix/ui';
+import { Banner } from '@camtomlabs/malix-design-system';
 
 export function BannerDemo() {
   return (

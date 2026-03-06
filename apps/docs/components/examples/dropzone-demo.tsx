@@ -1,6 +1,6 @@
 'use client';
 
-import { Dropzone } from '@malix/ui';
+import { Dropzone } from '@camtomlabs/malix-design-system';
 
 export function DropzoneDemo() {
   return (

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FilterTabs } from '@malix/ui';
+import { FilterTabs } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/FilterTabs',

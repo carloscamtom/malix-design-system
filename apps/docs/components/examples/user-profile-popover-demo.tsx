@@ -1,6 +1,6 @@
 'use client';
 
-import { UserProfilePopover, Avatar } from '@malix/ui';
+import { UserProfilePopover, Avatar } from '@camtomlabs/malix-design-system';
 import { Settings, CreditCard, HelpCircle } from 'lucide-react';
 
 export function UserProfilePopoverDemo() {

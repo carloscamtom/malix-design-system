@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SectionHeader, Button } from '@malix/ui';
+import { SectionHeader, Button } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/SectionHeader',

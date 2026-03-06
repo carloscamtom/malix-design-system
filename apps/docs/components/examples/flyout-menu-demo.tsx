@@ -1,6 +1,6 @@
 'use client';
 
-import { FlyoutMenu } from '@malix/ui';
+import { FlyoutMenu } from '@camtomlabs/malix-design-system';
 import { Settings, User, LogOut } from 'lucide-react';
 
 export function FlyoutMenuDemo() {

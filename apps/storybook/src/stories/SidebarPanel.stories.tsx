@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SidebarPanel, SidebarItem, Avatar } from '@malix/ui';
+import { SidebarPanel, SidebarItem, Avatar } from '@camtomlabs/malix-design-system';
 import { Folder, LayoutDashboard, ScanText, ShieldCheck, Building2, Package, Truck, FileText } from 'lucide-react';
 import camtomLogo from './camtom-tim-logo.svg';
 import camtomIsotype from './camtom-tim-isotype.svg';

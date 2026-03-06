@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Modal } from '@malix/ui';
+import { Button, Modal } from '@camtomlabs/malix-design-system';
 
 export function ModalDemo() {
   const [open, setOpen] = useState(false);

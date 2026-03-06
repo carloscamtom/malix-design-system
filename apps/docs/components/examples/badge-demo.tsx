@@ -1,6 +1,6 @@
 'use client';
 
-import { Badge } from '@malix/ui';
+import { Badge } from '@camtomlabs/malix-design-system';
 
 export function BadgeDemo() {
   return (

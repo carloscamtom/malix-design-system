@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { TabBar } from '@malix/ui';
+import { TabBar } from '@camtomlabs/malix-design-system';
 
 export function TabBarDemo() {
   const [value, setValue] = useState('overview');

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Tooltip } from '@malix/ui';
+import { Button, Tooltip } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/Tooltip',

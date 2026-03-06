@@ -1,6 +1,6 @@
 'use client';
 
-import { ProgressBar } from '@malix/ui';
+import { ProgressBar } from '@camtomlabs/malix-design-system';
 
 export function ProgressBarDemo() {
   return (

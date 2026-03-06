@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button, Overlay } from '@malix/ui';
+import { Button, Overlay } from '@camtomlabs/malix-design-system';
 
 function OverlayExample() {
   const [open, setOpen] = useState(false);

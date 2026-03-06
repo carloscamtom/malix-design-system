@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Pagination } from '@malix/ui';
+import { Pagination } from '@camtomlabs/malix-design-system';
 
 export function PaginationDemo() {
   const [fullPage, setFullPage] = useState(1);

@@ -5,9 +5,9 @@ Build UI in this repository using only Malix tokens and Malix components.
 No surprise tokens. No surprise components.
 
 ## Hard Rules
-- Use only tokens defined in `@malix/tokens/tokens.registry.json`.
+- Use only tokens defined in `@camtomlabs/malix-design-system/tokens.registry.json`.
 - Do not use raw hex colors, ad-hoc box-shadows, or arbitrary spacing/radius values.
-- Use components from `@malix/ui` for button/input/tooltip/modal-like primitives.
+- Use components from `@camtomlabs/malix-design-system` for button/input/tooltip/modal-like primitives.
 - If a token/component is missing, propose and centralize it first.
 
 ## Accessibility

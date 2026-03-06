@@ -1,6 +1,6 @@
 'use client';
 
-import { OnboardingPopover } from '@malix/ui';
+import { OnboardingPopover } from '@camtomlabs/malix-design-system';
 
 export function OnboardingPopoverDemo() {
   return (

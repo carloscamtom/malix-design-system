@@ -1,7 +1,7 @@
 'use client';
 
-import { DataTable, Pill } from '@malix/ui';
-import type { TableColumn, TableRow } from '@malix/ui';
+import { DataTable, Pill } from '@camtomlabs/malix-design-system';
+import type { TableColumn, TableRow } from '@camtomlabs/malix-design-system';
 
 const columns: TableColumn[] = [
   { key: 'name', header: 'Name', width: '35%' },

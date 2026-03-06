@@ -1,6 +1,6 @@
 'use client';
 
-import { SectionHeader, Button } from '@malix/ui';
+import { SectionHeader, Button } from '@camtomlabs/malix-design-system';
 import { Plus } from 'lucide-react';
 
 export function SectionHeaderDemo() {

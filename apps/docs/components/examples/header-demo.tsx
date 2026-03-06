@@ -1,6 +1,6 @@
 'use client';
 
-import { Header, Button } from '@malix/ui';
+import { Header, Button } from '@camtomlabs/malix-design-system';
 import { Plus } from 'lucide-react';
 
 export function HeaderDemo() {

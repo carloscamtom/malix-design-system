@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SearchInput } from '@malix/ui';
+import { SearchInput } from '@camtomlabs/malix-design-system';
 import { Search } from 'lucide-react';
 
 const meta = {

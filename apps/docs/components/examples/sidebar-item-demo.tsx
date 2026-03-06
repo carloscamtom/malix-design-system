@@ -1,6 +1,6 @@
 'use client';
 
-import { SidebarItem } from '@malix/ui';
+import { SidebarItem } from '@camtomlabs/malix-design-system';
 import { Home, Settings, Users, BarChart3 } from 'lucide-react';
 
 export function SidebarItemDemo() {

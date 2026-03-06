@@ -1,6 +1,6 @@
 'use client';
 
-import { CreditsIndicator } from '@malix/ui';
+import { CreditsIndicator } from '@camtomlabs/malix-design-system';
 
 export function CreditsIndicatorDemo() {
   return (

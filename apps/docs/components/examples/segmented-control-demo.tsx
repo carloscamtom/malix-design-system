@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { SegmentedControl } from '@malix/ui';
+import { SegmentedControl } from '@camtomlabs/malix-design-system';
 
 const items = [
   { label: 'Day', value: 'day' },

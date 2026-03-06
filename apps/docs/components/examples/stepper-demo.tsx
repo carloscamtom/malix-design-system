@@ -1,7 +1,7 @@
 'use client';
 
-import { Stepper } from '@malix/ui';
-import type { StepItem } from '@malix/ui';
+import { Stepper } from '@camtomlabs/malix-design-system';
+import type { StepItem } from '@camtomlabs/malix-design-system';
 
 const steps: StepItem[] = [
   { label: 'Account', status: 'completed' },

@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@malix/ui';
+import { Button } from '@camtomlabs/malix-design-system';
 import { Plus } from 'lucide-react';
 
 export function ButtonDemo() {

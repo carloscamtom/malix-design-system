@@ -1,6 +1,6 @@
 'use client';
 
-import { Textarea } from '@malix/ui';
+import { Textarea } from '@camtomlabs/malix-design-system';
 
 export function TextareaDemo() {
   return (

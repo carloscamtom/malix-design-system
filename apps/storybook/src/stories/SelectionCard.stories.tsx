@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SelectionCard } from '@malix/ui';
+import { SelectionCard } from '@camtomlabs/malix-design-system';
 import { FileText, Image, Upload } from 'lucide-react';
 
 const meta = {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Textarea } from '@malix/ui';
+import { Textarea } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/Textarea',

@@ -1,6 +1,6 @@
 'use client';
 
-import { Pill } from '@malix/ui';
+import { Pill } from '@camtomlabs/malix-design-system';
 
 export function PillDemo() {
   return (

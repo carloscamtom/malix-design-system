@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputGroup } from '@malix/ui';
+import { InputGroup } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/InputGroup',

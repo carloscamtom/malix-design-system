@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from '@malix/ui';
+import { Button } from '@camtomlabs/malix-design-system';
 import { Plus, Settings, Bell, Download, ArrowRight } from 'lucide-react';
 
 const meta = {

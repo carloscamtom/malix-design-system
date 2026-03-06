@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar } from '@malix/ui';
+import { Avatar } from '@camtomlabs/malix-design-system';
 
 export function AvatarDemo() {
   return (

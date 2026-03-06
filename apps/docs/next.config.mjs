@@ -8,7 +8,7 @@ const withMDX = createMDX();
 
 /** @type {import('next').NextConfig} */
 const config = {
-  transpilePackages: ['@malix/ui', '@malix/tokens'],
+  transpilePackages: ['@camtomlabs/malix-design-system', '@camtomlabs/malix-design-system'],
   reactStrictMode: true,
   outputFileTracingRoot: path.join(__dirname, '../../'),
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Button, Overlay } from '@malix/ui';
+import { Button, Overlay } from '@camtomlabs/malix-design-system';
 
 export function OverlayDemo() {
   const [open, setOpen] = useState(false);

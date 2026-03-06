@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ProgressBar } from '@malix/ui';
+import { ProgressBar } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/ProgressBar',

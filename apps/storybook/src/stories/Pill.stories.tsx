@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Pill } from '@malix/ui';
+import { Pill } from '@camtomlabs/malix-design-system';
 
 const meta = {
   title: 'Malix/Pill',

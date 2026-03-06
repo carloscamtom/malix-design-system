@@ -1,6 +1,6 @@
 'use client';
 
-import { ValidationAlert } from '@malix/ui';
+import { ValidationAlert } from '@camtomlabs/malix-design-system';
 
 export function ValidationAlertDemo() {
   return (

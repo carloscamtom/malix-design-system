@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Select } from '@malix/ui';
+import { Select } from '@camtomlabs/malix-design-system';
 
 const options = [
   { value: 'react', label: 'React' },

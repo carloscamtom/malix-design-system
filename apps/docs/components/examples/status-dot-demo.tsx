@@ -1,6 +1,6 @@
 'use client';
 
-import { StatusDot } from '@malix/ui';
+import { StatusDot } from '@camtomlabs/malix-design-system';
 
 export function StatusDotDemo() {
   return (

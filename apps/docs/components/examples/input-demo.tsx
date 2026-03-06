@@ -1,6 +1,6 @@
 'use client';
 
-import { Input } from '@malix/ui';
+import { Input } from '@camtomlabs/malix-design-system';
 import { Search } from 'lucide-react';
 
 export function InputDemo() {

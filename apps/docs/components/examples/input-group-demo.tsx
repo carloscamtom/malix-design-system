@@ -1,6 +1,6 @@
 'use client';
 
-import { InputGroup } from '@malix/ui';
+import { InputGroup } from '@camtomlabs/malix-design-system';
 
 export function InputGroupDemo() {
   return (

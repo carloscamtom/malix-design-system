@@ -1,6 +1,6 @@
 'use client';
 
-import { SearchInput } from '@malix/ui';
+import { SearchInput } from '@camtomlabs/malix-design-system';
 
 export function SearchInputDemo() {
   return (
