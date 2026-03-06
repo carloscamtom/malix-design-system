@@ -144,6 +144,8 @@ import { tokenRegistry } from '@camtomlabs/malix-design-system';
 | `SegmentedControl` | Multi-option segmented selector |
 | `SelectionCard` | Selectable card option |
 | `UserProfilePopover` | User profile menu popover |
+| `ChatBubble` | AI/user message bubble for chat UIs |
+| `AIAssistantPanel` | Full AI chat panel with messages and input |
 
 ## TypeScript
 

@@ -76,6 +76,8 @@ export const components: ComponentMeta[] = [
 
   // Composite
   { name: 'Dropzone', slug: 'dropzone', description: 'File upload with drag and drop.', category: 'Composite', categorySlug: 'composite' },
+  { name: 'ChatBubble', slug: 'chat-bubble', description: 'Message bubble for AI and user chat messages.', category: 'Composite', categorySlug: 'composite' },
+  { name: 'AIAssistantPanel', slug: 'ai-assistant-panel', description: 'Full AI chat panel with message history and input.', category: 'Composite', categorySlug: 'composite' },
 ];
 
 export const categories = [...new Set(components.map((c) => c.category))];

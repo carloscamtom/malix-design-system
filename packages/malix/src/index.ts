@@ -175,3 +175,11 @@ export type { LanguageSelectorProps, LanguageSelectorOption } from './components
 // UserProfilePopover
 export { UserProfilePopover } from './components/UserProfilePopover';
 export type { UserProfilePopoverProps, UserProfileMenuItem } from './components/UserProfilePopover';
+
+// ChatBubble
+export { ChatBubble } from './components/ChatBubble';
+export type { ChatBubbleProps, ChatBubbleVariant } from './components/ChatBubble';
+
+// AIAssistantPanel
+export { AIAssistantPanel } from './components/AIAssistantPanel';
+export type { AIAssistantPanelProps, AIAssistantMessage } from './components/AIAssistantPanel';

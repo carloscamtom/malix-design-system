@@ -1,0 +1,66 @@
+---
+title: ChatBubble
+description: A message bubble for chat interfaces, with AI and User variants.
+---
+
+import { ChatBubbleDemo } from '@/components/examples/chat-bubble-demo'
+
+## Preview
+
+<ComponentPreview>
+  <ChatBubbleDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { ChatBubble } from '@camtomlabs/malix-design-system';
+```
+
+## Usage
+
+```tsx
+<ChatBubble variant="ai" message="Hello from the AI!" />
+<ChatBubble variant="user" message="User reply here" avatarInitials="CG" />
+```
+
+## AI Variant
+
+The `ai` variant uses a light surface background with left-aligned rounded corners.
+
+```tsx
+<ChatBubble variant="ai" message="I can help with that." />
+```
+
+## User Variant
+
+The `user` variant uses the primary CTA background, right-aligned with optional avatar initials.
+
+```tsx
+<ChatBubble variant="user" message="Thanks!" avatarInitials="JD" />
+```
+
+## Custom Content
+
+Use the `children` prop for rich content instead of plain text.
+
+```tsx
+<ChatBubble variant="ai">
+  <strong>Here are the results:</strong>
+  <ul>
+    <li>Component A</li>
+    <li>Component B</li>
+  </ul>
+</ChatBubble>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'variant', type: "'ai' | 'user'", required: true, description: 'Which side of the conversation the bubble represents.' },
+    { name: 'message', type: 'string', description: 'Text content of the message.' },
+    { name: 'avatarInitials', type: 'string', description: 'Initials shown in the avatar circle (user variant only).' },
+    { name: 'children', type: 'ReactNode', description: 'Override content with custom JSX instead of message prop.' },
+  ]}
+/>

@@ -1,0 +1,85 @@
+---
+title: AIAssistantPanel
+description: A full chat panel for AI assistant interfaces with message history and input.
+---
+
+import { AIAssistantPanelDemo } from '@/components/examples/ai-assistant-panel-demo'
+
+## Preview
+
+<ComponentPreview>
+  <AIAssistantPanelDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { AIAssistantPanel } from '@camtomlabs/malix-design-system';
+import type { AIAssistantMessage } from '@camtomlabs/malix-design-system';
+```
+
+## Usage
+
+```tsx
+const [messages, setMessages] = useState<AIAssistantMessage[]>([
+  { id: '1', variant: 'ai', content: 'Hi! How can I help?' },
+]);
+
+<AIAssistantPanel
+  messages={messages}
+  onSend={(text) => {
+    setMessages((prev) => [
+      ...prev,
+      { id: String(Date.now()), variant: 'user', content: text },
+    ]);
+  }}
+  onClose={() => setOpen(false)}
+  userInitials="CG"
+/>
+```
+
+## Custom Title
+
+```tsx
+<AIAssistantPanel
+  title="Support Bot"
+  messages={messages}
+  onSend={handleSend}
+  placeholder="Describe your issue..."
+/>
+```
+
+## Disabled State
+
+```tsx
+<AIAssistantPanel
+  messages={messages}
+  onSend={handleSend}
+  disabled
+  placeholder="AI is processing..."
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'messages', type: 'AIAssistantMessage[]', required: true, description: 'Array of chat messages to display.' },
+    { name: 'onSend', type: '(message: string) => void', required: true, description: 'Callback when the user sends a new message.' },
+    { name: 'onClose', type: '() => void', description: 'Callback when the close button is clicked.' },
+    { name: 'title', type: 'string', default: "'AI Assistant'", description: 'Title shown in the panel header.' },
+    { name: 'placeholder', type: 'string', default: "'Ask the AI assistant...'", description: 'Input placeholder text.' },
+    { name: 'userInitials', type: 'string', description: 'Initials shown next to user messages.' },
+    { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the input and send button.' },
+  ]}
+/>
+
+## Message Type
+
+```ts
+type AIAssistantMessage = {
+  id: string;
+  variant: 'ai' | 'user';
+  content: string;
+};
+```
