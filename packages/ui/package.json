@@ -36,7 +36,7 @@
     "react-dom": "^18.0.0 || ^19.0.0"
   },
   "dependencies": {
-    "@camtomlabs/malix-tokens": "^0.1.2"
+    "@camtomlabs/malix-tokens": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

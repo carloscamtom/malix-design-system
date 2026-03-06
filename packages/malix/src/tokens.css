@@ -1,0 +1,165 @@
+:root {
+  /* ── Backgrounds ────────────────────────────── */
+  --malix-background-main: #ffffff;
+  --malix-surface: #ffffff;
+  --malix-surface-secondary: #f9fafb;
+  --malix-surface-hover: #f3f4f6;
+
+  /* ── Foreground / text ─────────────────────── */
+  --malix-foreground: #111827;
+  --malix-foreground-secondary: #6b7280;
+  --malix-foreground-tertiary: #9ca3af;
+  --malix-foreground-disabled: #d1d5db;
+
+  /* ── Borders ───────────────────────────────── */
+  --malix-border: #e5e7eb;
+  --malix-border-strong: #d1d5db;
+  --malix-border-focus: #004a7c;
+  --malix-overlay: #00000066;
+
+  /* ── Primary CTA ───────────────────────────── */
+  --malix-cta-primary-bg: #004a7c;
+  --malix-primary-hover: #003a63;
+  --malix-primary-active: #002e4f;
+  --malix-primary-foreground: #ffffff;
+  --malix-primary-light: #e6f0f7;
+
+  /* ── Semantic colors ───────────────────────── */
+  --malix-success: #059669;
+  --malix-success-light: #ecfdf5;
+  --malix-success-foreground: #065f46;
+
+  --malix-warning: #d97706;
+  --malix-warning-light: #fffbeb;
+  --malix-warning-foreground: #92400e;
+
+  --malix-error: #dc2626;
+  --malix-error-light: #fef2f2;
+  --malix-error-foreground: #991b1b;
+
+  --malix-info: #2563eb;
+  --malix-info-light: #eff6ff;
+  --malix-info-foreground: #1e40af;
+
+  /* ── Glass / morphism ──────────────────────── */
+  --malix-glass-bg: #f3f3f3b3;
+  --malix-glass-border: #ffffff66;
+  --malix-glass-blur: 20px;
+
+  /* ── Sidebar ───────────────────────────────── */
+  --malix-sidebar-bg: #fbfbfb;
+  --malix-sidebar-hover-bg: #fbfbfb;
+  --malix-sidebar-active-bg: #e6f0f7;
+
+  /* ── Spacing ───────────────────────────────── */
+  --malix-space-xs: 4px;
+  --malix-space-sm: 8px;
+  --malix-space-md: 12px;
+  --malix-space-lg: 16px;
+  --malix-space-xl: 24px;
+  --malix-space-2xl: 32px;
+  --malix-space-3xl: 48px;
+
+  /* ── Radii ─────────────────────────────────── */
+  --malix-radius-sm: 4px;
+  --malix-radius-md: 8px;
+  --malix-radius-lg: 12px;
+  --malix-radius-xl: 16px;
+  --malix-radius-pill: 9999px;
+
+  /* ── Typography ────────────────────────────── */
+  --malix-text-xs: 12px;
+  --malix-text-sm: 13px;
+  --malix-text-base: 14px;
+  --malix-text-lg: 16px;
+  --malix-text-xl: 20px;
+  --malix-text-2xl: 24px;
+
+  --malix-font-body: Inter, sans-serif;
+  --malix-font-heading: Inter, sans-serif;
+
+  --malix-weight-normal: 400;
+  --malix-weight-medium: 500;
+  --malix-weight-semibold: 600;
+  --malix-weight-bold: 700;
+
+  /* ── Shadows (matching Pencil elevation levels) */
+  --malix-shadow-btn-primary: 0 1px 2px #00000015, 0 2px 4px #004a7c40;
+  --malix-shadow-btn-secondary: 0 4px 4px #b8b8b84d;
+  --malix-shadow-input: 0 1px 2px #0000000a;
+  --malix-shadow-depth: 0 4px 12px color-mix(in srgb, var(--malix-foreground) 12%, transparent);
+  --malix-shadow-card-l1: 0 1px 3px #0000000f, 0 1px 2px #0000000a;
+  --malix-shadow-card-l2: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000000f;
+  --malix-shadow-card-l3: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000000f;
+  --malix-shadow-overlay: 0 10px 25px #0000001a;
+  --malix-shadow-tooltip: 0 4px 8px #00000026;
+  --malix-shadow-sidebar: 1px 0 3px #0000000a;
+  --malix-shadow-header: 0 1px 3px #0000000a;
+}
+
+/* ── Dark Mode ───────────────────────────────── */
+.dark, [data-theme="dark"] {
+  /* ── Backgrounds ────────────────────────────── */
+  --malix-background-main: #010510;
+  --malix-surface: #000413;
+  --malix-surface-secondary: #1c232d;
+  --malix-surface-hover: #475569;
+
+  /* ── Foreground / text ─────────────────────── */
+  --malix-foreground: #F9FAFB;
+  --malix-foreground-secondary: #dfdfdf;
+  --malix-foreground-tertiary: #6B7280;
+  --malix-foreground-disabled: #475569;
+
+  /* ── Borders ───────────────────────────────── */
+  --malix-border: #334155;
+  --malix-border-strong: #475569;
+  --malix-border-focus: #60A5FA;
+  --malix-overlay: #00000099;
+
+  /* ── Primary CTA ───────────────────────────── */
+  --malix-cta-primary-bg: #005ce8;
+  --malix-primary-hover: #0351cf;
+  --malix-primary-active: #1037a3;
+  --malix-primary-foreground: #FFFFFF;
+  --malix-primary-light: #082b59;
+
+  /* ── Semantic colors ───────────────────────── */
+  --malix-success: #34D399;
+  --malix-success-light: #064E3B;
+  --malix-success-foreground: #6EE7B7;
+
+  --malix-warning: #ffb700;
+  --malix-warning-light: #441b02;
+  --malix-warning-foreground: #ffcf57;
+
+  --malix-error: #ff9595;
+  --malix-error-light: #7F1D1D;
+  --malix-error-foreground: #ff9d9d;
+
+  --malix-info: #47a8ff;
+  --malix-info-light: #1E3A5F;
+  --malix-info-foreground: #93C5FD;
+
+  /* ── Glass / morphism ──────────────────────── */
+  --malix-glass-bg: #1E293BCC;
+  --malix-glass-border: #47556966;
+
+  /* ── Sidebar ───────────────────────────────── */
+  --malix-sidebar-bg: #010510;
+  --malix-sidebar-hover-bg: #1e2632;
+  --malix-sidebar-active-bg: #1c232d;
+
+  /* ── Shadows (dark mode) ───────────────────── */
+  --malix-shadow-btn-primary: 0 1px 2px #00000025, 0 2px 4px #60A5FA40;
+  --malix-shadow-btn-secondary: 0 4px 4px #0000004d;
+  --malix-shadow-input: 0 1px 2px #00000020;
+  --malix-shadow-depth: 0 4px 12px #00000040;
+  --malix-shadow-card-l1: 0 1px 3px #0000002a, 0 1px 2px #00000020;
+  --malix-shadow-card-l2: 0 4px 6px -1px #00000033, 0 2px 4px -2px #00000025;
+  --malix-shadow-card-l3: 0 10px 15px -3px #00000040, 0 4px 6px -4px #00000030;
+  --malix-shadow-overlay: 0 10px 25px #00000040;
+  --malix-shadow-tooltip: 0 4px 8px #00000040;
+  --malix-shadow-sidebar: 1px 0 3px #00000020;
+  --malix-shadow-header: 0 1px 3px #00000020;
+}
