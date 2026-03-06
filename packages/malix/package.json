@@ -1,6 +1,6 @@
 {
   "name": "@camtomlabs/malix-design-system",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Malix Design System combined package with components, tokens, and bundled styles.",
   "type": "module",
   "main": "./dist/index.cjs",

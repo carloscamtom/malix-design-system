@@ -163,7 +163,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: var(--malix-background-main);
   border: 1px solid var(--malix-border);
   flex-shrink: 0;
 }
@@ -172,7 +172,7 @@
   font-family: var(--malix-font-body);
   font-size: var(--malix-text-base);
   font-weight: var(--malix-weight-semibold);
-  color: #3a3a3a;
+  color: var(--malix-foreground);
   line-height: 1;
 }
 
@@ -386,7 +386,7 @@
   font-family: var(--malix-font-body);
   font-size: var(--malix-text-base);
   font-weight: var(--malix-weight-normal);
-  color: #696969;
+  color: var(--malix-foreground-secondary);
   transition: background-color 120ms ease, color 120ms ease;
   text-align: left;
 }
@@ -398,8 +398,8 @@
 }
 
 .malix-sidebar-item[data-active] {
-  background: #f3f3f3;
-  color: #3a3a3a;
+  background: var(--malix-surface-hover);
+  color: var(--malix-foreground);
   font-weight: var(--malix-weight-semibold);
 }
 
@@ -477,8 +477,8 @@
 }
 
 .malix-flyout-menu__item[data-active] {
-  background: #f3f3f3;
-  color: #3a3a3a;
+  background: var(--malix-surface-hover);
+  color: var(--malix-foreground);
   font-weight: var(--malix-weight-medium);
 }
 
@@ -560,8 +560,8 @@
 .malix-sidebar-panel[data-collapsed] .malix-sidebar-panel__toggle {
   width: 32px;
   height: 32px;
-  background: #f3f3f3;
-  color: #3a3a3a;
+  background: var(--malix-surface-hover);
+  color: var(--malix-foreground);
   border-radius: var(--malix-radius-sm);
 }
 
