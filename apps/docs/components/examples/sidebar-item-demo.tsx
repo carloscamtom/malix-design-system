@@ -10,7 +10,7 @@ export function SidebarItemDemo() {
         display: 'flex',
         flexDirection: 'column',
         gap: 2,
-        background: '#fbfbfb',
+        background: 'var(--malix-sidebar-bg)',
         borderRadius: 12,
         padding: 12,
         width: 240,

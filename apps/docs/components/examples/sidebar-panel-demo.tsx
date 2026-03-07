@@ -8,15 +8,15 @@ export function SidebarPanelDemo() {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-    <div style={{ height: 520, position: 'relative', borderRadius: 12, overflow: 'hidden', border: '1px solid #e5e7eb' }}>
+    <div style={{ height: 520, position: 'relative', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--malix-border)' }}>
       <SidebarPanel
         collapsed={collapsed}
         onToggleCollapse={() => setCollapsed((c) => !c)}
         logo={
-          <span style={{ fontWeight: 700, fontSize: 18, color: '#111827' }}>camtom</span>
+          <span style={{ fontWeight: 700, fontSize: 18, color: 'var(--malix-foreground)' }}>camtom</span>
         }
         collapsedLogo={
-          <span style={{ fontWeight: 700, fontSize: 16, color: '#111827' }}>C</span>
+          <span style={{ fontWeight: 700, fontSize: 16, color: 'var(--malix-foreground)' }}>C</span>
         }
         navigation={
           <>
@@ -51,8 +51,8 @@ export function SidebarPanelDemo() {
             <Avatar initials="PR" size={36} />
             {!collapsed && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                <span style={{ fontSize: 13, fontWeight: 500, color: '#111827' }}>Pedro Rios</span>
-                <span style={{ fontSize: 12, color: '#6b7280' }}>Operational</span>
+                <span style={{ fontSize: 13, fontWeight: 500, color: 'var(--malix-foreground)' }}>Pedro Rios</span>
+                <span style={{ fontSize: 12, color: 'var(--malix-foreground-secondary)' }}>Operational</span>
               </div>
             )}
           </div>
