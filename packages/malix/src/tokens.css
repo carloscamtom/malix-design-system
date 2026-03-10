@@ -85,8 +85,8 @@
 
   /* ── Shadows (matching Pencil elevation levels) */
   --malix-shadow-btn-primary: 0 1px 2px #00000015, 0 2px 4px #004a7c40;
-  --malix-shadow-btn-secondary: 0 4px 4px #b8b8b84d;
-  --malix-shadow-input: 0 1px 2px #0000000a;
+  --malix-shadow-btn-secondary: none;
+  --malix-shadow-input: none;
   --malix-shadow-depth: 0 4px 12px color-mix(in srgb, var(--malix-foreground) 12%, transparent);
   --malix-shadow-card-l1: 0 1px 3px #0000000f, 0 1px 2px #0000000a;
   --malix-shadow-card-l2: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000000f;
@@ -152,8 +152,8 @@
 
   /* ── Shadows (dark mode) ───────────────────── */
   --malix-shadow-btn-primary: 0 1px 2px #00000025, 0 2px 4px #60A5FA40;
-  --malix-shadow-btn-secondary: 0 4px 4px #0000004d;
-  --malix-shadow-input: 0 1px 2px #00000020;
+  --malix-shadow-btn-secondary: none;
+  --malix-shadow-input: none;
   --malix-shadow-depth: 0 4px 12px #00000040;
   --malix-shadow-card-l1: 0 1px 3px #0000002a, 0 1px 2px #00000020;
   --malix-shadow-card-l2: 0 4px 6px -1px #00000033, 0 2px 4px -2px #00000025;

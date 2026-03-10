@@ -25,7 +25,7 @@ export default function HomePage() {
             <div className="max-w-2xl">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-fd-border bg-fd-card px-3 py-1 text-xs text-fd-muted-foreground">
                 <Package size={12} />
-                <span>v0.1.6</span>
+                <span>v0.1.7</span>
                 <span className="mx-1 text-fd-border">|</span>
                 <span>{components.length} components</span>
                 <span className="mx-1 text-fd-border">|</span>
