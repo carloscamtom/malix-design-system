@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--filter", "@malix/docs", "exec", "next", "dev", "--turbopack", "--port", "3001"],
+      "port": 3001
+    }
+  ]
+}
