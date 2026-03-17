@@ -99,18 +99,59 @@
   height: 18px;
 }
 
+/* Pill variant: full-rounded corners */
+.malix-button[data-variant="pill"] {
+  border-radius: var(--malix-radius-pill);
+}
+
+/* Outline hierarchy: bordered with primary color */
+.malix-button[data-hierarchy="outline"] {
+  background: transparent;
+  border-color: var(--malix-primary);
+  color: var(--malix-primary);
+  box-shadow: none;
+}
+
+.malix-button[data-hierarchy="outline"]:hover {
+  background: var(--malix-primary-light);
+}
+
+/* Danger hierarchy: destructive action button */
+.malix-button[data-hierarchy="danger"] {
+  background: var(--malix-error);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+.malix-button[data-hierarchy="danger"]:hover {
+  background: var(--malix-error-foreground);
+}
+
+/* Size variants */
+.malix-button[data-size="sm"] {
+  padding: 6px 12px;
+  font-size: var(--malix-text-sm);
+  gap: 6px;
+}
+
+.malix-button[data-size="lg"] {
+  padding: 14px 28px;
+  font-size: var(--malix-text-lg);
+  gap: 10px;
+}
+
 .malix-button:focus-visible {
   outline: 2px solid var(--malix-border-focus);
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(0, 74, 124, 0.1);
+  box-shadow: var(--malix-focus-ring);
 }
 
 .malix-button:disabled {
   cursor: not-allowed;
-  background: var(--malix-foreground-disabled);
-  color: var(--malix-primary-foreground);
+  background: var(--malix-surface-disabled);
+  color: var(--malix-foreground-disabled);
+  border-color: var(--malix-border-disabled);
   box-shadow: none;
-  border-color: transparent;
 }
 
 .malix-button[data-loading="true"] {
@@ -248,7 +289,7 @@
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  background: var(--malix-surface);
+  background: var(--malix-input-bg);
   border: 1px solid var(--malix-border);
   border-radius: var(--malix-radius-md);
   box-shadow: var(--malix-shadow-input);
@@ -258,6 +299,7 @@
 .malix-input-group__field:focus-within {
   outline: 2px solid var(--malix-border-focus);
   outline-offset: 2px;
+  box-shadow: var(--malix-focus-ring);
 }
 
 .malix-input-group__icon {
@@ -303,6 +345,7 @@
 .malix-input-wrap:focus-within {
   outline: 2px solid var(--malix-border-focus);
   outline-offset: 2px;
+  box-shadow: var(--malix-focus-ring);
 }
 
 .malix-input {
@@ -316,7 +359,7 @@
 }
 
 .malix-input::placeholder {
-  color: var(--malix-foreground-tertiary);
+  color: var(--malix-placeholder);
 }
 
 /* ═══════════════════════════════════════════════
@@ -341,7 +384,7 @@
   font-size: var(--malix-text-xs);
   font-weight: var(--malix-weight-medium);
   box-shadow: var(--malix-shadow-tooltip);
-  z-index: 20;
+  z-index: var(--malix-z-tooltip);
 }
 
 .malix-tooltip[data-placement="top"] {
@@ -366,6 +409,15 @@
   left: calc(100% + var(--malix-space-sm));
   top: 50%;
   transform: translateY(-50%);
+}
+
+/* Portal tooltip — position: fixed, managed via JS */
+.malix-tooltip[data-portal] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: none;
+  z-index: var(--malix-z-tooltip);
 }
 
 /* ═══════════════════════════════════════════════
@@ -648,6 +700,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border: 1px solid transparent;
   padding: 24px;
   width: 320px;
   background: var(--malix-surface);
@@ -664,6 +717,12 @@
 
 .malix-card[data-level="3"] {
   box-shadow: var(--malix-shadow-card-l3);
+}
+
+/* Dark mode: add visible border since shadows wash out */
+.dark .malix-card,
+[data-theme="dark"] .malix-card {
+  border-color: var(--malix-border);
 }
 
 .malix-card__header {
@@ -766,6 +825,117 @@
 }
 
 /* ═══════════════════════════════════════════════
+   CONFIRM DIALOG
+   Semantic dialog with danger/warning/info variants
+   ═══════════════════════════════════════════════ */
+
+.malix-confirm-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 420px;
+  background: var(--malix-surface-elevated);
+  border-radius: var(--malix-radius-lg);
+  box-shadow: var(--malix-shadow-card-l3);
+  overflow: hidden;
+  border: 1px solid transparent;
+  z-index: var(--malix-z-modal);
+}
+
+.dark .malix-confirm-dialog,
+[data-theme="dark"] .malix-confirm-dialog {
+  border-color: var(--malix-border);
+}
+
+.malix-confirm-dialog__content {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+}
+
+.malix-confirm-dialog__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--malix-radius-md);
+  flex-shrink: 0;
+}
+
+.malix-confirm-dialog[data-variant="default"] .malix-confirm-dialog__icon {
+  background: var(--malix-primary-light);
+  color: var(--malix-primary);
+}
+
+.malix-confirm-dialog[data-variant="danger"] .malix-confirm-dialog__icon {
+  background: var(--malix-error-light);
+  color: var(--malix-error);
+}
+
+.malix-confirm-dialog[data-variant="warning"] .malix-confirm-dialog__icon {
+  background: var(--malix-warning-light);
+  color: var(--malix-warning);
+}
+
+.malix-confirm-dialog[data-variant="info"] .malix-confirm-dialog__icon {
+  background: var(--malix-info-light);
+  color: var(--malix-info);
+}
+
+.malix-confirm-dialog__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.malix-confirm-dialog__title {
+  margin: 0;
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-lg);
+  font-weight: var(--malix-weight-semibold);
+  color: var(--malix-foreground);
+}
+
+.malix-confirm-dialog__description {
+  margin: 0;
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-base);
+  color: var(--malix-foreground-secondary);
+  line-height: 1.5;
+}
+
+.malix-confirm-dialog__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--malix-border);
+}
+
+/* Danger confirm button overrides primary colors */
+.malix-confirm-dialog__confirm-btn[data-variant="danger"] {
+  background: var(--malix-error);
+  box-shadow: none;
+}
+
+.malix-confirm-dialog__confirm-btn[data-variant="danger"]:hover {
+  background: var(--malix-error-foreground);
+}
+
+.malix-confirm-dialog__confirm-btn[data-variant="warning"] {
+  background: var(--malix-warning);
+  color: var(--malix-warning-foreground);
+  box-shadow: none;
+}
+
+.malix-confirm-dialog__confirm-btn[data-variant="warning"]:hover {
+  opacity: 0.9;
+}
+
+/* ═══════════════════════════════════════════════
    GLASS POPOVER — Pencil: bgJHS
    w: 300, radius-xl, glass bg
    ═══════════════════════════════════════════════ */
@@ -824,12 +994,12 @@
 .malix-overlay-backdrop {
   position: fixed;
   inset: 0;
-  background: var(--malix-overlay);
+  background: var(--malix-overlay-backdrop);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--malix-space-xl);
-  z-index: 50;
+  z-index: var(--malix-z-overlay);
 }
 
 /* ═══════════════════════════════════════════════
@@ -1365,7 +1535,7 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-textarea-group__field::placeholder {
-  color: var(--malix-foreground-tertiary);
+  color: var(--malix-placeholder);
 }
 
 .malix-textarea-group__field:focus {
@@ -1424,7 +1594,7 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-chat-input__field::placeholder {
-  color: var(--malix-foreground-tertiary);
+  color: var(--malix-placeholder);
 }
 
 .malix-chat-input__send-btn {
@@ -2272,7 +2442,7 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-data-table__header-row {
-  background: var(--malix-surface-secondary);
+  background: var(--malix-table-header-bg);
 }
 
 .malix-data-table__header-cell {
@@ -2292,11 +2462,11 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-data-table__data-row:not(:last-child) {
-  border-bottom: 1px solid var(--malix-border);
+  border-bottom: 1px solid var(--malix-table-border);
 }
 
 .malix-data-table__data-row:hover {
-  background: var(--malix-surface-secondary);
+  background: var(--malix-table-row-hover);
 }
 
 .malix-data-table__data-row[data-clickable] {
@@ -3395,7 +3565,7 @@ a.malix-breadcrumb__label:hover {
 }
 
 .malix-ai-panel__input::placeholder {
-  color: var(--malix-foreground-tertiary);
+  color: var(--malix-placeholder);
 }
 
 .malix-ai-panel__send {

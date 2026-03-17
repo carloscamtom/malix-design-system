@@ -1,0 +1,196 @@
+---
+title: Token Stability Contract
+description: Classification of every Malix token as Stable or Experimental, with deprecation policy.
+---
+
+# Token Stability Contract
+
+Every CSS custom property in the Malix Design System is classified as **Stable** or **Experimental**. This contract tells consuming teams which tokens are safe to depend on and which may change.
+
+## Deprecation Policy
+
+| Classification | Semver guarantee | What it means |
+|---|---|---|
+| **Stable** | No breaking changes without a **major** version bump | Safe to use in production. Will not be renamed, removed, or semantically changed in minor/patch releases. |
+| **Experimental** | May change in **minor** releases | Under active evaluation. API (name, default value, or semantic meaning) may change. Use at your own risk. |
+
+### How deprecation works
+
+1. A token is marked `@deprecated` in the registry and release notes
+2. It continues to work for at least **one minor release cycle**
+3. It is removed in the next **major** release
+
+---
+
+## Token Classification
+
+### Backgrounds & Surfaces — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-background-main` | Stable |
+| `--malix-surface` | Stable |
+| `--malix-surface-secondary` | Stable |
+| `--malix-surface-elevated` | Stable |
+| `--malix-surface-hover` | Stable |
+| `--malix-surface-active` | Stable |
+| `--malix-surface-disabled` | Stable |
+| `--malix-input-bg` | Stable |
+| `--malix-input-autofill-bg` | Stable |
+
+### Foreground & Text — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-foreground` | Stable |
+| `--malix-foreground-secondary` | Stable |
+| `--malix-foreground-tertiary` | Stable |
+| `--malix-foreground-disabled` | Stable |
+| `--malix-placeholder` | Stable |
+
+### Borders — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-border` | Stable |
+| `--malix-border-strong` | Stable |
+| `--malix-border-focus` | Stable |
+| `--malix-border-disabled` | Stable |
+| `--malix-focus-ring` | Stable |
+
+### Overlays — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-overlay` | Stable |
+| `--malix-overlay-backdrop` | Stable |
+
+### Z-Index Scale — Stable
+
+| Token | Value | Status |
+|---|---|---|
+| `--malix-z-dropdown` | 100 | Stable |
+| `--malix-z-sticky` | 200 | Stable |
+| `--malix-z-overlay` | 300 | Stable |
+| `--malix-z-modal` | 400 | Stable |
+| `--malix-z-tooltip` | 500 | Stable |
+| `--malix-z-notification` | 600 | Stable |
+
+### Primary & Brand — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-primary` | Stable |
+| `--malix-cta-primary-bg` | Stable (alias for `--malix-primary`) |
+| `--malix-primary-hover` | Stable |
+| `--malix-primary-active` | Stable |
+| `--malix-primary-foreground` | Stable |
+| `--malix-primary-light` | Stable |
+
+### Semantic Colors — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-success` | Stable |
+| `--malix-success-light` | Stable |
+| `--malix-success-foreground` | Stable |
+| `--malix-warning` | Stable |
+| `--malix-warning-light` | Stable |
+| `--malix-warning-foreground` | Stable |
+| `--malix-error` | Stable |
+| `--malix-error-light` | Stable |
+| `--malix-error-foreground` | Stable |
+| `--malix-info` | Stable |
+| `--malix-info-light` | Stable |
+| `--malix-info-foreground` | Stable |
+
+### Table — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-table-header-bg` | Stable |
+| `--malix-table-row-hover` | Stable |
+| `--malix-table-border` | Stable |
+
+### Glass / Morphism — Experimental
+
+| Token | Status | Notes |
+|---|---|---|
+| `--malix-glass-bg` | Experimental | Glassmorphism API may consolidate |
+| `--malix-glass-border` | Experimental | Glassmorphism API may consolidate |
+| `--malix-glass-blur` | Experimental | Glassmorphism API may consolidate |
+
+### Sidebar — Experimental
+
+| Token | Status | Notes |
+|---|---|---|
+| `--malix-sidebar-bg` | Experimental | May move to component-level tokens |
+| `--malix-sidebar-hover-bg` | Experimental | May move to component-level tokens |
+| `--malix-sidebar-active-bg` | Experimental | May move to component-level tokens |
+
+### Spacing — Stable
+
+| Token | Value | Status |
+|---|---|---|
+| `--malix-space-xs` | 4px | Stable |
+| `--malix-space-sm` | 8px | Stable |
+| `--malix-space-md` | 12px | Stable |
+| `--malix-space-lg` | 16px | Stable |
+| `--malix-space-xl` | 24px | Stable |
+| `--malix-space-2xl` | 32px | Stable |
+| `--malix-space-3xl` | 48px | Stable |
+
+### Border Radius — Stable
+
+| Token | Value | Status |
+|---|---|---|
+| `--malix-radius-sm` | 4px | Stable |
+| `--malix-radius-md` | 8px | Stable |
+| `--malix-radius-lg` | 12px | Stable |
+| `--malix-radius-xl` | 16px | Stable |
+| `--malix-radius-pill` | 9999px | Stable |
+
+### Typography — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-text-xs` | Stable |
+| `--malix-text-sm` | Stable |
+| `--malix-text-base` | Stable |
+| `--malix-text-lg` | Stable |
+| `--malix-text-xl` | Stable |
+| `--malix-text-2xl` | Stable |
+| `--malix-font-body` | Stable |
+| `--malix-font-heading` | Stable |
+| `--malix-weight-normal` | Stable |
+| `--malix-weight-medium` | Stable |
+| `--malix-weight-semibold` | Stable |
+| `--malix-weight-bold` | Stable |
+
+### Shadows — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-shadow-btn-primary` | Stable |
+| `--malix-shadow-btn-secondary` | Stable |
+| `--malix-shadow-input` | Stable |
+| `--malix-shadow-depth` | Stable |
+| `--malix-shadow-card-l1` | Stable |
+| `--malix-shadow-card-l2` | Stable |
+| `--malix-shadow-card-l3` | Stable |
+| `--malix-shadow-overlay` | Stable |
+| `--malix-shadow-tooltip` | Stable |
+| `--malix-shadow-sidebar` | Stable |
+| `--malix-shadow-header` | Stable |
+
+---
+
+## Summary
+
+| Classification | Count |
+|---|---|
+| Stable | 85 |
+| Experimental | 6 |
+| **Total** | **91** |
+
+Experimental tokens are limited to **Glass/Morphism** and **Sidebar** categories. All core tokens (colors, spacing, typography, shadows, z-index) are Stable.

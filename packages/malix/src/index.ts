@@ -10,7 +10,7 @@ export type { PillProps, PillVariant } from './components/Pill';
 
 // Button
 export { Button } from './components/Button';
-export type { ButtonProps, ButtonHierarchy, ButtonVariant } from './components/Button';
+export type { ButtonProps, ButtonHierarchy, ButtonVariant, ButtonSize } from './components/Button';
 
 // Inputs
 export { Input, SearchInput } from './components/Input';
@@ -97,6 +97,8 @@ export { Overlay } from './components/Overlay';
 export type { OverlayProps } from './components/Overlay';
 export { Modal } from './components/Modal';
 export type { ModalProps } from './components/Modal';
+export { ConfirmDialog } from './components/ConfirmDialog';
+export type { ConfirmDialogProps, ConfirmDialogVariant } from './components/ConfirmDialog';
 export { GlassPopover } from './components/GlassPopover';
 export type { GlassPopoverProps } from './components/GlassPopover';
 

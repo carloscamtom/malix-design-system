@@ -1,11 +1,13 @@
 import React from 'react';
 
-export type ButtonHierarchy = 'primary' | 'secondary' | 'tertiary' | 'ghost';
-export type ButtonVariant = 'text' | 'leading-icon-text' | 'icon-only' | 'icon-badge';
+export type ButtonHierarchy = 'primary' | 'secondary' | 'tertiary' | 'ghost' | 'outline' | 'danger';
+export type ButtonVariant = 'text' | 'leading-icon-text' | 'icon-only' | 'icon-badge' | 'pill';
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   hierarchy?: ButtonHierarchy;
   variant?: ButtonVariant;
+  size?: ButtonSize;
   icon?: React.ReactNode;
   badge?: React.ReactNode;
   loading?: boolean;
@@ -15,6 +17,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export function Button({
   hierarchy = 'primary',
   variant = 'text',
+  size,
   icon,
   badge,
   loading = false,
@@ -32,6 +35,7 @@ export function Button({
       className="malix-button"
       data-hierarchy={hierarchy}
       data-variant={variant}
+      data-size={size || undefined}
       data-loading={loading}
       disabled={isDisabled}
       aria-busy={loading || undefined}

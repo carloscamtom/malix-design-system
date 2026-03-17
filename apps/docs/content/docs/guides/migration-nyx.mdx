@@ -1,0 +1,214 @@
+---
+title: Migration Guide — Nyx to Malix
+description: Component-by-component migration path from the legacy Nyx design system to Malix.
+---
+
+# Migration Guide: Nyx → Malix
+
+This guide provides a component-by-component mapping from the legacy **Nyx** design system to **Malix**, along with migration notes and what to watch for.
+
+## Before You Start
+
+1. **Install Malix** alongside Nyx — they can coexist during migration
+2. **Import Malix CSS** in your entry point: `import '@camtomlabs/malix-design-system/css'`
+3. **Migrate page-by-page**, not all at once — both systems can render on the same page
+4. **Use the Malix Stylelint config** to catch hardcoded values: `extends: ['@camtomlabs/malix-design-system/stylelint.config']`
+
+```bash
+pnpm add @camtomlabs/malix-design-system
+```
+
+---
+
+## Component Mapping
+
+### Buttons
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxButton>` | `<Button>` | Use `hierarchy` prop instead of `variant` for visual style |
+| `<NyxIconButton>` | `<Button variant="icon-only">` | Pass `icon` and `label` props |
+| `<NyxButtonGroup>` | Flex container + `<Button>` | No dedicated wrapper needed — use flex/gap |
+
+**Key differences:**
+- Nyx uses `variant="primary"` → Malix uses `hierarchy="primary"`
+- Nyx `size="small"` → Malix `size="sm"`
+- Nyx `isLoading` → Malix `loading`
+
+```tsx
+// Nyx
+<NyxButton variant="primary" size="small" isLoading>Save</NyxButton>
+
+// Malix
+<Button hierarchy="primary" size="sm" loading>Save</Button>
+```
+
+### Form Inputs
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxInput>` | `<Input>` | Extends native `<input>` props |
+| `<NyxTextarea>` | `<Textarea>` | With built-in label and validation |
+| `<NyxSelect>` | `<Select>` | `options` array instead of children |
+| `<NyxCheckbox>` | `<Checkbox>` | Direct replacement |
+| `<NyxRadio>` | `<Radio>` | Direct replacement |
+| `<NyxToggle>` / `<NyxSwitch>` | `<Toggle>` | Direct replacement |
+| `<NyxDatePicker>` | `<DateInput>` | Simplified date input |
+| `<NyxFormGroup>` | `<InputGroup>` | Wraps input with `label`, `error`, `helper` |
+| `<NyxSearchBar>` | `<SearchInput>` | Preconfigured search input |
+
+### Feedback
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxTooltip>` | `<Tooltip>` | CSS-only by default; use `usePortal` for overflow-hidden contexts |
+| `<NyxAlert>` | `<Banner>` | Full-width notification banner |
+| `<NyxBadge>` | `<Badge>` | Direct replacement |
+| `<NyxTag>` | `<Pill>` | Renamed — uses `variant` for semantic colors |
+| `<NyxProgress>` | `<ProgressBar>` | Direct replacement |
+| `<NyxStatusIndicator>` | `<StatusDot>` | Small colored dot |
+| `<NyxEmptyState>` | `<EmptyState>` | Direct replacement |
+| `<NyxValidation>` | `<ValidationAlert>` | Inline validation message |
+| `<NyxOperationStatus>` | `<OperationStatus>` | Status indicator for async operations |
+
+### Navigation
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxSidebar>` | `<SidebarPanel>` | Layout container for sidebar |
+| `<NyxSidebarLink>` | `<SidebarItem>` | Individual sidebar nav item |
+| `<NyxDropdown>` | `<FlyoutMenu>` | Dropdown/flyout menu |
+| `<NyxTabs>` | `<TabBar>` | Tab navigation |
+| `<NyxFilterTabs>` | `<FilterTabs>` | Filter toggle tabs |
+| `<NyxBreadcrumb>` | `<Breadcrumb>` | Direct replacement |
+| `<NyxHeader>` | `<Header>` | Page header bar |
+| `<NyxSegmented>` | `<SegmentedControl>` | Segmented toggle |
+
+### Layout
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxCard>` | `<Card>` | Use `level` prop (1/2/3) for shadow depth |
+| `<NyxDivider>` | `<Divider>` | Direct replacement |
+| `<NyxSplitPane>` | `<SplitPane>` | Resizable split layout |
+| `<NyxSectionTitle>` | `<SectionHeader>` | Section title with optional action |
+
+### Overlays
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxModal>` | `<Modal>` | `open`, `title`, `onClose` props |
+| `<NyxConfirmModal>` | `<ConfirmDialog>` | Dedicated confirm dialog with `variant` |
+| `<NyxOverlay>` | `<Overlay>` | Full-screen overlay |
+| `<NyxPopover>` | `<GlassPopover>` | Glassmorphism popover |
+| `<NyxOnboarding>` | `<OnboardingPopover>` | Onboarding tooltip |
+
+### Data Display
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxTable>` | `<DataTable>` | Declarative columns + data API |
+| `<NyxPagination>` | `<Pagination>` | Direct replacement |
+| `<NyxStatCard>` | `<StatCard>` | Metric display |
+| `<NyxStepper>` | `<Stepper>` | Multi-step progress |
+
+### Specialized
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| `<NyxAvatar>` | `<Avatar>` | With initials fallback |
+| `<NyxFileCard>` | `<FileCard>` | File display card |
+| `<NyxDropzone>` | `<Dropzone>` | File upload area |
+| `<NyxUserMenu>` | `<UserProfilePopover>` | User profile popover |
+| `<NyxLanguagePicker>` | `<LanguageSelector>` | Language picker |
+| `<NyxCredits>` | `<CreditsIndicator>` | Usage credits display |
+| `<NyxPricing>` | `<PricingCard>` | Pricing tier card |
+| `<NyxSelectionCard>` | `<SelectionCard>` | Selectable option card |
+
+### Chat / AI
+
+| Nyx Component | Malix Equivalent | Notes |
+|---|---|---|
+| N/A | `<ChatInput>` | **New in Malix** — no Nyx equivalent |
+| N/A | `<ChatBubble>` | **New in Malix** — no Nyx equivalent |
+| N/A | `<AIAssistantPanel>` | **New in Malix** — no Nyx equivalent |
+
+---
+
+## Not Yet in Malix
+
+The following Nyx components do not have Malix equivalents yet. Continue using Nyx for these until a Malix replacement is available:
+
+| Nyx Component | Status | Workaround |
+|---|---|---|
+| `<NyxToast>` | Planned | Use `<Banner>` positioned fixed, or a third-party toast library |
+| `<NyxDrawer>` | Planned | Use `<SidebarPanel>` with absolute positioning |
+| `<NyxCalendar>` | Under review | Use `<DateInput>` for simple date selection |
+| `<NyxColorPicker>` | Not planned | Use a third-party color picker |
+| `<NyxRichTextEditor>` | Not planned | Use a third-party editor |
+
+---
+
+## CSS / Token Migration
+
+### Replace Nyx CSS variables
+
+| Nyx Token | Malix Token |
+|---|---|
+| `--nyx-bg` | `--malix-background-main` |
+| `--nyx-surface` | `--malix-surface` |
+| `--nyx-text` | `--malix-foreground` |
+| `--nyx-text-secondary` | `--malix-foreground-secondary` |
+| `--nyx-border` | `--malix-border` |
+| `--nyx-primary` | `--malix-primary` |
+| `--nyx-error` | `--malix-error` |
+| `--nyx-success` | `--malix-success` |
+| `--nyx-warning` | `--malix-warning` |
+
+### Replace hardcoded values
+
+```css
+/* Before (Nyx / hardcoded) */
+.my-component {
+  color: #111827;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  z-index: 9999;
+}
+
+/* After (Malix tokens) */
+.my-component {
+  color: var(--malix-foreground);
+  background: var(--malix-surface);
+  border: 1px solid var(--malix-border);
+  z-index: var(--malix-z-modal);
+}
+```
+
+### Remove Bootstrap overrides
+
+If your project uses Bootstrap alongside Nyx, Malix provides all the primitives you need. You can progressively remove Bootstrap:
+
+1. Replace Bootstrap grid with CSS Grid or Flexbox
+2. Replace Bootstrap utilities with Malix Tailwind preset utilities
+3. Remove `bootstrap.css` import once all pages are migrated
+
+---
+
+## Migration Checklist
+
+- [ ] Install `@camtomlabs/malix-design-system`
+- [ ] Add CSS import to entry point
+- [ ] Enable Malix Stylelint config
+- [ ] Migrate buttons (most common component)
+- [ ] Migrate form inputs
+- [ ] Migrate layout components (Card, Divider)
+- [ ] Migrate navigation (Sidebar, Header, Tabs)
+- [ ] Migrate overlays (Modal, ConfirmDialog)
+- [ ] Migrate data display (DataTable, Pagination)
+- [ ] Replace all Nyx CSS variables with Malix tokens
+- [ ] Replace all hardcoded hex colors with tokens
+- [ ] Replace arbitrary z-index values with `--malix-z-*` tokens
+- [ ] Remove Nyx package dependency
+- [ ] Remove Nyx CSS import
+- [ ] Verify dark mode works correctly

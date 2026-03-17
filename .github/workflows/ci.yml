@@ -21,3 +21,18 @@ jobs:
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
+
+      # Visual regression tests
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+      - name: Build Storybook
+        run: pnpm --filter @malix/storybook build
+      - name: Run visual regression tests
+        run: pnpm --filter @malix/storybook exec playwright test
+      - name: Upload visual diff artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-report
+          path: apps/storybook/test-results/
+          retention-days: 7
