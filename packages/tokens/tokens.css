@@ -38,7 +38,8 @@
 
   /* ── Primary ─────────────────────────────── */
   --malix-primary: #004a7c;
-  --malix-cta-primary-bg: var(--malix-primary);
+  --malix-primary-bg: var(--malix-primary);
+  --malix-cta-primary-bg: var(--malix-primary-bg); /* @deprecated — use --malix-primary-bg */
   --malix-primary-hover: #003a63;
   --malix-primary-active: #002e4f;
   --malix-primary-foreground: #ffffff;
@@ -76,6 +77,24 @@
   --malix-sidebar-hover-bg: #fbfbfb;
   --malix-sidebar-active-bg: #e6f0f7;
 
+  /* ── Card ─────────────────────────────────── */
+  --malix-card-bg: var(--malix-surface);
+  --malix-card-border: var(--malix-border);
+  --malix-card-radius: var(--malix-radius-lg);
+
+  /* ── Input (semantic) ────────────────────── */
+  --malix-input-border: var(--malix-border);
+
+  /* ── Nav ──────────────────────────────────── */
+  --malix-nav-bg: var(--malix-background-main);
+  --malix-nav-height: 56px;
+
+  /* ── Layout / Containers ─────────────────── */
+  --malix-container-sm: 640px;
+  --malix-container-md: 768px;
+  --malix-container-lg: 1024px;
+  --malix-container-xl: 1280px;
+
   /* ── Spacing ───────────────────────────────── */
   --malix-space-xs: 4px;
   --malix-space-sm: 8px;
@@ -99,6 +118,10 @@
   --malix-text-lg: 16px;
   --malix-text-xl: 20px;
   --malix-text-2xl: 24px;
+  --malix-text-3xl: 30px;
+  --malix-text-4xl: 36px;
+  --malix-text-5xl: 48px;
+  --malix-text-display: clamp(2.5rem, 5vw, 4rem);
 
   --malix-font-body: Geist, sans-serif;
   --malix-font-heading: Geist, sans-serif;
@@ -155,7 +178,8 @@
 
   /* ── Primary ─────────────────────────────── */
   --malix-primary: #005ce8;
-  --malix-cta-primary-bg: var(--malix-primary);
+  --malix-primary-bg: var(--malix-primary);
+  --malix-cta-primary-bg: var(--malix-primary-bg); /* @deprecated */
   --malix-primary-hover: #0351cf;
   --malix-primary-active: #1037a3;
   --malix-primary-foreground: #FFFFFF;

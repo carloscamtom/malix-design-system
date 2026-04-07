@@ -1,9 +1,9 @@
 ---
 title: Design Tokens
-description: The 74 CSS custom properties that power the Malix Design System.
+description: The complete CSS custom property reference for the Malix Design System.
 ---
 
-Malix uses a closed set of **74 CSS custom properties** organized into categories. These tokens are validated at build time — no ad-hoc values allowed.
+Malix uses a closed set of **CSS custom properties** organized into categories. These tokens are validated at build time — no ad-hoc values allowed.
 
 ## Usage
 
@@ -52,15 +52,18 @@ Use them in your styles:
 | `--malix-border-strong` | `#d1d5db` | Emphasized border |
 | `--malix-border-focus` | `#004a7c` | Focus ring border |
 
-## Primary CTA
+## Primary
 
 | Token | Value | Description |
 |-------|-------|-------------|
-| `--malix-cta-primary-bg` | `#004a7c` | Primary button background |
-| `--malix-primary-hover` | `#003d66` | Primary hover state |
-| `--malix-primary-active` | `#003052` | Primary active/pressed |
+| `--malix-primary` | `#004a7c` | Primary brand color |
+| `--malix-primary-bg` | `var(--malix-primary)` | Primary background (buttons, CTAs) |
+| `--malix-primary-hover` | `#003a63` | Primary hover state |
+| `--malix-primary-active` | `#002e4f` | Primary active/pressed |
 | `--malix-primary-foreground` | `#ffffff` | Text on primary background |
-| `--malix-primary-light` | `#e0f2fe` | Light primary accent |
+| `--malix-primary-light` | `#e6f0f7` | Light primary accent |
+
+> `--malix-cta-primary-bg` is deprecated. Use `--malix-primary-bg` instead.
 
 ## Semantic Colors
 
@@ -108,17 +111,51 @@ Use them in your styles:
 | `--malix-text-xs` | `12px` | Extra small text |
 | `--malix-text-sm` | `13px` | Small text |
 | `--malix-text-base` | `14px` | Base body text |
-| `--malix-text-md` | `16px` | Medium text |
-| `--malix-text-lg` | `18px` | Large text |
+| `--malix-text-lg` | `16px` | Large text |
 | `--malix-text-xl` | `20px` | Extra large text |
 | `--malix-text-2xl` | `24px` | 2x large text |
-| `--malix-font-body` | `Inter, sans-serif` | Body font family |
-| `--malix-font-heading` | `Inter, sans-serif` | Heading font family |
+| `--malix-text-3xl` | `30px` | Section headings |
+| `--malix-text-4xl` | `36px` | Page headings |
+| `--malix-text-5xl` | `48px` | Hero headings |
+| `--malix-text-display` | `clamp(2.5rem, 5vw, 4rem)` | Responsive display/hero text |
+| `--malix-font-body` | `Geist, sans-serif` | Body font family |
+| `--malix-font-heading` | `Geist, sans-serif` | Heading font family |
 | `--malix-weight-normal` | `400` | Normal weight |
 | `--malix-weight-medium` | `500` | Medium weight |
 | `--malix-weight-semibold` | `600` | Semibold weight |
 | `--malix-weight-bold` | `700` | Bold weight |
-| `--malix-line-height-base` | `1.5` | Base line height |
+
+## Card
+
+| Token | Value | Description |
+|-------|-------|-------------|
+| `--malix-card-bg` | `var(--malix-surface)` | Card background |
+| `--malix-card-border` | `var(--malix-border)` | Card border color |
+| `--malix-card-radius` | `var(--malix-radius-lg)` | Card border radius |
+
+## Input (semantic)
+
+| Token | Value | Description |
+|-------|-------|-------------|
+| `--malix-input-bg` | `#ffffff` | Input field background |
+| `--malix-input-border` | `var(--malix-border)` | Input border color |
+| `--malix-input-autofill-bg` | `#ffffff` | Autofill background |
+
+## Nav
+
+| Token | Value | Description |
+|-------|-------|-------------|
+| `--malix-nav-bg` | `var(--malix-background-main)` | Navigation background |
+| `--malix-nav-height` | `56px` | Standard navigation height |
+
+## Layout / Containers
+
+| Token | Value | Description |
+|-------|-------|-------------|
+| `--malix-container-sm` | `640px` | Small container max-width |
+| `--malix-container-md` | `768px` | Medium container max-width |
+| `--malix-container-lg` | `1024px` | Large container max-width |
+| `--malix-container-xl` | `1280px` | Extra large container max-width |
 
 ## Shadows
 

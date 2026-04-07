@@ -25,7 +25,8 @@
   --malix-border-strong: #d1d5db;
   --malix-border-focus: #004a7c;
   --malix-overlay: #00000066;
-  --malix-cta-primary-bg: #004a7c;
+  --malix-primary-bg: #004a7c;
+  --malix-cta-primary-bg: var(--malix-primary-bg);
   --malix-primary-hover: #003a63;
   --malix-primary-active: #002e4f;
   --malix-primary-foreground: #ffffff;
@@ -66,7 +67,8 @@
   --malix-border-strong: #475569;
   --malix-border-focus: #60A5FA;
   --malix-overlay: #00000099;
-  --malix-cta-primary-bg: #005ce8;
+  --malix-primary-bg: #005ce8;
+  --malix-cta-primary-bg: var(--malix-primary-bg);
   --malix-primary-hover: #0351cf;
   --malix-primary-active: #1037a3;
   --malix-primary-foreground: #FFFFFF;

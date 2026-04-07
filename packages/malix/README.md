@@ -43,6 +43,27 @@ export function MyPage() {
 }
 ```
 
+## Theme Provider
+
+Malix includes a React theme provider for managing dark mode:
+
+```tsx
+import { MalixThemeProvider, useMalixTheme } from '@camtomlabs/malix-design-system';
+
+// Wrap your app
+<MalixThemeProvider defaultTheme="system">
+  <App />
+</MalixThemeProvider>
+
+// Use in any component
+function ThemeToggle() {
+  const { theme, toggleTheme } = useMalixTheme();
+  return <button onClick={toggleTheme}>{theme}</button>;
+}
+```
+
+Supported themes: `'light'` | `'dark'` | `'system'`
+
 ## Design Tokens
 
 Malix uses a CSS custom-property token system for colors, spacing, typography, and radius. You can also import the tokens stylesheet separately:
@@ -56,6 +77,24 @@ Or access the token registry programmatically:
 ```ts
 import { tokenRegistry } from '@camtomlabs/malix-design-system';
 ```
+
+### Quick Reference
+
+| Category | Tokens |
+|----------|--------|
+| **Surfaces** | `--malix-surface`, `--malix-surface-secondary`, `--malix-surface-elevated` |
+| **Card** | `--malix-card-bg`, `--malix-card-border`, `--malix-card-radius` |
+| **Input** | `--malix-input-bg`, `--malix-input-border` |
+| **Nav** | `--malix-nav-bg`, `--malix-nav-height` |
+| **Text** | `--malix-foreground`, `--malix-foreground-secondary`, `--malix-foreground-tertiary` |
+| **Primary** | `--malix-primary-bg`, `--malix-primary-hover`, `--malix-primary-active`, `--malix-primary-foreground` |
+| **Semantic** | `--malix-success`, `--malix-warning`, `--malix-error`, `--malix-info` (each with `-light` and `-foreground`) |
+| **Spacing** | `--malix-space-xs` (4px) through `--malix-space-3xl` (48px) |
+| **Radius** | `--malix-radius-sm` (4px) through `--malix-radius-pill` (9999px) |
+| **Typography** | `--malix-text-xs` (12px) through `--malix-text-display` (responsive) |
+| **Layout** | `--malix-container-sm` (640px) through `--malix-container-xl` (1280px) |
+| **Z-Index** | `--malix-z-dropdown` (100) through `--malix-z-notification` (600) |
+| **Shadows** | `--malix-shadow-card-l1` / `l2` / `l3`, `--malix-shadow-overlay`, `--malix-shadow-tooltip` |
 
 ## Components
 

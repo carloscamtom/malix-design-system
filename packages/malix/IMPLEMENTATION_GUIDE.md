@@ -51,6 +51,31 @@ Now you can use Malix tokens as Tailwind utilities:
 
 ## Dark Mode
 
+### Option A: Theme Provider (recommended for React)
+
+```tsx
+import { MalixThemeProvider, useMalixTheme } from '@camtomlabs/malix-design-system';
+
+// Wrap your app
+function App() {
+  return (
+    <MalixThemeProvider defaultTheme="system">
+      <YourApp />
+    </MalixThemeProvider>
+  );
+}
+
+// Toggle theme from any component
+function ThemeToggle() {
+  const { theme, setTheme, toggleTheme } = useMalixTheme();
+  return <button onClick={toggleTheme}>{theme === 'dark' ? 'Light' : 'Dark'}</button>;
+}
+```
+
+Supported values: `'light'` | `'dark'` | `'system'`. Persists to `localStorage`.
+
+### Option B: Manual CSS class
+
 Add `.dark` class to `<html>` or use `[data-theme="dark"]`:
 
 ```html
@@ -102,12 +127,13 @@ input:-webkit-autofill {
 | Token | Use for | Light | Dark |
 |---|---|---|---|
 | `--malix-primary` | Links, active tabs, sidebar active, spinners, primary actions | `#004a7c` | `#005ce8` |
+| `--malix-primary-bg` | Primary button/CTA background | `var(--malix-primary)` | `var(--malix-primary)` |
 | `--malix-primary-hover` | Hover on primary elements | `#003a63` | `#0351cf` |
 | `--malix-primary-active` | Active/pressed on primary | `#002e4f` | `#1037a3` |
 | `--malix-primary-foreground` | Text on primary background | `#ffffff` | `#FFFFFF` |
 | `--malix-primary-light` | Subtle primary bg (badges, pills, sidebar active) | `#e6f0f7` | `#082b59` |
 
-> `--malix-cta-primary-bg` still works (references `--malix-primary`) but prefer `--malix-primary`.
+> `--malix-cta-primary-bg` is deprecated. Use `--malix-primary-bg` instead.
 
 ### Semantic Colors
 
@@ -197,6 +223,38 @@ With Tailwind preset: `z-malix-modal`, `z-malix-tooltip`, etc.
 | `--malix-radius-xl` | 16px | Large cards, modals |
 | `--malix-radius-pill` | 9999px | Pills, full-round buttons |
 
+### Card
+
+| Token | Value | Use for |
+|---|---|---|
+| `--malix-card-bg` | `var(--malix-surface)` | Card background |
+| `--malix-card-border` | `var(--malix-border)` | Card border color |
+| `--malix-card-radius` | `var(--malix-radius-lg)` | Card border radius |
+
+### Input (semantic)
+
+| Token | Use for |
+|---|---|
+| `--malix-input-bg` | Input field background |
+| `--malix-input-border` | Input border color |
+| `--malix-input-autofill-bg` | Autofill background |
+
+### Nav
+
+| Token | Value | Use for |
+|---|---|---|
+| `--malix-nav-bg` | `var(--malix-background-main)` | Navigation background |
+| `--malix-nav-height` | `56px` | Standard navigation height |
+
+### Layout / Containers
+
+| Token | Value | Use for |
+|---|---|---|
+| `--malix-container-sm` | 640px | Small screens max-width |
+| `--malix-container-md` | 768px | Medium screens max-width |
+| `--malix-container-lg` | 1024px | Large screens max-width |
+| `--malix-container-xl` | 1280px | Extra large screens max-width |
+
 ### Typography
 
 | Token | Value |
@@ -207,6 +265,10 @@ With Tailwind preset: `z-malix-modal`, `z-malix-tooltip`, etc.
 | `--malix-text-lg` | 16px |
 | `--malix-text-xl` | 20px |
 | `--malix-text-2xl` | 24px |
+| `--malix-text-3xl` | 30px |
+| `--malix-text-4xl` | 36px |
+| `--malix-text-5xl` | 48px |
+| `--malix-text-display` | clamp(2.5rem, 5vw, 4rem) |
 | `--malix-font-body` | Geist, sans-serif |
 | `--malix-font-heading` | Geist, sans-serif |
 | `--malix-weight-normal` | 400 |

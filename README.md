@@ -70,7 +70,7 @@ Use tokens only through CSS variables:
 
 ```css
 .button {
-  background: var(--malix-cta-primary-bg);
+  background: var(--malix-primary-bg);
   color: var(--malix-primary-foreground);
   box-shadow: var(--malix-shadow-depth);
 }

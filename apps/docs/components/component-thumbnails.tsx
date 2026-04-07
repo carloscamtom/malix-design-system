@@ -298,7 +298,7 @@ function BannerThumb() {
 }
 
 function BadgeThumb() {
-  /* Pencil: radius-sm (4px), primary badge uses cta-primary-bg, also semantic variants */
+  /* Pencil: radius-sm (4px), primary badge uses primary-bg, also semantic variants */
   return (
     <div className="flex items-center gap-1.5">
       <span className="px-1.5 py-0.5 text-[9px] font-medium text-white" style={{ background: '#004a7c', borderRadius: 4 }}>New</span>
@@ -383,7 +383,7 @@ function ValidationAlertThumb() {
 }
 
 function ProgressBarThumb() {
-  /* Pencil: track height 6px, radius-pill, fill uses cta-primary-bg */
+  /* Pencil: track height 6px, radius-pill, fill uses primary-bg */
   return (
     <div className="w-44 space-y-1">
       <div className="flex items-center justify-between">

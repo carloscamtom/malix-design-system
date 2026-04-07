@@ -81,7 +81,8 @@ Every CSS custom property in the Malix Design System is classified as **Stable**
 | Token | Status |
 |---|---|
 | `--malix-primary` | Stable |
-| `--malix-cta-primary-bg` | Stable (alias for `--malix-primary`) |
+| `--malix-primary-bg` | Stable |
+| `--malix-cta-primary-bg` | Deprecated (alias for `--malix-primary-bg`) |
 | `--malix-primary-hover` | Stable |
 | `--malix-primary-active` | Stable |
 | `--malix-primary-foreground` | Stable |
@@ -128,6 +129,36 @@ Every CSS custom property in the Malix Design System is classified as **Stable**
 | `--malix-sidebar-hover-bg` | Experimental | May move to component-level tokens |
 | `--malix-sidebar-active-bg` | Experimental | May move to component-level tokens |
 
+### Card — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-card-bg` | Stable |
+| `--malix-card-border` | Stable |
+| `--malix-card-radius` | Stable |
+
+### Input (semantic) — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-input-border` | Stable |
+
+### Nav — Stable
+
+| Token | Status |
+|---|---|
+| `--malix-nav-bg` | Stable |
+| `--malix-nav-height` | Stable |
+
+### Layout / Containers — Stable
+
+| Token | Value | Status |
+|---|---|---|
+| `--malix-container-sm` | 640px | Stable |
+| `--malix-container-md` | 768px | Stable |
+| `--malix-container-lg` | 1024px | Stable |
+| `--malix-container-xl` | 1280px | Stable |
+
 ### Spacing — Stable
 
 | Token | Value | Status |
@@ -160,6 +191,10 @@ Every CSS custom property in the Malix Design System is classified as **Stable**
 | `--malix-text-lg` | Stable |
 | `--malix-text-xl` | Stable |
 | `--malix-text-2xl` | Stable |
+| `--malix-text-3xl` | Stable |
+| `--malix-text-4xl` | Stable |
+| `--malix-text-5xl` | Stable |
+| `--malix-text-display` | Stable |
 | `--malix-font-body` | Stable |
 | `--malix-font-heading` | Stable |
 | `--malix-weight-normal` | Stable |
@@ -189,8 +224,9 @@ Every CSS custom property in the Malix Design System is classified as **Stable**
 
 | Classification | Count |
 |---|---|
-| Stable | 85 |
+| Stable | 100 |
 | Experimental | 6 |
-| **Total** | **91** |
+| Deprecated | 1 |
+| **Total** | **107** |
 
-Experimental tokens are limited to **Glass/Morphism** and **Sidebar** categories. All core tokens (colors, spacing, typography, shadows, z-index) are Stable.
+Experimental tokens are limited to **Glass/Morphism** and **Sidebar** categories. All core tokens (colors, spacing, typography, shadows, z-index, layout, card, nav) are Stable. `--malix-cta-primary-bg` is deprecated in favor of `--malix-primary-bg`.

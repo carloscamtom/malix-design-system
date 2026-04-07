@@ -185,3 +185,7 @@ export type { ChatBubbleProps, ChatBubbleVariant } from './components/ChatBubble
 // AIAssistantPanel
 export { AIAssistantPanel } from './components/AIAssistantPanel';
 export type { AIAssistantPanelProps, AIAssistantMessage } from './components/AIAssistantPanel';
+
+// Theme
+export { MalixThemeProvider, useMalixTheme } from './theme';
+export type { MalixTheme } from './theme';
