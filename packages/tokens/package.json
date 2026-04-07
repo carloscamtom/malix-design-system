@@ -1,6 +1,6 @@
 {
   "name": "@camtomlabs/malix-tokens",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Malix Design System design tokens, token registry, and CSS variables.",
   "type": "module",
   "files": [
