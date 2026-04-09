@@ -116,6 +116,27 @@ importers:
         specifier: ^5.4.7
         version: 5.4.21(@types/node@22.19.11)(lightningcss@1.31.1)
 
+  packages/eslint-plugin-malix:
+    devDependencies:
+      '@camtomlabs/malix-design-system':
+        specifier: workspace:*
+        version: link:../malix
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+
+  packages/eslint-plugin-malix/__fixtures__/classic-config:
+    devDependencies:
+      '@camtomlabs/eslint-plugin-malix':
+        specifier: workspace:*
+        version: link:../..
+      '@camtomlabs/malix-design-system':
+        specifier: workspace:*
+        version: link:../../../malix
+      eslint:
+        specifier: ^8.57.1
+        version: 8.57.1
+
   packages/malix:
     dependencies:
       react:

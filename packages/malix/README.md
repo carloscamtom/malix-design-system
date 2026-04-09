@@ -83,6 +83,13 @@ Sizes: `'xs'` (12px), `'sm'` (14px), `'md'` (16px), `'lg'` (20px), `'xl'` (24px)
 Malix ships an ESLint plugin that catches raw `<button>` and `<input>`
 elements and tells you to use `<Button>` / `<Input>` from the DS.
 
+Install the sibling plugin package alongside the main package so that
+classic ESLint config can resolve `@camtomlabs/malix` automatically:
+
+```bash
+pnpm add -D @camtomlabs/eslint-plugin-malix
+```
+
 ```js
 // .eslintrc.cjs
 module.exports = {
@@ -108,6 +115,11 @@ You can escape the rule with a standard disable comment when needed:
 ```
 
 The `no-raw-input` rule allows `type="hidden"` and `type="file"` by default.
+
+> **Legacy subpath export.** The `@camtomlabs/malix-design-system/eslint-plugin`
+> subpath export still works but is considered legacy — classic ESLint
+> configs can't resolve plugin names from subpath exports. Prefer installing
+> `@camtomlabs/eslint-plugin-malix` directly.
 
 ## Theme Provider
 

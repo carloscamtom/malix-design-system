@@ -1,3 +1,4 @@
 packages:
   - "packages/*"
+  - "packages/eslint-plugin-malix/__fixtures__/*"
   - "apps/*"

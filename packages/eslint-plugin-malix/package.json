@@ -1,0 +1,41 @@
+{
+  "name": "@camtomlabs/eslint-plugin-malix",
+  "version": "0.1.0",
+  "description": "ESLint plugin for the Malix Design System. Enforces usage of canonical <Button>, <Input> components over raw HTML elements.",
+  "main": "./index.cjs",
+  "files": [
+    "index.cjs",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node smoke-test.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carloscamtom/malix-design-system.git",
+    "directory": "packages/eslint-plugin-malix"
+  },
+  "homepage": "https://github.com/carloscamtom/malix-design-system#readme",
+  "bugs": {
+    "url": "https://github.com/carloscamtom/malix-design-system/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "malix",
+    "design-system"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@camtomlabs/malix-design-system": ">=0.3.0",
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@camtomlabs/malix-design-system": "workspace:*",
+    "eslint": "^8.57.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

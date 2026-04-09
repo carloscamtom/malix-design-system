@@ -1,0 +1,14 @@
+{
+  "name": "malix-eslint-classic-fixture",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Fixture that consumes @camtomlabs/eslint-plugin-malix via classic ESLint config to verify plugin name resolution.",
+  "scripts": {
+    "test": "eslint --no-eslintrc --config .eslintrc.cjs bad.jsx good.jsx"
+  },
+  "devDependencies": {
+    "@camtomlabs/eslint-plugin-malix": "workspace:*",
+    "@camtomlabs/malix-design-system": "workspace:*",
+    "eslint": "^8.57.1"
+  }
+}
