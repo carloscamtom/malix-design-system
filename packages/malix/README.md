@@ -23,10 +23,28 @@ npm install react react-dom
 Import the bundled stylesheet once in your app's entry point (e.g. `main.tsx`, `layout.tsx`, or `_app.tsx`):
 
 ```ts
+// Optional: opt-in reset scoped to @layer malix-reset.
+// Import BEFORE styles.css so the layer order is established correctly.
+import '@camtomlabs/malix-design-system/reset.css';
+
 import '@camtomlabs/malix-design-system/styles.css';
 ```
 
 That's it. All components are styled and ready to use.
+
+### Why the reset is optional
+
+`reset.css` lives inside `@layer malix-reset`, which means **any style you
+write outside a layer will automatically win** — no specificity wars, no
+`:not()` hacks. Use it if your project has a hostile global reset that
+makes CSS Modules fight for background colors; skip it if you already
+have your own reset.
+
+Layer cascade order:
+
+```
+malix-reset  →  malix-tokens  →  malix-components  →  app
+```
 
 ## Usage
 
@@ -42,6 +60,54 @@ export function MyPage() {
   );
 }
 ```
+
+## Icons
+
+Malix ships a canonical `<Icon>` wrapper that accepts any icon component
+(lucide-react, phosphor-react, custom SVG) and enforces consistent
+sizing and theming via `currentColor`.
+
+```tsx
+import { Icon } from '@camtomlabs/malix-design-system';
+import { Plus, Search, Trash } from 'lucide-react';
+
+<Icon as={Plus} size="md" label="Add item" />       // 16px, aria-label
+<Icon as={Search} size="sm" />                       // decorative (aria-hidden)
+<Icon as={Trash} size="lg" />                        // 20px
+```
+
+Sizes: `'xs'` (12px), `'sm'` (14px), `'md'` (16px), `'lg'` (20px), `'xl'` (24px), or a raw number.
+
+## ESLint Plugin — enforce canonical components
+
+Malix ships an ESLint plugin that catches raw `<button>` and `<input>`
+elements and tells you to use `<Button>` / `<Input>` from the DS.
+
+```js
+// .eslintrc.cjs
+module.exports = {
+  plugins: ['@camtomlabs/malix'],
+  rules: {
+    '@camtomlabs/malix/no-raw-button': 'warn',
+    '@camtomlabs/malix/no-raw-input': 'warn',
+  },
+};
+```
+
+Or use the recommended preset:
+
+```js
+extends: ['plugin:@camtomlabs/malix/recommended']
+```
+
+You can escape the rule with a standard disable comment when needed:
+
+```tsx
+// eslint-disable-next-line @camtomlabs/malix/no-raw-button
+<button type="submit" form="external-form-id" />
+```
+
+The `no-raw-input` rule allows `type="hidden"` and `type="file"` by default.
 
 ## Theme Provider
 

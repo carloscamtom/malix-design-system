@@ -1,6 +1,6 @@
 {
   "name": "@camtomlabs/malix-design-system",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Malix Design System combined package with components, tokens, and bundled styles.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -8,15 +8,18 @@
   "types": "./dist/index.d.ts",
   "sideEffects": [
     "./src/styles.css",
-    "./src/tokens.css"
+    "./src/tokens.css",
+    "./src/reset.css"
   ],
   "files": [
     "dist",
     "src/styles.css",
     "src/tokens.css",
+    "src/reset.css",
     "src/tokens.registry.json",
     "tailwind.preset.js",
-    "stylelint.config.cjs"
+    "stylelint.config.cjs",
+    "eslint-plugin.cjs"
   ],
   "repository": {
     "type": "git",
@@ -44,9 +47,11 @@
     "./css": "./src/styles.css",
     "./styles.css": "./src/styles.css",
     "./tokens.css": "./src/tokens.css",
+    "./reset.css": "./src/reset.css",
     "./tokens.registry.json": "./src/tokens.registry.json",
     "./tailwind.preset": "./tailwind.preset.js",
-    "./stylelint.config": "./stylelint.config.cjs"
+    "./stylelint.config": "./stylelint.config.cjs",
+    "./eslint-plugin": "./eslint-plugin.cjs"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",

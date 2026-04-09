@@ -1,5 +1,11 @@
 @import "./tokens.css";
 
+/* Declare the layer here (harmless if reset.css isn't imported) so
+   consumers that skip reset.css still get a named layer for our
+   component styles. When reset.css IS imported, this declaration
+   merges with the one there and the cascade order is preserved. */
+@layer malix-reset, malix-tokens, malix-components, app;
+
 /* ═══════════════════════════════════════════════
    BUTTON — Pencil: KCjkg, 5eAkI, zMyI0, zUoM5
    padding: 10px 20px, gap: 8px, radius-md

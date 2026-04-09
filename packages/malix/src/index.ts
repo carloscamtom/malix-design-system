@@ -189,3 +189,7 @@ export type { AIAssistantPanelProps, AIAssistantMessage } from './components/AIA
 // Theme
 export { MalixThemeProvider, useMalixTheme } from './theme';
 export type { MalixTheme } from './theme';
+
+// Icon
+export { Icon } from './components/Icon';
+export type { IconProps, IconSize, IconComponent } from './components/Icon';
