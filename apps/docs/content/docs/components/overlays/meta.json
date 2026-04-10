@@ -1,4 +1,4 @@
 {
   "title": "Overlays",
-  "pages": ["modal", "overlay", "glass-popover", "onboarding-popover"]
+  "pages": ["dialog", "confirm-dialog", "modal", "overlay", "glass-popover", "onboarding-popover"]
 }

@@ -489,6 +489,54 @@ function ModalThumb() {
   );
 }
 
+function DialogThumb() {
+  /* Dialog: composable modal with slots. Shows header / body / footer divisions. */
+  return (
+    <div className="relative h-24 w-44 rounded-md bg-[#11182710]">
+      <div className="absolute inset-x-3 top-3 border border-[#e5e7eb] bg-white shadow-lg" style={{ borderRadius: 12 }}>
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-[#e5e7eb] px-2 py-1.5">
+          <div className="text-[8px] font-semibold text-[#111827]">Edit catalog</div>
+          <div className="text-[10px] text-[#6b7280]">×</div>
+        </div>
+        {/* Body */}
+        <div className="px-2 py-2">
+          <div className="h-1 w-20 rounded-full bg-[#f3f4f6]" />
+          <div className="mt-1 h-1 w-16 rounded-full bg-[#f3f4f6]" />
+        </div>
+        {/* Footer */}
+        <div className="flex justify-end gap-1 border-t border-[#e5e7eb] bg-[#f9fafb] px-2 py-1">
+          <div className="h-3 px-1.5 text-[6px] leading-3 text-[#6b7280]" style={{ background: '#f3f4f6', borderRadius: 4 }}>Cancel</div>
+          <div className="h-3 px-1.5 text-[6px] leading-3 text-white" style={{ background: '#004a7c', borderRadius: 4 }}>Save</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ConfirmDialogThumb() {
+  /* ConfirmDialog: tinted icon on left, title + description on right, danger confirm button. */
+  return (
+    <div className="relative h-24 w-44 rounded-md bg-[#11182710]">
+      <div className="absolute inset-x-3 top-4 border border-[#e5e7eb] bg-white shadow-lg" style={{ borderRadius: 10 }}>
+        <div className="flex gap-2 p-2">
+          <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded" style={{ background: '#fee2e2' }}>
+            <span className="text-[9px] font-bold text-[#dc2626]">!</span>
+          </div>
+          <div className="flex-1">
+            <div className="text-[8px] font-semibold text-[#111827]">Delete project?</div>
+            <div className="mt-0.5 h-1 w-20 rounded-full bg-[#f3f4f6]" />
+          </div>
+        </div>
+        <div className="flex justify-end gap-1 border-t border-[#e5e7eb] px-2 py-1">
+          <div className="h-3 px-1.5 text-[6px] leading-3 text-[#6b7280]" style={{ background: '#f3f4f6', borderRadius: 4 }}>Cancel</div>
+          <div className="h-3 px-1.5 text-[6px] leading-3 text-white" style={{ background: '#dc2626', borderRadius: 4 }}>Delete</div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function OverlayThumb() {
   return (
     <div className="relative h-20 w-44 rounded-md bg-[#11182710]">
@@ -768,6 +816,8 @@ const thumbnails: Record<string, () => React.ReactNode> = {
   divider: DividerThumb,
   'section-header': SectionHeaderThumb,
   'split-pane': SplitPaneThumb,
+  dialog: DialogThumb,
+  'confirm-dialog': ConfirmDialogThumb,
   modal: ModalThumb,
   overlay: OverlayThumb,
   'glass-popover': GlassPopoverThumb,

@@ -1,0 +1,131 @@
+---
+title: ConfirmDialog
+description: Semantic confirmation preset for simple confirm / cancel flows. Built on top of the overlay primitives with danger, warning, and info variants.
+---
+
+import { ConfirmDialogDemo } from '@/components/examples/confirm-dialog-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="ConfirmDialog">
+  <ConfirmDialogDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { ConfirmDialog } from '@camtomlabs/malix-design-system';
+```
+
+## When to use
+
+`ConfirmDialog` is a preset for the most common modal pattern: **"Are you
+sure?"** flows with a title, a single message, and binary confirm / cancel
+buttons. It renders as `role="alertdialog"` so screen readers announce it
+immediately.
+
+- Use it for simple destructive confirmations (delete, archive, reject).
+- For anything with **custom body content** (forms, textareas, multi-step
+  flows), use [`Dialog`](/docs/components/overlays/dialog) directly — it
+  gives you slot composition and the same behavior.
+
+## Usage
+
+```tsx
+import { ConfirmDialog, Button } from '@camtomlabs/malix-design-system';
+import { useState } from 'react';
+
+export function DeleteProjectButton({ onDelete }: { onDelete: () => void }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button hierarchy="danger" onClick={() => setOpen(true)}>
+        Delete project
+      </Button>
+      <ConfirmDialog
+        open={open}
+        variant="danger"
+        title="Delete project?"
+        description="This will permanently delete the project and all its data."
+        confirmLabel="Delete"
+        cancelLabel="Cancel"
+        onConfirm={() => {
+          onDelete();
+          setOpen(false);
+        }}
+        onCancel={() => setOpen(false)}
+      />
+    </>
+  );
+}
+```
+
+## Variants
+
+Each variant tints the icon slot and (for `danger` / `warning`) the confirm
+button itself.
+
+```tsx
+<ConfirmDialog variant="default" ... />
+<ConfirmDialog variant="danger"  ... />  {/* red confirm button */}
+<ConfirmDialog variant="warning" ... />  {/* amber confirm button */}
+<ConfirmDialog variant="info"    ... />
+```
+
+## Loading state
+
+Pass `loading` while the confirm handler is in-flight. Both buttons become
+disabled and the confirm button shows a loading indicator.
+
+```tsx
+const [loading, setLoading] = useState(false);
+
+<ConfirmDialog
+  open={open}
+  loading={loading}
+  title="Delete project?"
+  onConfirm={async () => {
+    setLoading(true);
+    try {
+      await deleteProject();
+      setOpen(false);
+    } finally {
+      setLoading(false);
+    }
+  }}
+  onCancel={() => setOpen(false)}
+/>
+```
+
+## Behavior
+
+Inherits the overlay behavior from the shared primitive:
+
+- **Portal rendering** to `document.body`
+- **Focus trap** — Tab cycles within the dialog
+- **Escape** and **backdrop click** call `onCancel`
+- **Body scroll lock** while open
+- **Focus restoration** on close
+- **`role="alertdialog"`** — announced immediately by assistive tech
+- **Automatic ARIA wiring** via `useId` — no ID collisions with multiple dialogs
+
+## Props
+
+<PropsTable
+  props={[
+    { name: 'open', type: 'boolean', required: true, description: 'Whether the dialog is visible.' },
+    { name: 'title', type: 'string', required: true, description: 'Title displayed at the top of the dialog.' },
+    { name: 'description', type: 'string', description: 'Supporting text rendered below the title.' },
+    { name: 'onConfirm', type: '() => void', required: true, description: 'Called when the confirm button is clicked.' },
+    { name: 'onCancel', type: '() => void', required: true, description: 'Called when the cancel button, backdrop, or Escape is used.' },
+    { name: 'variant', type: "'default' | 'danger' | 'warning' | 'info'", default: "'default'", description: 'Semantic variant — affects icon tint and confirm button color.' },
+    { name: 'confirmLabel', type: 'string', default: "'Confirm'", description: 'Label for the confirm button.' },
+    { name: 'cancelLabel', type: 'string', default: "'Cancel'", description: 'Label for the cancel button.' },
+    { name: 'icon', type: 'ReactNode', description: 'Optional icon rendered next to the title.' },
+    { name: 'loading', type: 'boolean', default: 'false', description: 'Disables both buttons and shows a loading state on the confirm button.' },
+    { name: 'children', type: 'ReactNode', description: 'Additional content rendered below the description.' },
+  ]}
+/>

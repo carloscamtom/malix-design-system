@@ -50,7 +50,9 @@ export const components: ComponentMeta[] = [
   { name: 'SplitPane', slug: 'split-pane', description: 'Resizable split view with draggable handle.', category: 'Layout', categorySlug: 'layout' },
 
   // Overlays
-  { name: 'Modal', slug: 'modal', description: 'Dialog modal with focus trap and actions.', category: 'Overlays', categorySlug: 'overlays' },
+  { name: 'Dialog', slug: 'dialog', description: 'Composable modal with Header / Body / Footer slots.', category: 'Overlays', categorySlug: 'overlays' },
+  { name: 'ConfirmDialog', slug: 'confirm-dialog', description: 'Confirm / cancel preset with danger and warning variants.', category: 'Overlays', categorySlug: 'overlays' },
+  { name: 'Modal', slug: 'modal', description: 'Legacy fixed-preset modal. Prefer Dialog.', category: 'Overlays', categorySlug: 'overlays' },
   { name: 'Overlay', slug: 'overlay', description: 'Base overlay panel with backdrop.', category: 'Overlays', categorySlug: 'overlays' },
   { name: 'GlassPopover', slug: 'glass-popover', description: 'Glassmorphism popover panel.', category: 'Overlays', categorySlug: 'overlays' },
   { name: 'OnboardingPopover', slug: 'onboarding-popover', description: 'Step-by-step onboarding tooltip.', category: 'Overlays', categorySlug: 'overlays' },

@@ -1,0 +1,215 @@
+---
+title: Dialog
+description: Composable modal dialog with Header / Body / Footer slots. The canonical primitive for all modal UI — portal rendering, focus trap, body scroll lock, and focus restoration included.
+---
+
+import { DialogDemo, DialogDangerDemo } from '@/components/examples/dialog-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+## Preview
+
+<ComponentPreview name="Dialog">
+  <DialogDemo />
+</ComponentPreview>
+
+## Installation
+
+```tsx
+import { Dialog, Button } from '@camtomlabs/malix-design-system';
+```
+
+## When to use
+
+`Dialog` is the canonical modal primitive. Reach for it whenever you need a
+modal surface with custom content — edit forms, detail panels, multi-step
+flows, destructive confirmations with a reason field, etc.
+
+- For simple **confirm / cancel** prompts with a single message, use
+  [`ConfirmDialog`](/docs/components/overlays/confirm-dialog) instead — it's
+  a thin preset on top of the same primitives.
+- The older [`Modal`](/docs/components/overlays/modal) component is a fixed
+  preset kept for backward compatibility. Prefer `Dialog` for new code.
+
+## Usage
+
+```tsx
+import { Dialog, Button } from '@camtomlabs/malix-design-system';
+import { useState } from 'react';
+
+export function EditCatalogDialog() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button hierarchy="primary" onClick={() => setOpen(true)}>
+        Edit catalog
+      </Button>
+      <Dialog open={open} onClose={() => setOpen(false)} size="md">
+        <Dialog.Header>Edit catalog</Dialog.Header>
+        <Dialog.Body>
+          <p>Update the catalog details below.</p>
+        </Dialog.Body>
+        <Dialog.Footer>
+          <Button hierarchy="secondary" onClick={() => setOpen(false)}>
+            Cancel
+          </Button>
+          <Button hierarchy="primary" onClick={() => setOpen(false)}>
+            Save changes
+          </Button>
+        </Dialog.Footer>
+      </Dialog>
+    </>
+  );
+}
+```
+
+## Danger variant with custom body
+
+Set `variant="danger"` to tint the header border, and use `role="alertdialog"`
+so screen readers announce the dialog immediately. Compose any content inside
+`Dialog.Body` — form fields, textareas, checkboxes — nothing is hardcoded.
+
+<ComponentPreview name="Dialog Danger">
+  <DialogDangerDemo />
+</ComponentPreview>
+
+```tsx
+<Dialog
+  open={open}
+  onClose={close}
+  variant="danger"
+  size="sm"
+  role="alertdialog"
+>
+  <Dialog.Header>Delete catalog?</Dialog.Header>
+  <Dialog.Body>
+    <p>This action cannot be undone.</p>
+    <textarea
+      value={reason}
+      onChange={(e) => setReason(e.target.value)}
+      placeholder="Reason (required)"
+    />
+  </Dialog.Body>
+  <Dialog.Footer>
+    <Button hierarchy="secondary" onClick={close}>Cancel</Button>
+    <Button hierarchy="danger" onClick={onDelete} disabled={!reason}>
+      Delete
+    </Button>
+  </Dialog.Footer>
+</Dialog>
+```
+
+## Slot composition
+
+`Dialog` exposes three subcomponents that must be used inside `<Dialog>`:
+
+### `Dialog.Header`
+
+Renders the title row with an optional built-in close (✕) button. The title
+text is automatically wired to the dialog's `aria-labelledby`.
+
+```tsx
+<Dialog.Header>Edit catalog</Dialog.Header>
+
+{/* Hide the close button: */}
+<Dialog.Header showClose={false}>Required action</Dialog.Header>
+
+{/* Custom close label: */}
+<Dialog.Header closeLabel="Dismiss">Edit catalog</Dialog.Header>
+```
+
+### `Dialog.Body`
+
+Scrollable content region. Its `id` is automatically wired to the dialog's
+`aria-describedby`.
+
+```tsx
+<Dialog.Body>
+  <p>Any JSX content — forms, fields, anything.</p>
+</Dialog.Body>
+```
+
+### `Dialog.Footer`
+
+Action bar. Defaults to right-aligned; use the `align` prop for other layouts.
+
+```tsx
+<Dialog.Footer align="end">
+  <Button hierarchy="secondary">Cancel</Button>
+  <Button hierarchy="primary">Save</Button>
+</Dialog.Footer>
+
+{/* Split layout: destructive action on the left, primary actions on the right */}
+<Dialog.Footer align="between">
+  <Button hierarchy="danger">Delete</Button>
+  <div style={{ display: 'flex', gap: 12 }}>
+    <Button hierarchy="secondary">Cancel</Button>
+    <Button hierarchy="primary">Save</Button>
+  </div>
+</Dialog.Footer>
+```
+
+## Behavior
+
+`Dialog` handles every modal concern you'd otherwise hand-roll in CSS Modules:
+
+- **Portal rendering** — mounted into `document.body`, immune to `transform`
+  / `overflow: hidden` ancestors
+- **Focus trap** — `Tab` and `Shift+Tab` cycle within the panel
+- **Escape to close** — disable via `closeOnEsc={false}`
+- **Backdrop click to close** — disable via `closeOnBackdropClick={false}`
+- **Body scroll lock** — `document.body` scroll is locked while open
+- **Focus restoration** — focus returns to the previously focused element
+  when the dialog closes
+- **Initial focus** — defaults to the first focusable element in the panel;
+  override with `initialFocusRef`
+- **Automatic ARIA** — `aria-labelledby` and `aria-describedby` wired via
+  `useId`, so multiple dialogs never collide
+
+## Props
+
+### `<Dialog>`
+
+<PropsTable
+  props={[
+    { name: 'open', type: 'boolean', required: true, description: 'Whether the dialog is visible.' },
+    { name: 'onClose', type: '() => void', required: true, description: 'Called when the dialog requests to close (Escape, backdrop, close button).' },
+    { name: 'variant', type: "'default' | 'danger' | 'warning' | 'info'", default: "'default'", description: 'Semantic variant — tints the header border.' },
+    { name: 'size', type: "'sm' | 'md' | 'lg'", default: "'md'", description: 'Max-width of the panel. sm=400px, md=560px, lg=720px.' },
+    { name: 'role', type: "'dialog' | 'alertdialog'", default: "'dialog'", description: 'Use "alertdialog" for urgent confirm flows so screen readers announce immediately.' },
+    { name: 'closeOnBackdropClick', type: 'boolean', default: 'true', description: 'Clicking the backdrop closes the dialog.' },
+    { name: 'closeOnEsc', type: 'boolean', default: 'true', description: 'Pressing Escape closes the dialog.' },
+    { name: 'initialFocusRef', type: 'RefObject<HTMLElement>', description: 'Element to focus on open. Defaults to the first focusable in the panel.' },
+    { name: 'className', type: 'string', description: 'Optional class added to the panel.' },
+    { name: 'children', type: 'ReactNode', required: true, description: 'Dialog content — typically Dialog.Header, Dialog.Body, Dialog.Footer.' },
+  ]}
+/>
+
+### `<Dialog.Header>`
+
+<PropsTable
+  props={[
+    { name: 'children', type: 'ReactNode', required: true, description: 'Title text or nodes.' },
+    { name: 'showClose', type: 'boolean', default: 'true', description: 'Whether to render the built-in close button.' },
+    { name: 'closeLabel', type: 'string', default: "'Close'", description: 'Accessible label for the close button.' },
+  ]}
+/>
+
+### `<Dialog.Body>`
+
+<PropsTable
+  props={[
+    { name: 'children', type: 'ReactNode', required: true, description: 'Body content.' },
+    { name: 'className', type: 'string', description: 'Optional class added to the body.' },
+  ]}
+/>
+
+### `<Dialog.Footer>`
+
+<PropsTable
+  props={[
+    { name: 'children', type: 'ReactNode', required: true, description: 'Action buttons.' },
+    { name: 'align', type: "'start' | 'center' | 'end' | 'between'", default: "'end'", description: 'Horizontal alignment of footer children.' },
+  ]}
+/>

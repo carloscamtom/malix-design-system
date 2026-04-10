@@ -1,13 +1,22 @@
 ---
 title: Modal
-description: A dialog overlay with focus trap, backdrop click to close, and configurable confirm/cancel actions.
+description: Opinionated glass-style modal with a fixed title + content + confirm/cancel preset. Legacy — prefer Dialog for new code.
 ---
 
-import { ModalDemo } from '@/components/examples/modal-demo'
+import { ModalDemo } from '@/components/examples/modal-demo';
+import { ComponentPreview } from '@/components/component-preview';
+import { PropsTable } from '@/components/props-table';
+
+> **Legacy.** `Modal` is kept for backward compatibility. For new code,
+> prefer [`Dialog`](/docs/components/overlays/dialog) — it exposes the
+> same behavior (portal, focus trap, scroll lock, focus restore) plus
+> composable `Dialog.Header` / `Dialog.Body` / `Dialog.Footer` slots and
+> `default | danger | warning | info` variants. For simple confirm / cancel
+> prompts, use [`ConfirmDialog`](/docs/components/overlays/confirm-dialog).
 
 ## Preview
 
-<ComponentPreview>
+<ComponentPreview name="Modal">
   <ModalDemo />
 </ComponentPreview>
 
