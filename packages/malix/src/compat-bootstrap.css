@@ -1,0 +1,51 @@
+/**
+ * @camtomlabs/malix-design-system/compat-bootstrap.css
+ *
+ * Opt-in overrides for projects that use Bootstrap alongside Malix.
+ *
+ * Problem: Bootstrap does not use CSS @layer, so its unlayered styles
+ * always win over Malix's layered styles (per CSS cascade spec).
+ * This file provides unlayered overrides for the critical properties
+ * that Bootstrap sets globally and that conflict with Malix tokens.
+ *
+ * Usage — import AFTER Bootstrap and AFTER Malix styles:
+ *
+ *   import 'bootstrap/dist/css/bootstrap.min.css';
+ *   import '@camtomlabs/malix-design-system/reset.css';   // optional
+ *   import '@camtomlabs/malix-design-system/styles.css';
+ *   import '@camtomlabs/malix-design-system/compat-bootstrap.css';
+ *
+ * This file intentionally lives OUTSIDE any @layer so it wins over
+ * Bootstrap's unlayered declarations. It only targets properties where
+ * Bootstrap and Malix conflict; it does not reset anything else.
+ *
+ * When you remove Bootstrap from your project, remove this import too.
+ */
+
+/* ── Typography ────────────────────────────────── */
+body {
+  font-family: var(--malix-font-body);
+  color: var(--malix-foreground);
+  line-height: 1.5;
+}
+
+/* ── Links ─────────────────────────────────────── */
+a {
+  color: var(--malix-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--malix-primary-hover);
+}
+
+/* ── Headings ──────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--malix-font-body);
+  color: var(--malix-foreground);
+}
+
+/* ── Form elements ─────────────────────────────── */
+button, input, select, textarea {
+  font-family: var(--malix-font-body);
+}

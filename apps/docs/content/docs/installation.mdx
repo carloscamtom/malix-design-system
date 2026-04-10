@@ -88,6 +88,37 @@ export function MyComponent() {
 }
 ```
 
+## Using alongside Bootstrap
+
+Malix uses CSS `@layer` for cascade control. By CSS spec, **unlayered styles
+always win over layered styles** — so Bootstrap's global `body { font-family }`
+will override Malix's layered reset.
+
+Import the compatibility stylesheet **after** both Bootstrap and Malix styles:
+
+```tsx title="main.tsx"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@camtomlabs/malix-design-system/reset.css';              // optional
+import '@camtomlabs/malix-design-system/styles.css';
+import '@camtomlabs/malix-design-system/compat-bootstrap.css';   // ← add this
+```
+
+`compat-bootstrap.css` is intentionally **unlayered** so it overrides
+Bootstrap's global `body`, `a`, and heading declarations with Malix tokens.
+It only touches properties where Bootstrap and Malix conflict — safe to
+remove once you drop Bootstrap.
+
+This same approach applies to **any CSS framework that doesn't use `@layer`**
+(Tailwind Preflight, Bulma, Foundation, etc.). If you have a custom global
+reset that conflicts, add an unlayered override after Malix styles:
+
+```css title="app.css"
+body {
+  font-family: var(--malix-font-body);
+  color: var(--malix-foreground);
+}
+```
+
 ## Icon Library
 
 Malix components accept any `React.ReactNode` for icon props. We recommend [Lucide React](https://lucide.dev/) for consistency with the design system:

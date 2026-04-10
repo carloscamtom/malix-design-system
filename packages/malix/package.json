@@ -1,6 +1,6 @@
 {
   "name": "@camtomlabs/malix-design-system",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Malix Design System combined package with components, tokens, and bundled styles.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -9,13 +9,15 @@
   "sideEffects": [
     "./src/styles.css",
     "./src/tokens.css",
-    "./src/reset.css"
+    "./src/reset.css",
+    "./src/compat-bootstrap.css"
   ],
   "files": [
     "dist",
     "src/styles.css",
     "src/tokens.css",
     "src/reset.css",
+    "src/compat-bootstrap.css",
     "src/tokens.registry.json",
     "tailwind.preset.js",
     "stylelint.config.cjs",
@@ -48,6 +50,7 @@
     "./styles.css": "./src/styles.css",
     "./tokens.css": "./src/tokens.css",
     "./reset.css": "./src/reset.css",
+    "./compat-bootstrap.css": "./src/compat-bootstrap.css",
     "./tokens.registry.json": "./src/tokens.registry.json",
     "./tailwind.preset": "./tailwind.preset.js",
     "./stylelint.config": "./stylelint.config.cjs",

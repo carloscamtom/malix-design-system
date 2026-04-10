@@ -46,6 +46,27 @@ Layer cascade order:
 malix-reset  →  malix-tokens  →  malix-components  →  app
 ```
 
+### Using Malix alongside Bootstrap (or other unlayered frameworks)
+
+CSS spec: **unlayered styles always beat layered styles**, regardless of
+source order or specificity. Since Bootstrap, Tailwind Preflight, and most
+legacy CSS frameworks don't use `@layer`, their global `body` rules will
+override Malix's layered reset.
+
+Import the compatibility stylesheet **after** Bootstrap and Malix:
+
+```ts
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@camtomlabs/malix-design-system/reset.css';   // optional
+import '@camtomlabs/malix-design-system/styles.css';
+import '@camtomlabs/malix-design-system/compat-bootstrap.css'; // ← add this
+```
+
+This file is intentionally unlayered so it wins over Bootstrap's global
+`body { font-family }`, `a { color }`, and heading declarations. It only
+overrides properties where Bootstrap and Malix conflict — it is safe to
+import even if you later remove Bootstrap.
+
 ## Usage
 
 ```tsx
