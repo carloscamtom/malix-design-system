@@ -942,6 +942,133 @@
 }
 
 /* ═══════════════════════════════════════════════
+   DIALOG — canonical composable modal
+   Slot-based: <Dialog.Header>, <Dialog.Body>, <Dialog.Footer>
+   Variants: default | danger | warning | info
+   Sizes: sm (400px) | md (560px) | lg (720px)
+   ═══════════════════════════════════════════════ */
+
+.malix-dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: min(85vh, 720px);
+  background: var(--malix-surface-elevated);
+  border: 1px solid var(--malix-border);
+  border-radius: var(--malix-radius-lg);
+  box-shadow: var(--malix-shadow-card-l3);
+  z-index: var(--malix-z-modal);
+  overflow: hidden;
+}
+
+.malix-dialog:focus {
+  outline: none;
+}
+
+.malix-dialog[data-size="sm"] {
+  max-width: 400px;
+}
+
+.malix-dialog[data-size="md"] {
+  max-width: 560px;
+}
+
+.malix-dialog[data-size="lg"] {
+  max-width: 720px;
+}
+
+.malix-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--malix-border);
+}
+
+.malix-dialog[data-variant="danger"] .malix-dialog__header {
+  border-bottom-color: var(--malix-error-light);
+}
+
+.malix-dialog[data-variant="warning"] .malix-dialog__header {
+  border-bottom-color: var(--malix-warning-light);
+}
+
+.malix-dialog[data-variant="info"] .malix-dialog__header {
+  border-bottom-color: var(--malix-info-light);
+}
+
+.malix-dialog__title {
+  margin: 0;
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-lg);
+  font-weight: var(--malix-weight-semibold);
+  color: var(--malix-foreground);
+  line-height: 1.4;
+}
+
+.malix-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  margin: -6px -6px -6px 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--malix-radius-sm);
+  cursor: pointer;
+  color: var(--malix-foreground-secondary);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.malix-dialog__close:hover {
+  background: var(--malix-surface-hover);
+  color: var(--malix-foreground);
+}
+
+.malix-dialog__close:focus-visible {
+  outline: 2px solid var(--malix-primary);
+  outline-offset: 2px;
+}
+
+.malix-dialog__body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 20px 24px;
+  font-family: var(--malix-font-body);
+  font-size: var(--malix-text-base);
+  color: var(--malix-foreground-secondary);
+  line-height: 1.6;
+}
+
+.malix-dialog__footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--malix-border);
+  background: var(--malix-surface-secondary);
+}
+
+.malix-dialog__footer[data-align="end"] {
+  justify-content: flex-end;
+}
+
+.malix-dialog__footer[data-align="start"] {
+  justify-content: flex-start;
+}
+
+.malix-dialog__footer[data-align="center"] {
+  justify-content: center;
+}
+
+.malix-dialog__footer[data-align="between"] {
+  justify-content: space-between;
+}
+
+/* ═══════════════════════════════════════════════
    GLASS POPOVER — Pencil: bgJHS
    w: 300, radius-xl, glass bg
    ═══════════════════════════════════════════════ */

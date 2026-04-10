@@ -1,4 +1,8 @@
-import React, { useEffect, useRef } from 'react';
+'use client';
+
+import React, { useId, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import { useOverlayBehavior } from '../hooks/useOverlayBehavior';
 
 export type ConfirmDialogVariant = 'default' | 'danger' | 'warning' | 'info';
 
@@ -16,8 +20,12 @@ export type ConfirmDialogProps = {
   loading?: boolean;
 };
 
-const FOCUSABLE_SELECTOR = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
-
+/**
+ * <ConfirmDialog> — semantic confirmation preset built on top of the
+ * overlay primitives. Use for binary confirm/cancel flows with a single
+ * message. For custom layouts (reason textareas, multi-step, extra
+ * controls), use <Dialog> instead.
+ */
 export function ConfirmDialog({
   open,
   title,
@@ -32,60 +40,37 @@ export function ConfirmDialog({
   loading = false,
 }: ConfirmDialogProps) {
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const titleId = useId();
+  const descriptionId = useId();
 
-  useEffect(() => {
-    if (!open || !panelRef.current) return;
-
-    const panel = panelRef.current;
-    const focusables = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR));
-    const first = focusables[0];
-    const last = focusables[focusables.length - 1];
-
-    first?.focus();
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        event.preventDefault();
-        onCancel();
-      }
-
-      if (event.key === 'Tab' && focusables.length > 0) {
-        if (event.shiftKey && document.activeElement === first) {
-          event.preventDefault();
-          last?.focus();
-        } else if (!event.shiftKey && document.activeElement === last) {
-          event.preventDefault();
-          first?.focus();
-        }
-      }
-    }
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [open, onCancel]);
+  useOverlayBehavior({ open, onClose: onCancel, panelRef });
 
   if (!open) return null;
+  if (typeof document === 'undefined') return null;
 
-  return (
+  const content = (
     <div className="malix-overlay-backdrop" onMouseDown={onCancel}>
       <div
         ref={panelRef}
         className="malix-confirm-dialog"
         role="alertdialog"
         aria-modal="true"
-        aria-labelledby="malix-confirm-title"
-        aria-describedby={description ? 'malix-confirm-desc' : undefined}
+        aria-labelledby={titleId}
+        aria-describedby={description ? descriptionId : undefined}
         data-variant={variant}
+        tabIndex={-1}
         onMouseDown={(event) => event.stopPropagation()}
       >
         <div className="malix-confirm-dialog__content">
-          {icon ? (
-            <div className="malix-confirm-dialog__icon">{icon}</div>
-          ) : null}
+          {icon ? <div className="malix-confirm-dialog__icon">{icon}</div> : null}
           <div className="malix-confirm-dialog__text">
-            <h3 id="malix-confirm-title" className="malix-confirm-dialog__title">{title}</h3>
+            <h3 id={titleId} className="malix-confirm-dialog__title">
+              {title}
+            </h3>
             {description ? (
-              <p id="malix-confirm-desc" className="malix-confirm-dialog__description">{description}</p>
+              <p id={descriptionId} className="malix-confirm-dialog__description">
+                {description}
+              </p>
             ) : null}
             {children}
           </div>
@@ -115,4 +100,6 @@ export function ConfirmDialog({
       </div>
     </div>
   );
+
+  return createPortal(content, document.body);
 }

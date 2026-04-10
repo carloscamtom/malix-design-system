@@ -99,6 +99,15 @@ export { Modal } from './components/Modal';
 export type { ModalProps } from './components/Modal';
 export { ConfirmDialog } from './components/ConfirmDialog';
 export type { ConfirmDialogProps, ConfirmDialogVariant } from './components/ConfirmDialog';
+export { Dialog } from './components/Dialog';
+export type {
+  DialogProps,
+  DialogVariant,
+  DialogSize,
+  DialogHeaderProps,
+  DialogBodyProps,
+  DialogFooterProps,
+} from './components/Dialog';
 export { GlassPopover } from './components/GlassPopover';
 export type { GlassPopoverProps } from './components/GlassPopover';
 

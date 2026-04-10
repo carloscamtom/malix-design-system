@@ -244,10 +244,45 @@ import { tokenRegistry } from '@camtomlabs/malix-design-system';
 ### Overlays
 | Component | Description |
 |-----------|-------------|
+| `Dialog` | **Composable modal** with `Dialog.Header` / `Dialog.Body` / `Dialog.Footer` slots. Portal + focus trap + scroll lock + focus restore. Variants: `default \| danger \| warning \| info`. Sizes: `sm \| md \| lg`. **Prefer this for custom modal layouts.** |
+| `ConfirmDialog` | Preset confirm/cancel dialog with title + description + icon. Variants: `default \| danger \| warning \| info`. Use for simple binary confirmations. |
+| `Modal` | Opinionated glass-style modal with fixed header/body/footer preset. Legacy — prefer `Dialog` for new code. |
 | `GlassPopover` | Glassmorphism-styled popover |
-| `Modal` | Full-screen modal dialog |
 | `OnboardingPopover` | Guided onboarding popover |
 | `Overlay` | Backdrop overlay layer |
+
+#### Dialog usage
+
+```tsx
+import { Dialog, Button } from '@camtomlabs/malix-design-system';
+
+function DeleteCatalogDialog({ open, onClose, onDelete }) {
+  return (
+    <Dialog open={open} onClose={onClose} variant="danger" size="sm" role="alertdialog">
+      <Dialog.Header>Delete catalog?</Dialog.Header>
+      <Dialog.Body>
+        This action cannot be undone. All related glosas and flags will be
+        permanently removed.
+      </Dialog.Body>
+      <Dialog.Footer>
+        <Button hierarchy="secondary" onClick={onClose}>Cancel</Button>
+        <Button hierarchy="danger" onClick={onDelete}>Delete</Button>
+      </Dialog.Footer>
+    </Dialog>
+  );
+}
+```
+
+`Dialog` handles all the modal plumbing for you:
+
+- **Portal to `document.body`** — immune to `transform` / `overflow: hidden` ancestors
+- **Focus trap** — Tab cycles within the panel
+- **Escape to close** (disable via `closeOnEsc={false}`)
+- **Backdrop click to close** (disable via `closeOnBackdropClick={false}`)
+- **Body scroll lock** while open
+- **Focus restore** — returns focus to the trigger on close
+- **ARIA wiring** — `aria-labelledby` / `aria-describedby` auto-generated via `useId`
+- **`role="alertdialog"`** opt-in for urgent confirm flows
 
 ### Interactive / Composite
 | Component | Description |
